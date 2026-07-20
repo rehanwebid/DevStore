@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevStore</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            width: 100%;
+            min-height: 100%;
+            background-color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background-color: black;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .brand-logo {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            object-fit: cover;
+            pointer-events: none;
+            -webkit-user-drag: none;
+        }
+
+        .brand {
+            color: #D1D1D1;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .tiktok-icon {
+            width: 16px;
+            height: 16px;
+            fill: #555;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .tiktok-username {
+            color: #555;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .whatsapp-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            background-color: #00BFFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .whatsapp-icon {
+            width: 24px;
+            height: 24px;
+            fill: black;
+        }
+
+        .projects-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 100px 40px 40px 40px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .project-card {
+            aspect-ratio: 1 / 1;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border: 1px solid #333;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .project-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #252525;
+            overflow: hidden;
+            flex-shrink: 0;
+            pointer-events: none;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            -webkit-user-drag: none;
+        }
+
+        .project-info {
+            padding: 12px 15px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .project-title {
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .project-description {
+            color: #999;
+            font-size: 12px;
+            line-height: 1.4;
+            flex-grow: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .project-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 8px;
+            border-top: 1px solid #333;
+        }
+
+        .project-date {
+            color: #777;
+            font-size: 11px;
+        }
+
+        .project-button {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: #00BFFF;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            font-family: inherit;
+        }
+
+        .project-button svg {
+            width: 14px;
+            height: 14px;
+            fill: #00BFFF;
+        }
+
+        /* Tablet */
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 600px;
+            }
+
+            .brand {
+                font-size: 20px;
+            }
+
+            .tiktok-username {
+                font-size: 11px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+            .projects-grid {
+                grid-template-columns: repeat(1, 1fr);
+                max-width: 350px;
+            }
+
+            .projects-section {
+                padding: 100px 20px 40px 20px;
+            }
+
+            .header {
+                padding: 15px;
+            }
+
+            .brand {
+                font-size: 16px;
+            }
+
+            .brand-logo {
+                width: 22px;
+                height: 22px;
+            }
+
+            .tiktok-icon {
+                width: 14px;
+                height: 14px;
+            }
+
+            .tiktok-username {
+                font-size: 10px;
+            }
+
+            .header-right {
+                gap: 5px;
+            }
+
+            .header-left {
+                gap: 6px;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.keyCode === 123) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode === 85) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode === 83) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode === 80) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 83) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        (function() {
+            const element = new Image();
+            Object.defineProperty(element, 'id', {
+                get: function() {
+                    document.body.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;background:black;color:#D1D1D1;font-family:sans-serif;font-size:20px;">Akses diblokir</div>';
+                    throw new Error('Devtools terdeteksi');
+                }
+            });
+            
+            setInterval(function() {
+                const threshold = 160;
+                const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+                const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+                
+                if (widthThreshold || heightThreshold) {
+                    document.body.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;background:black;color:#D1D1D1;font-family:sans-serif;font-size:20px;">Akses diblokir</div>';
+                }
+            }, 1000);
+        })();
+
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        document.addEventListener('cut', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        document.addEventListener('paste', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.keyCode === 65) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        console.log = function() {};
+        console.warn = function() {};
+        console.error = function() {};
+        console.info = function() {};
+        console.debug = function() {};
+        console.table = function() {};
+        console.trace = function() {};
+        console.dir = function() {};
+        console.dirxml = function() {};
+        console.group = function() {};
+        console.groupEnd = function() {};
+        console.groupCollapsed = function() {};
+        console.time = function() {};
+        console.timeEnd = function() {};
+        console.timeLog = function() {};
+        console.clear = function() {};
+        console.count = function() {};
+        console.countReset = function() {};
+        console.assert = function() {};
+        console.profile = function() {};
+        console.profileEnd = function() {};
+
+        function openProject(url) {
+            window.open(url, '_blank');
+        }
+
+        function openWhatsApp() {
+            window.open('https://wa.me/6289684219904', '_blank');
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <img src="https://via.placeholder.com/28x28" alt="logo" class="brand-logo">
+            <span class="brand">DevStore</span>
+        </div>
+        <div class="header-right">
+            <svg class="tiktok-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+            </svg>
+            <span class="tiktok-username">@devstore.space</span>
+        </div>
+    </div>
+
+    <div class="projects-section">
+        <div class="projects-grid">
+
+            <!-- ============================================ -->
+            <!-- PROJECT 1 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+1" alt="Project 1">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 1</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project1')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 2 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+2" alt="Project 2">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 2</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project2')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 3 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+3" alt="Project 3">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 3</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project3')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 4 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+4" alt="Project 4">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 4</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project4')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 5 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+5" alt="Project 5">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 5</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project5')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 6 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+6" alt="Project 6">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 6</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project6')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 7 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+7" alt="Project 7">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 7</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project7')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 8 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+8" alt="Project 8">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 8</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project8')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 9 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+9" alt="Project 9">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 9</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project9')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 10 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+10" alt="Project 10">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 10</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project10')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 11 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+11" alt="Project 11">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 11</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project11')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 12 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+12" alt="Project 12">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 12</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project12')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 13 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+13" alt="Project 13">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 13</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project13')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 14 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+14" alt="Project 14">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 14</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project14')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 15 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+15" alt="Project 15">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 15</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project15')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 16 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+16" alt="Project 16">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 16</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project16')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 17 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+17" alt="Project 17">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 17</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project17')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 18 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+18" alt="Project 18">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 18</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project18')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 19 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+19" alt="Project 19">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 19</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project19')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 20 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+20" alt="Project 20">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 20</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project20')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 21 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+21" alt="Project 21">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 21</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project21')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 22 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+22" alt="Project 22">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 22</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project22')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 23 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+23" alt="Project 23">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 23</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project23')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 24 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+24" alt="Project 24">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 24</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project24')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 25 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+25" alt="Project 25">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 25</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project25')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 26 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+26" alt="Project 26">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 26</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project26')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 27 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+27" alt="Project 27">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 27</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project27')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 28 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+28" alt="Project 28">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 28</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project28')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 29 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+29" alt="Project 29">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 29</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project29')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 30 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+30" alt="Project 30">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 30</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project30')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 31 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+31" alt="Project 31">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 31</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project31')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 32 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+32" alt="Project 32">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 32</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project32')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 33 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+33" alt="Project 33">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 33</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project33')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 34 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+34" alt="Project 34">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 34</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project34')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 35 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+35" alt="Project 35">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 35</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project35')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 36 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+36" alt="Project 36">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 36</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project36')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 37 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+37" alt="Project 37">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 37</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project37')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 38 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+38" alt="Project 38">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 38</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project38')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 39 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+39" alt="Project 39">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 39</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project39')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 40 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+40" alt="Project 40">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 40</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project40')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 41 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+41" alt="Project 41">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 41</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project41')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 42 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+42" alt="Project 42">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 42</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project42')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 43 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+43" alt="Project 43">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 43</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project43')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 44 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+44" alt="Project 44">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 44</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project44')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 45 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+45" alt="Project 45">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 45</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project45')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 46 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+46" alt="Project 46">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 46</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project46')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 47 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+47" alt="Project 47">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 47</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project47')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 48 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+48" alt="Project 48">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 48</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project48')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 49 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+49" alt="Project 49">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 49</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project49')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 50 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
+            <!-- ============================================ -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/640x360/2a2a2a/666?text=Project+50" alt="Project 50">
+                </div>
+                <div class="project-info">
+                    <div>
+                        <div class="project-title">Project 50</div>
+                        <div class="project-description">Isi dengan deskripsi yang baik dan jelas</div>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-date">00 Bul 0000</span>
+                        <button class="project-button" onclick="openProject('https://example.com/project50')">
+                            Open
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- PROJECT 51-100 - LANJUTKAN FORMAT YANG SAMA -->
+            <!-- ============================================ -->
+            <!-- Silahkan copy-paste format di atas untuk project 51 sampai 100 -->
+            <!-- Ubah nomor project, link, gambar, dan deskripsi sesuai kebutuhan -->
+
+        </div>
+    </div>
+
+    <div class="whatsapp-container" onclick="openWhatsApp()">
+        <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+        </svg>
+    </div>
+</body>
+</html>
