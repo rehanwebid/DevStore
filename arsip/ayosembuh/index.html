@@ -787,6 +787,55 @@
 
     // Instant opacity for hero
     document.querySelector('section').classList.remove('opacity-0', 'translate-y-10');
+
+    // Double-tap 'c' untuk scroll linear dari atas ke bawah
+let lastTapTime = 0;
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'c' || e.key === 'C') {
+    const currentTime = new Date().getTime();
+    const tapGap = currentTime - lastTapTime;
+    
+    if (tapGap < 500 && tapGap > 0) {
+      e.preventDefault();
+      smoothLinearScroll();
+      lastTapTime = 0;
+    } else {
+      lastTapTime = currentTime;
+    }
+  }
+});
+
+function smoothLinearScroll() {
+  const scrollHeight = document.documentElement.scrollHeight;
+  const windowHeight = window.innerHeight;
+  const maxScroll = scrollHeight - windowHeight;
+  
+  // ⬇️⬇️⬇️ ATUR KECEPATAN DI SINI ⬇️⬇️⬇️
+  const duration = 5000; // <<<< GANTI ANGKA INI (dalam milidetik, 1000 = 1 detik)
+  // ⬆️⬆️⬆️ ATUR KECEPATAN DI SINI ⬆️⬆️⬆️
+  // Contoh: 2000 = 2 detik, 5000 = 5 detik, 10000 = 10 detik
+  // Makin besar angka = makin pelan scrollnya
+  
+  const startPosition = window.pageYOffset;
+  const distance = maxScroll - startPosition;
+  let startTime = null;
+  
+  function animation(currentTime) {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+    
+    const scrollPosition = startPosition + (distance * progress);
+    window.scrollTo(0, scrollPosition);
+    
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  }
+  
+  requestAnimationFrame(animation);
+}
 </script>
 
 </body>
