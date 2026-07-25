@@ -817,7 +817,7 @@
         }
     });
 
-    // Double-tap 'c' untuk scroll linear dari atas ke bawah
+     // Double-tap 'c' untuk scroll linear pelan sampai bawah
 let lastTapTime = 0;
 
 document.addEventListener('keydown', function(e) {
@@ -827,7 +827,7 @@ document.addEventListener('keydown', function(e) {
     
     if (tapGap < 500 && tapGap > 0) {
       e.preventDefault();
-      smoothLinearScroll();
+      startSmoothScroll();
       lastTapTime = 0;
     } else {
       lastTapTime = currentTime;
@@ -835,35 +835,22 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
-function smoothLinearScroll() {
-  const scrollHeight = document.documentElement.scrollHeight;
-  const windowHeight = window.innerHeight;
-  const maxScroll = scrollHeight - windowHeight;
+function startSmoothScroll() {
+  const target = document.documentElement.scrollHeight - window.innerHeight;
   
   // ⬇️⬇️⬇️ ATUR KECEPATAN DI SINI ⬇️⬇️⬇️
-  const duration = 5000; // <<<< GANTI ANGKA INI (dalam milidetik, 1000 = 1 detik)
+  const speed = 2; // Semakin besar semakin cepat
   // ⬆️⬆️⬆️ ATUR KECEPATAN DI SINI ⬆️⬆️⬆️
-  // Contoh: 2000 = 2 detik, 5000 = 5 detik, 10000 = 10 detik
-  // Makin besar angka = makin pelan scrollnya
   
-  const startPosition = window.pageYOffset;
-  const distance = maxScroll - startPosition;
-  let startTime = null;
-  
-  function animation(currentTime) {
-    if (startTime === null) startTime = currentTime;
-    const timeElapsed = currentTime - startTime;
-    const progress = Math.min(timeElapsed / duration, 1);
+  function scroll() {
+    window.scrollBy(0, speed);
     
-    const scrollPosition = startPosition + (distance * progress);
-    window.scrollTo(0, scrollPosition);
-    
-    if (timeElapsed < duration) {
-      requestAnimationFrame(animation);
+    if (window.pageYOffset < target) {
+      requestAnimationFrame(scroll);
     }
   }
   
-  requestAnimationFrame(animation);
+  scroll();
 }
 </script>
 
