@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AyoSembuh Hospital | Kesehatan Anda, Prioritas Kami</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#d9dadc",
+                    "surface-container-highest": "#e1e2e4",
+                    "outline-variant": "#c3c6d6",
+                    "tertiary-fixed-dim": "#65dca4",
+                    "on-secondary-fixed-variant": "#004e5d",
+                    "inverse-primary": "#b2c5ff",
+                    "surface-container-high": "#e7e8ea",
+                    "primary-container": "#0052cc",
+                    "primary": "#003d9b",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f3f4f6",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#004e32",
+                    "outline": "#737685",
+                    "on-surface": "#191c1e",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#191c1e",
+                    "secondary-fixed": "#afecff",
+                    "inverse-on-surface": "#f0f1f3",
+                    "tertiary-container": "#006844",
+                    "surface-variant": "#e1e2e4",
+                    "surface": "#f8f9fb",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#0040a2",
+                    "secondary": "#00687b",
+                    "surface-tint": "#0c56d0",
+                    "inverse-surface": "#2e3132",
+                    "primary-fixed": "#dae2ff",
+                    "secondary-fixed-dim": "#48d7f9",
+                    "background": "#f8f9fb",
+                    "on-primary-container": "#c4d2ff",
+                    "secondary-container": "#50dcff",
+                    "on-tertiary-container": "#72e9af",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#005235",
+                    "primary-fixed-dim": "#b2c5ff",
+                    "on-tertiary-fixed": "#002113",
+                    "on-secondary-fixed": "#001f27",
+                    "surface-bright": "#f8f9fb",
+                    "on-surface-variant": "#434654",
+                    "tertiary-fixed": "#82f9be",
+                    "on-secondary-container": "#005f71",
+                    "surface-container": "#edeef0",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#001848"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-padding-desktop": "80px",
+                    "section-gap-mobile": "64px",
+                    "base": "8px",
+                    "gutter": "24px",
+                    "container-padding-mobile": "20px",
+                    "section-gap-desktop": "120px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "button": ["Inter"],
+                    "display-lg-mobile": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "button": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-lift {
+            box-shadow: 0px 4px 20px rgba(0, 82, 204, 0.08);
+        }
+        .soft-lift:hover {
+            box-shadow: 0px 8px 30px rgba(0, 82, 204, 0.12);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- 1. TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-bright/80 backdrop-blur-md shadow-sm">
+<nav class="flex justify-between items-center h-20 px-container-padding-mobile md:px-container-padding-desktop max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed">AyoSembuh</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#specializations">Specialties</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#doctors">Doctors</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#facilities">Facilities</a>
+<a class="bg-primary text-on-primary px-6 py-2 rounded-full font-button text-button hover:bg-on-primary-fixed-variant transition-all active:scale-95" href="#appointment">Book Now</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<main class="pt-20">
+<!-- 2. Hero Section -->
+<section class="relative overflow-hidden bg-surface py-20 px-container-padding-mobile md:px-container-padding-desktop flex flex-col md:flex-row items-center gap-12 max-w-7xl mx-auto">
+<div class="flex-1 space-y-6 z-10">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-container/10 text-primary rounded-full font-label-md text-label-md">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                    Tersedia 24/7 untuk Anda
+                </div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg leading-tight text-primary">
+                    Kesehatan Anda, <br/><span class="text-secondary">Prioritas Kami.</span>
+</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-lg">
+                    Memberikan pelayanan medis kelas dunia dengan teknologi terkini dan empati yang tulus untuk kesembuhan optimal keluarga Anda.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<a class="flex items-center justify-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-xl font-button text-button soft-lift" href="#appointment">
+                        Buat Janji Temu <span class="material-symbols-outlined">calendar_month</span>
+</a>
+<a class="flex items-center justify-center gap-2 border-2 border-primary text-primary px-8 py-4 rounded-xl font-button text-button hover:bg-primary-container/5 transition-colors" href="#specializations">
+                        Layanan Kami
+                    </a>
+</div>
+</div>
+<div class="flex-1 relative w-full aspect-[4/3] rounded-3xl overflow-hidden soft-lift">
+<img class="w-full h-full object-cover" data-alt="A professional, cinematic shot of a modern, bright hospital lobby with high ceilings and warm wooden accents. In the foreground, a friendly female doctor in a white lab coat smiles warmly while holding a digital tablet. The lighting is soft, natural, and creates an atmosphere of trust and clinical excellence in a high-end corporate healthcare setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA688KpStN1CIsi0tun-DEBI5D6UpOsrYQBTRq-a6q4_YLXvK74FZxooyxnnDlJN1sE9nrVTKcrIep9Hmw9vD-kYtrtKrxhkk1GAH_AUFInmXOTWXDeb9bFIp34qEjqCj4xIO0s34TUJv27oVDyjCc6sEVtMlD3LQBmxPUSDDhw4WWaYInaVX1R4DWJma1hwkhDb9zBY0kd6HBLAI_jS8RADLj3pGEuhHBXG0ewu694dRfQCGqAo0MEu8dBxgVTJCP9Wz5RrReripN1"/>
+<div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl flex items-center gap-4">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden"><img class="w-full h-full object-cover" data-alt="A close-up headshot of a diverse male physician with glasses and a kind expression, professional lighting, modern medical aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOeQ4gms9a8BBTRKJNQ-9ZbAsJL6e6tdtXh9fFlHAXw4v82A93y0Ga6FSQ1HwS_LNPMKTh_4hhKBwEHK_bnajuYXaW1v7ysmJspp-9dCFvZ6FrIYbTJ-sO9SiQSJwT5PSR4jWv0pGRW91CPtNTEH-gU3IFXprBYIJvDHPDbskqqySxXInEfS2ZTcd_f24phGLNufniOfYWZ0WMsjVGqzkhdfTht4oKbIHa89DatAtIUL3D3OGcnNovvpcEFxfmD0SgIwQbjV3RnYqK"/></div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-300 overflow-hidden"><img class="w-full h-full object-cover" data-alt="A close-up headshot of a confident female specialist in a light blue medical scrub, professional high-key lighting, bright healthcare style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUfQ-4gaJw_PCXh8P9NXaM0sl7YqnIRK_PjI6BW-fLs2j-sDEJcoF2t06OM9kjH-p0OwqS-qZZv4rzbJNYPtb_v7M3EmdVw9NGcEX4OjgN1GafiMh0BzKA3ofAcyjpgKNGaMOQDqkXGBW4cLu9eStfBjQUx7N1msIp5BacD2GuimYF4eZKr9c5Tvbgc-wgtt3tRTkUUEIh2ILnuz7ZkLMTaNQj132cP62K_4kYzg_5484Kh60QwJ-kI8uKYT-pPEVC6ANG_-HvWAeR"/></div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md">+500</div>
+</div>
+<div class="text-on-surface-variant font-label-md text-label-md">Dokter Ahli Siap Membantu</div>
+</div>
+</div>
+</section>
+<!-- 3. Quick Emergency -->
+<section class="bg-error text-on-error py-6 px-container-padding-mobile md:px-container-padding-desktop">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">emergency</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm">Layanan Gawat Darurat 24 Jam</h3>
+<p class="opacity-90">Tim medis kami selalu siap sedia dalam kondisi kritis.</p>
+</div>
+</div>
+<a class="bg-white text-error px-8 py-3 rounded-full font-button text-button flex items-center gap-2 hover:scale-105 transition-transform" href="tel:1500999">
+<span class="material-symbols-outlined">call</span> 1500-999
+                </a>
+</div>
+</section>
+<!-- 4. Statistics -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop grid grid-cols-1 sm:grid-cols-3 gap-gutter">
+<div class="text-center p-8 bg-surface-container-lowest rounded-3xl soft-lift">
+<div class="text-primary font-display-lg text-display-lg mb-2">500+</div>
+<div class="text-on-surface-variant font-headline-sm text-headline-sm">Dokter Spesialis</div>
+</div>
+<div class="text-center p-8 bg-surface-container-lowest rounded-3xl soft-lift">
+<div class="text-secondary font-display-lg text-display-lg mb-2">20+</div>
+<div class="text-on-surface-variant font-headline-sm text-headline-sm">Pusat Layanan</div>
+</div>
+<div class="text-center p-8 bg-surface-container-lowest rounded-3xl soft-lift">
+<div class="text-tertiary font-display-lg text-display-lg mb-2">1M+</div>
+<div class="text-on-surface-variant font-headline-sm text-headline-sm">Pasien Sembuh</div>
+</div>
+</div>
+</section>
+<!-- 5. Our Specializations -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop" id="specializations">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Layanan Spesialis Unggulan</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">Kami menghadirkan keahlian medis mendalam dalam berbagai disiplin ilmu untuk memastikan Anda menerima perawatan yang tepat.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Cardiology -->
+<div class="p-6 bg-surface-container-lowest border border-outline-variant/30 rounded-3xl soft-lift text-center group">
+<div class="w-16 h-16 bg-primary-container/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-4xl">cardiology</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Kardiologi</h3>
+<p class="text-on-surface-variant text-label-md">Kesehatan jantung &amp; pembuluh darah.</p>
+</div>
+<!-- Pediatrics -->
+<div class="p-6 bg-surface-container-lowest border border-outline-variant/30 rounded-3xl soft-lift text-center group">
+<div class="w-16 h-16 bg-secondary-container/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-secondary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-4xl">child_care</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Pediatri</h3>
+<p class="text-on-surface-variant text-label-md">Spesialis kesehatan anak dan bayi.</p>
+</div>
+<!-- Orthopedics -->
+<div class="p-6 bg-surface-container-lowest border border-outline-variant/30 rounded-3xl soft-lift text-center group">
+<div class="w-16 h-16 bg-tertiary-container/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-tertiary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-4xl">orthopedics</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Ortopedi</h3>
+<p class="text-on-surface-variant text-label-md">Ahli tulang, sendi, dan otot.</p>
+</div>
+<!-- Neurology -->
+<div class="p-6 bg-surface-container-lowest border border-outline-variant/30 rounded-3xl soft-lift text-center group">
+<div class="w-16 h-16 bg-primary-container/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-4xl">neurology</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Neurologi</h3>
+<p class="text-on-surface-variant text-label-md">Kesehatan saraf dan otak.</p>
+</div>
+</div>
+</section>
+<!-- 6. About Us -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-high overflow-hidden" id="about">
+<div class="max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop flex flex-col md:flex-row items-center gap-16">
+<div class="flex-1 grid grid-cols-2 gap-4">
+<div class="space-y-4 pt-12">
+<div class="h-64 rounded-2xl overflow-hidden shadow-lg"><img class="w-full h-full object-cover" data-alt="A modern architectural shot of AyoSembuh Hospital building exterior, featuring glass facades and green landscaping, under a clear blue sky, evoking a sense of calm and progress." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn9fVlL0OvinxYoauQHP1BUX1njjJzVz-_hJ53rTr95OMk_KYhSw6EXHkKH2RNSWON_C8K3C7amu257_XM6ZKeC9-aNZFrHsQ4VQPNdkx4RYhq-lgzSoXaoPUE2udyjTzdz3ArfZfikC5yu8PZU70_r09VvgZoM4RRB8bIrA1Xs7btLHyWhEzXyPnYyjZtiyPFTZg0IM5BCIUn7qIX679tCx95aGm4Dlz9usTRCjob2ttuqQ2Nocdq2pSQ5fBmWYiJetUjAIMOQ7Nz"/></div>
+<div class="h-48 rounded-2xl overflow-hidden shadow-lg"><img class="w-full h-full object-cover" data-alt="A candid photo of two medical professionals in a clean, brightly lit hallway discussing a patient chart with compassion and focus, showing professional teamwork." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM7U1k-6kTW7wTX5IYrI8Ye9jHCtWbcppUl6pFMPaJHar9yWXHYh1qoUK-nxmvDy51f8jIH8j4lcCxNYQQ-cO1njm9dxUpiIXn0DwakcgOWQm6PF7nvYBSTuawupidIonDmXRKSu_cbEmM4ggfTAufEO9VcT0QJ_aQsvZFr8CZGxjz40IPptHkEsGuI9n0tPBIaaENDR3mhmLluZ5JP0TdaAkXvxedgXeks62OwYZMeRMEFFO910PCr2L6BF8kBkhDlr4Y-e2H5PKG"/></div>
+</div>
+<div class="space-y-4">
+<div class="h-48 rounded-2xl overflow-hidden shadow-lg"><img class="w-full h-full object-cover" data-alt="Close up of a state-of-the-art laboratory with a robotic arm and advanced medical diagnostic equipment in a sterile blue-toned environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKRBblX1weuH--zxO8PEfX2Lrd-QoYk48tr_iY8Nnmg_XL1RUhS6ssd1TB22HkACoko9Lu76lzFDpWop6KYLiX3Rl8D0G2BICyp_YC2UxzyrTlEaKlT1DHuc5znrAbmW-pUvHrPW3ekwSzcCw5VwHRWrx3xz618_ZwPqpyH6eBz4flFl-FQEDuil9LKP4MVCZmVZboejz3hMULIc9LUqJutV-kJDITZGbW0BV4s4YQEiSImfZBH8Uecq7WQDTONmfibSEi7j1g886I"/></div>
+<div class="h-64 rounded-2xl overflow-hidden shadow-lg"><img class="w-full h-full object-cover" data-alt="A peaceful patient recovery room with floor-to-ceiling windows, modern furniture, and a view of a lush garden, looking more like a premium hotel suite." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgehSVI3wA4Hd4gFBfE8XF1CfUZdQATiKEOeT_tkRPyn6NCdW0X3IAAQsYEGOFvuZA-WK2nIXnbf1jmL822Qp9a0MemLgCibrrVr5NNb3fS1u87HEM7up9p2GMRIFEt_0UfW1fXcim2vesZadl7aBWDqbNgDE0KT_EALHltReroACp1uYym3-fHe0jDm--VQEjydyk9bYEg1xvAPb6SmmAshNkPXaR4KHOYyjJYtxKSd0YpREXdu-Kc7Uz4vNyCDQ_nXl1tQgXYyBk"/></div>
+</div>
+</div>
+<div class="flex-1 space-y-8">
+<span class="text-primary font-label-md text-label-md uppercase tracking-widest">Sejarah &amp; Komitmen Kami</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Membangun Masa Depan Kesehatan yang Lebih Baik.</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">Didirikan pada tahun 1998, AyoSembuh bermula dari sebuah visi sederhana: menjadikan perawatan medis berkualitas dapat diakses oleh semua orang. Selama lebih dari dua dekade, kami telah bertransformasi menjadi pusat medis terkemuka di Asia Tenggara.</p>
+<div class="space-y-4">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-body-md text-on-surface font-semibold">Akreditasi Internasional JCI</span>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-body-md text-on-surface font-semibold">Pusat Riset Medis Terpadu</span>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-body-md text-on-surface font-semibold">Fokus pada Kesembuhan Holistik</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Featured Doctors -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop" id="doctors">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Temui Dokter Ahli Kami</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">Dokter-dokter kami adalah para ahli di bidangnya yang berkomitmen penuh pada kesejahteraan Anda.</p>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-gutter overflow-x-auto pb-8 hide-scrollbar">
+<!-- Dr 1 -->
+<div class="min-w-[300px] bg-surface-container-lowest rounded-3xl overflow-hidden soft-lift border border-outline-variant/20">
+<div class="h-64 overflow-hidden"><img class="w-full h-full object-cover" data-alt="Portrait of a senior male cardiologist with graying hair, wearing a white coat and a blue stethoscope, smiling confidently in a modern medical office setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhK_d6dQLRPr6aLrEotjnhzSRMMtqHqbcCXu-JLN0AQUHoJdMI9uh4Jmfm6a4sl32M-vg7dDncokz-cqB0NH0aXMrndrNKE77pUncV37O2gYGdCu41Wa0X9zuFuHhzBUfp2jrlxpVknAtP_bQeEA7TsXS3t0ePD78U7b6a50Atf-yM8Valr0dESvsRmdFoQsfIC3FeFrd4tgFQ_RqSI5F9tMbVOSm1qmlMaBgeOfaOp4n6ji95w-eWJbgc90lFkYmwN4ss1VRVb2j0"/></div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm">Dr. Andi Pratama</h3>
+<span class="flex items-center gap-1 text-label-md text-secondary"><span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span> 4.9</span>
+</div>
+<p class="text-primary font-label-md text-label-md mb-4">Spesialis Jantung &amp; Pembuluh Darah</p>
+<button class="w-full py-3 rounded-xl border border-primary-container text-primary font-button hover:bg-primary hover:text-on-primary transition-all">Lihat Profil</button>
+</div>
+</div>
+<!-- Dr 2 -->
+<div class="min-w-[300px] bg-surface-container-lowest rounded-3xl overflow-hidden soft-lift border border-outline-variant/20">
+<div class="h-64 overflow-hidden"><img class="w-full h-full object-cover" data-alt="Portrait of a professional female neurologist with a friendly expression, wearing surgical scrubs and a modern white lab coat, standing in a brightly lit corridor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs04izEbkSHb6d9msvSsnPMkGxdUgF3H-nPJeLUEJW_Nmg7sjtBaFHWWlhrELq-tEcdcXZBK6D93-rVi6zGbTqvZCD1Wf7SMmjPB2f8rQxtk7R_zGQrMFasPwO4o67okqtzO2DA2AimDpVKbXVwyo4Mu8HugL_VIq6Pe5t-0UVaGDKgjD9AgXMXlt-6PFSVrzS3aVjG8mD8LwAEn9dMNiIsnUnZHZsTxsxxqDLeONS_X2hFkSpYpH5Ih2T2V7YosqXXUuIV-2V_q6r"/></div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm">Dr. Sarah Wijaya</h3>
+<span class="flex items-center gap-1 text-label-md text-secondary"><span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span> 5.0</span>
+</div>
+<p class="text-primary font-label-md text-label-md mb-4">Spesialis Bedah Saraf</p>
+<button class="w-full py-3 rounded-xl border border-primary-container text-primary font-button hover:bg-primary hover:text-on-primary transition-all">Lihat Profil</button>
+</div>
+</div>
+<!-- Dr 3 -->
+<div class="min-w-[300px] bg-surface-container-lowest rounded-3xl overflow-hidden soft-lift border border-outline-variant/20">
+<div class="h-64 overflow-hidden"><img class="w-full h-full object-cover" data-alt="Portrait of a young male pediatrician wearing a colorful stethoscope, holding a teddy bear, in a warm and playful children's clinic environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIluvbLJYghMObK17sUcNlc-UM6Z00tS6IpKY_NV8ZwmxO8mqaEt9pSEuwrrVidZtE9UKYT20VcVIZBuLEYVtSWI2hOVogYS7gSqyOsXDQcpgph3RSWptb1InDZcYwEz2QGCgQFpWMnclASTmb8yEi8r0XIj2u3OIDNe-9l7hghC8u21HPm14UKtEzs110Le2ZzSsCjpA320SI3i40vgdQAZDquf-BbIj1qlFuDmvDwqs0hfQm7Tex6Ivcc_NW9Ys5S4hth3Cl2zY2"/></div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm">Dr. Budi Santoso</h3>
+<span class="flex items-center gap-1 text-label-md text-secondary"><span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span> 4.8</span>
+</div>
+<p class="text-primary font-label-md text-label-md mb-4">Spesialis Kesehatan Anak</p>
+<button class="w-full py-3 rounded-xl border border-primary-container text-primary font-button hover:bg-primary hover:text-on-primary transition-all">Lihat Profil</button>
+</div>
+</div>
+<!-- Dr 4 -->
+<div class="min-w-[300px] bg-surface-container-lowest rounded-3xl overflow-hidden soft-lift border border-outline-variant/20">
+<div class="h-64 overflow-hidden"><img class="w-full h-full object-cover" data-alt="Portrait of a middle-aged female orthopedic surgeon in blue scrubs, arms crossed, standing in front of a digital X-ray display, looking expert and capable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCm-HsB5JZY4cttw0KBOz1vrduXTHem8fgbVdFfgVD8vJOckCl5QprdKZIXev4naiCYuLp66v4ngJVac8XVwVTd5wKnRSal6xIg933mwJtpYE5BdTRT1-p82_s8EPd9E38VxB3cutS1uI8fc2VxpoaRCRJJxJ4dLr1moMyaF5zq-YTSW6ijYA05JrqjETNmF7LUpLS81FIZ-eopUfCO8z3XWn7F88Lf6IQZOgzmd5iSSdLKpWVuXZV4mLbKd5RYauD6FDeMjGWzO1u"/></div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm">Dr. Linda Hartono</h3>
+<span class="flex items-center gap-1 text-label-md text-secondary"><span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span> 4.9</span>
+</div>
+<p class="text-primary font-label-md text-label-md mb-4">Spesialis Ortopedi</p>
+<button class="w-full py-3 rounded-xl border border-primary-container text-primary font-button hover:bg-primary hover:text-on-primary transition-all">Lihat Profil</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. Modern Facilities (Bento Grid) -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface" id="facilities">
+<div class="max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop">
+<h2 class="font-headline-md text-headline-md text-primary text-center mb-16">Fasilitas Medis Modern</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter auto-rows-[250px]">
+<div class="md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A sophisticated MRI machine in a futuristic, dimly lit scanning room with ambient blue lighting and circular architectural elements, looking clean and technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDBb7B9gvYcZLJDWgooNn7w9xYUJu7RK8UPkvT2N7LoxveeRTOZ4AO0m3-DVvk6ayV9IUixS6kE_xHp6bk-IhOROtLUJPjqwB1W2uea9b8UALwu-pokoYNnYOZxdRUXzS1AZXUxQVSttOx1syYpVAe8kNuKnuhGqqqXK5jD0a7JXoOalFK00daJyu5UeRrj2Ip49tOii33MakljSx6qG6BpMsB_xkpQhtTzAAUYHnRPAss_11OtP5K9AshoxwtB40AMSBX56uOWJ1-"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-8">
+<h3 class="text-white font-headline-md text-headline-md">Advanced MRI 3.0T</h3>
+<p class="text-white/80 font-body-md mt-2">Diagnostik presisi tinggi dengan kenyamanan maksimal bagi pasien.</p>
+</div>
+</div>
+<div class="relative rounded-3xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A robotic surgical arm performing a delicate operation in a high-tech operating theater, with surgeons monitoring from digital screens in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWf3d9_W_6UzzUbEpSfho9A8WaH402uDL8MzC4gjy43K4FaWSjqglVA8f4PVkW-_Xpu5huJZj80dQP2rY-48-RazSxDbNdRPyuIU2JokTY8_xB60S1oc6Ply8uLnPeQSY1c6kHGbi3VOWmhJtcSAFqz0fAOerChCzXG8dhZb3qIRvE3bZwVEnmicPxJhRVCEFBednuPBxlDdjnYyzAMgpoxt6pkA6GvDAiGbL0dECNepg2XPIQtdK-fE3YKrwT3aHaYne2oFAJ1HZ2"/>
+<div class="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent flex flex-col justify-end p-6">
+<h3 class="text-white font-headline-sm text-headline-sm">Robotic Surgery</h3>
+</div>
+</div>
+<div class="relative rounded-3xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A bright and airy smart ward with integrated patient monitoring systems, tablet control for room settings, and a peaceful garden view through a large window." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuUeENCDJ4oU_5gBX6YHeeLt_IWvh6XrCWtA0NfBndUXIeEgJndECUQ5CXbXkZ3F64amHdcvq17dNN_F6ozrI8reQdvAGHDKrnZ0V9cb6nWxyAaqTNnrAmiw0rCocGlNYAdav8P2S5b679S_uro4YVZ6sNOlnbAjFtBA880mC4DMcl6-og614wsl0eH4c6VYmeR3fIGlU5nbZlFQ1JUAb4Y5Ij9uWFUH58m5oQ7bMlP-vZXw3WZ4gDfe9GSs-T5dZQYD3YqF1gEfp_"/>
+<div class="absolute inset-0 bg-gradient-to-t from-tertiary/80 to-transparent flex flex-col justify-end p-6">
+<h3 class="text-white font-headline-sm text-headline-sm">Smart Wards</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. Patient Testimonials -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-primary text-on-primary">
+<div class="max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop">
+<div class="text-center mb-16">
+<span class="material-symbols-outlined text-6xl opacity-20">format_quote</span>
+<h2 class="font-headline-md text-headline-md mb-4">Kisah Pemulihan Pasien</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Testi 1 -->
+<div class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
+<p class="italic text-body-lg mb-8">"Pelayanan di AyoSembuh sangat luar biasa. Tim dokter jantung sangat cekatan dan perawatnya sangat penuh perhatian. Saya merasa seperti di rumah sendiri."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden"><img class="w-full h-full object-cover" data-alt="A smiling Indonesian businessman in his 50s, looking healthy and vibrant after a successful treatment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5whUfQNY6_z5H2Zw8hJuy28p1A7wUP0NjkNMziOgbM1QZV3s1gTaxy6xWxIPqDNLHkMyTrzX1HKZhSEUzQTaOkhlUGGZnVCN8bZeuSTYjuHsfowcQRQ9eYXkIT5MsRa5u2bNU8OBfKnXniDfJiOu2UIcn8unlHw2flxKtm4lztgOniK1gWFKvpQ1mmRuD7cVH81_3fF9k9XfNUiMlPVu3my8a_nVpAV8cmt69sYvfC_JsvgjLU9AIb4s-ZZwZUT1crMOS1bhTVWoC"/></div>
+<div>
+<h4 class="font-bold">Pak Ahmad Subarjo</h4>
+<p class="text-sm opacity-75">Pasien Kardiologi</p>
+</div>
+</div>
+</div>
+<!-- Testi 2 -->
+<div class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
+<p class="italic text-body-lg mb-8">"Operasi lutut saya berjalan sangat lancar berkat teknologi robotik di sini. Masa pemulihan jauh lebih cepat dari yang saya bayangkan."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden"><img class="w-full h-full object-cover" data-alt="An active woman in her late 40s wearing athletic clothes, smiling and standing in a sunny park." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHFD1WsYYWmVekdidxxpJGo3rfVj5d9RkO2kvM1duPMR99_au9xgzE2-V2NubaHjUOjgoA13bdcqSJurjYB8U54XHmyoe41brd_q6TCJ-2TyRbIABVJlSVn5p_R3ey3CXR26FSsYgt-bi-A8dXMstWpkNNZNAGwbsFrNMhuxqMy0xEbgGXFLX0SJa23tYDmp82MWsMErevZcgIsV9ZEjiRypNM5otAiHs52hsKN4ePRK5TtjzDbPRsdUqmwWh-I3V6fSMpJWtrq6K8"/></div>
+<div>
+<h4 class="font-bold">Ibu Maria Ulfa</h4>
+<p class="text-sm opacity-75">Pasien Ortopedi</p>
+</div>
+</div>
+</div>
+<!-- Testi 3 -->
+<div class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
+<p class="italic text-body-lg mb-8">"Fasilitas ruang anak sangat ramah dan tidak menakutkan. Anak saya sembuh dengan ceria tanpa rasa trauma rumah sakit."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden"><img class="w-full h-full object-cover" data-alt="A young mother smiling and holding her young child, both looking happy and healthy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBFBKIr2TA_f7li_Z6IGG1nmrPg_E3ryfUMsTtPW8OejQaImBf8MOn5rTeSEns2mF_WA9ylsNCcazf1lUPzgtJp3ZEGoKXCmLUQmSuhu3g7suMKJri-etI00-cRAWJgZi4uXz3mQPV-CMhlWe-_hab8a5vacxuCzYMx2yD0Msov2pwlYIygI9xufokOkfHZoSmsKGTxpUMEDh_xUM3EzfcyjDooGYJk7KCB_q1g8CHv02WWlTZccewXAgkkgUpJQzN_IyUfLhFhSgM"/></div>
+<div>
+<h4 class="font-bold">Ibu Ratna Sari</h4>
+<p class="text-sm opacity-75">Orang Tua Pasien Anak</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. Appointment Form -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop" id="appointment">
+<div class="bg-surface-container-lowest rounded-[40px] overflow-hidden soft-lift flex flex-col md:flex-row border border-outline-variant/30">
+<div class="flex-1 bg-primary p-12 text-on-primary flex flex-col justify-center">
+<h2 class="font-headline-md text-headline-md mb-6">Jadwalkan Kunjungan Anda Hari Ini.</h2>
+<p class="text-body-lg mb-8 opacity-90">Tim reservasi kami akan menghubungi Anda dalam waktu kurang dari 30 menit untuk mengonfirmasi jadwal dokter yang Anda pilih.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center"><span class="material-symbols-outlined">call</span></span>
+<span>Direct Line: (021) 500-123</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center"><span class="material-symbols-outlined">mail</span></span>
+<span>Email: care@ayosembuh.com</span>
+</div>
+</div>
+</div>
+<div class="flex-[1.5] p-12 bg-white">
+<form class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">Nama Lengkap</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-3 focus:ring-2 focus:ring-primary transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">Nomor Telepon</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-3 focus:ring-2 focus:ring-primary transition-all" placeholder="+62 812..." type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">Spesialisasi</label>
+<select class="w-full bg-surface-container-low border-none rounded-xl py-3 focus:ring-2 focus:ring-primary transition-all">
+<option>Pilih Spesialis</option>
+<option>Kardiologi</option>
+<option>Pediatri</option>
+<option>Neurologi</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">Tanggal Kunjungan</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-3 focus:ring-2 focus:ring-primary transition-all" type="date"/>
+</div>
+<div class="sm:col-span-2 space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">Keluhan Singkat</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-xl py-3 focus:ring-2 focus:ring-primary transition-all" placeholder="Jelaskan kondisi Anda..." rows="3"></textarea>
+</div>
+<div class="sm:col-span-2">
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-button text-button soft-lift hover:bg-on-primary-fixed-variant transition-all" type="submit">Kirim Permohonan Janji Temu</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- 11. Health Packages -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop">
+<h2 class="font-headline-md text-headline-md text-primary text-center mb-16">Paket Medical Check-Up</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Basic -->
+<div class="bg-surface-container-lowest p-8 rounded-[32px] border border-outline-variant/30 flex flex-col soft-lift">
+<h3 class="font-headline-sm text-headline-sm mb-2">Paket Basic</h3>
+<div class="text-primary font-display-lg text-[32px] mb-6">Rp 850.000</div>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-tertiary text-sm">check</span> Pemeriksaan Fisik Umum</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-tertiary text-sm">check</span> Tes Darah Lengkap</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-tertiary text-sm">check</span> Rontgen Thorax</li>
+</ul>
+<button class="w-full py-4 rounded-xl border-2 border-primary text-primary font-button hover:bg-primary hover:text-on-primary transition-all">Pilih Paket</button>
+</div>
+<!-- Premium (Featured) -->
+<div class="bg-primary p-8 rounded-[32px] border border-primary-container flex flex-col text-on-primary scale-105 relative z-10 shadow-2xl shadow-primary/30">
+<div class="absolute top-4 right-8 bg-secondary px-3 py-1 rounded-full text-xs font-bold uppercase">Terlaris</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Paket Premium</h3>
+<div class="text-white font-display-lg text-[32px] mb-6">Rp 2.500.000</div>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-container text-sm">check</span> Semua Layanan Basic</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-container text-sm">check</span> EKG (Rekam Jantung)</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-container text-sm">check</span> USG Abdomen</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-container text-sm">check</span> Konsultasi Spesialis</li>
+</ul>
+<button class="w-full py-4 rounded-xl bg-white text-primary font-button hover:bg-surface-variant transition-all">Pilih Paket</button>
+</div>
+<!-- Executive -->
+<div class="bg-surface-container-lowest p-8 rounded-[32px] border border-outline-variant/30 flex flex-col soft-lift">
+<h3 class="font-headline-sm text-headline-sm mb-2">Paket Eksekutif</h3>
+<div class="text-primary font-display-lg text-[32px] mb-6">Rp 5.200.000</div>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-tertiary text-sm">check</span> Semua Layanan Premium</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-tertiary text-sm">check</span> MRI Screening</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-tertiary text-sm">check</span> Treadmill Test</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-tertiary text-sm">check</span> Laporan Medis Lengkap</li>
+</ul>
+<button class="w-full py-4 rounded-xl border-2 border-primary text-primary font-button hover:bg-primary hover:text-on-primary transition-all">Pilih Paket</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 12. Health Blog -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop">
+<h2 class="font-headline-md text-headline-md text-primary mb-12">Artikel Kesehatan Terbaru</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Blog 1 -->
+<div class="group cursor-pointer">
+<div class="rounded-3xl overflow-hidden aspect-[16/10] mb-6 shadow-md"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant arrangement of fresh fruits and vegetables on a wooden table, symbolizing heart-healthy nutrition and balanced diet, professionally photographed with soft focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhqA7WeFuLfqB9ZZKNImDi4Ltgg0uFnmK_3aQN8XHqDUJve2v4SQu9AHPKb6odH9DacKtVglJakls96Q_D7Vjrv6ApyPEP2JAwC6mJcbEn6UqrAuM1-UGEUMosNmDBjoa9zYmgjyCzywcImwoJccJwtfH2_GNbfDRL83e3gYjkl3NHmZpEjINk0TDqTTGb_CrEsjB0jRT0ForMIFNCmpJzm_rA6vnTHhBY_1Ox7zwxvwec_3vlvVcTjU-ASqP0RqiktcVEHRkcTfpZ"/></div>
+<span class="text-primary font-label-md text-label-md">Nutrisi</span>
+<h3 class="font-headline-sm text-headline-sm mt-2 group-hover:text-primary transition-colors">10 Tips Menjaga Kesehatan Jantung di Usia Produktif</h3>
+<p class="text-on-surface-variant mt-3 line-clamp-2">Pola makan seimbang dan olahraga teratur adalah kunci utama jantung yang kuat...</p>
+</div>
+<!-- Blog 2 -->
+<div class="group cursor-pointer">
+<div class="rounded-3xl overflow-hidden aspect-[16/10] mb-6 shadow-md"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A person peacefully sleeping in a comfortable bedroom with warm evening lighting, illustrating the importance of restorative sleep for mental and physical health." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJW0LEjM_QbYV0eVijT962mKfp5QA42vbzEB1QZz9Y21EhHz3R4AkRx-PQNNqPkIOJ-acUhyA4zDOGSBcG5rPpJ6pgUXgWLUmreumFeT63nw8E9bDVabFIalsCI_ZWdeDtavCHfhVIVSUrDSr3uooQJ7uwpGU7cU49ym0A0ko8HjzmZv9ECrpTlOEc6I97UH7m0eaO5GguC5zfpn28cst5g8BzVe-ZOw9ltnM2_SPT_th5qduAWWPgr7Uo8ewsD4mAZRf2i1QUYVGl"/></div>
+<span class="text-primary font-label-md text-label-md">Gaya Hidup</span>
+<h3 class="font-headline-sm text-headline-sm mt-2 group-hover:text-primary transition-colors">Pentingnya Tidur Berkualitas untuk Imunitas Tubuh</h3>
+<p class="text-on-surface-variant mt-3 line-clamp-2">Kualitas tidur yang buruk dapat berdampak buruk pada sistem kekebalan tubuh Anda...</p>
+</div>
+<!-- Blog 3 -->
+<div class="group cursor-pointer">
+<div class="rounded-3xl overflow-hidden aspect-[16/10] mb-6 shadow-md"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of a smart watch displaying health metrics like heart rate and steps, representing modern wearable technology for health monitoring." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALXXjjnMjZLnFLN2ZG6Lk7laCdrApfI4wbs03oYSwYSD0gepuzwBnOqx60k72pAWqq90oGZYBBHVZwf7MimOlHxC6qBt0wUhj_XkJEnqhcAZM5MSlngRnq7tvMmSXP8UEN4uY5BZ2zmESv9X_DeWPnXUxLsVIh19xBsJOrATTflcnSI3O83ieZDeyGlXNjVUWW4zP3FxcWjp7EJG5Iy_qhTPpSiVo4p1Q74bA7S_ANHJnQd6tuRcjdwFTHdqkDH7dwkK9pTPZY9GM0"/></div>
+<span class="text-primary font-label-md text-label-md">Teknologi</span>
+<h3 class="font-headline-sm text-headline-sm mt-2 group-hover:text-primary transition-colors">Bagaimana AI Membantu Deteksi Dini Kanker</h3>
+<p class="text-on-surface-variant mt-3 line-clamp-2">Kecerdasan buatan kini berperan penting dalam membantu radiologis mendeteksi kelainan...</p>
+</div>
+</div>
+</section>
+<!-- 13. Insurance Partners -->
+<section class="py-16 bg-surface-container">
+<div class="max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop">
+<p class="text-center text-on-surface-variant font-label-md mb-8 uppercase tracking-widest">Mitra Asuransi Terpercaya Kami</p>
+<div class="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
+<span class="text-2xl font-bold">BPJS Kesehatan</span>
+<span class="text-2xl font-bold">PRUDENTIAL</span>
+<span class="text-2xl font-bold">ALLIANZ</span>
+<span class="text-2xl font-bold">MANULIFE</span>
+<span class="text-2xl font-bold">AXA Mandiri</span>
+<span class="text-2xl font-bold">AIA</span>
+</div>
+</div>
+</section>
+<!-- 14. Mobile App Download -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop">
+<div class="max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop">
+<div class="bg-secondary rounded-[48px] p-12 md:p-20 text-on-primary flex flex-col md:flex-row items-center gap-12 relative overflow-hidden">
+<div class="flex-1 space-y-6 z-10">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg">Rumah Sakit dalam Genggaman.</h2>
+<p class="text-body-lg opacity-90 max-w-lg">Unduh Aplikasi AyoSembuh untuk konsultasi online (telemedicine), cek hasil lab, dan daftar antrean tanpa perlu menunggu di rumah sakit.</p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-black text-white px-8 py-3 rounded-xl flex items-center gap-3 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-3xl">cloud_download</span>
+<div class="text-left"><p class="text-[10px] uppercase">Get it on</p><p class="text-lg font-bold">Google Play</p></div>
+</button>
+<button class="bg-black text-white px-8 py-3 rounded-xl flex items-center gap-3 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-3xl">file_download</span>
+<div class="text-left"><p class="text-[10px] uppercase">Download on the</p><p class="text-lg font-bold">App Store</p></div>
+</button>
+</div>
+</div>
+<div class="flex-1 relative flex justify-center">
+<div class="w-64 h-[500px] bg-white rounded-[3rem] border-[8px] border-black overflow-hidden shadow-2xl relative z-10">
+<img class="w-full h-full object-cover" data-alt="A clean mobile app interface showing doctor consultation options, patient health metrics dashboard, and appointment schedule, with the AyoSembuh brand colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgBamjx67NjEntmBWQARhj3vzID0NgyuAToxxfCIya2FzTJaQJLj0a4g69vEHmqyMtz0MqtzYhY4RjTWbOGEapXK9O7Q4LFftrZiquAS0lXwXKJve84COBD8KGjSfeE7miO718bRPw3n_oAIEJIZ2zKadM6ji6fijB7FwqrSR-iVUSXtwMllUiUGjq6mBiJPPobtWKr_05SgIEVl9eu3jNdPyhSkYGN_prRwxL6lwnHYbGQ8-QB4j96r5JIsSDesZNSz_e5TWDa_SZ"/>
+</div>
+<div class="absolute -bottom-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute -top-20 -left-20 w-64 h-64 bg-white/10 rounded-full blur-2xl"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 15. FAQ -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop max-w-3xl mx-auto px-container-padding-mobile">
+<h2 class="font-headline-md text-headline-md text-primary text-center mb-12">Pertanyaan Sering Diajukan</h2>
+<div class="space-y-4">
+<details class="group bg-surface-container-lowest rounded-2xl border border-outline-variant/30 p-6 open:shadow-md transition-all">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="font-headline-sm text-headline-sm">Apakah melayani pasien BPJS?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant font-body-md">Ya, kami merupakan mitra resmi BPJS Kesehatan untuk seluruh unit layanan kami. Harap pastikan Anda membawa surat rujukan yang diperlukan.</p>
+</details>
+<details class="group bg-surface-container-lowest rounded-2xl border border-outline-variant/30 p-6 open:shadow-md transition-all">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="font-headline-sm text-headline-sm">Kapan jam operasional IGD?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant font-body-md">Layanan Instalasi Gawat Darurat (IGD) kami beroperasi 24 jam sehari, 7 hari seminggu tanpa hari libur.</p>
+</details>
+<details class="group bg-surface-container-lowest rounded-2xl border border-outline-variant/30 p-6 open:shadow-md transition-all">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="font-headline-sm text-headline-sm">Bagaimana cara membatalkan janji temu?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant font-body-md">Pembatalan dapat dilakukan melalui aplikasi AyoSembuh atau menghubungi call center kami minimal 2 jam sebelum waktu janji temu.</p>
+</details>
+</div>
+</section>
+<!-- 16. Contact & Map -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop">
+<div class="max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<h2 class="font-headline-md text-headline-md text-primary">Lokasi &amp; Kontak</h2>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div>
+<h4 class="font-bold">Alamat Utama</h4>
+<p class="text-on-surface-variant">Jl. Sudirman No. 45, Jakarta Pusat, Indonesia 10210</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<div>
+<h4 class="font-bold">Jam Kunjung Rawat Inap</h4>
+<p class="text-on-surface-variant">Sesi 1: 11:00 - 13:00 <br/> Sesi 2: 17:00 - 19:00</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">support_agent</span>
+<div>
+<h4 class="font-bold">Layanan Pelanggan</h4>
+<p class="text-on-surface-variant">WhatsApp: +62 811-2222-3333 <br/> Call: (021) 500-123</p>
+</div>
+</div>
+</div>
+</div>
+<div class="h-[400px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+<img class="w-full h-full object-cover" data-alt="A clean and stylized map graphic showing the location of AyoSembuh Hospital in a modern city grid, with clear markers and a professional blue and white color scheme." data-location="Jakarta" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBslH8ITNISGKhGGdFREYN5zTmRHTbIHuVh-vsh2RzjbIDvR47Xc7pLRngEWtW3tY7O38YqJFMBJkdDuO9Y4oV84SxiJcJYTd0qhy9XZ5WT-uMSz8H0roeo8UScx8O3UQDbDxd_IAcXUEcMlOb3_c_c07kZwdQ_ReDn6zaBqUpHnYuT229lEbCXmGGgcVTecBYKPmavmfxuS3W1A2OcciUMZvtatBxzgRCJg5f3PAB0mpgRZtt-R23lcZITwAWsZl9TEl7KSalEJbf2"/>
+</div>
+</div>
+</section>
+</main>
+<!-- 17. Footer -->
+<footer class="w-full rounded-t-xl bg-surface-container-highest dark:bg-inverse-surface mt-section-gap-mobile md:mt-section-gap-desktop">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-container-padding-mobile md:px-container-padding-desktop py-16 max-w-7xl mx-auto">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface dark:text-inverse-on-surface">AyoSembuh</span>
+</div>
+<p class="text-on-surface-variant font-body-md">Membangun ekosistem kesehatan masa depan yang berbasis teknologi dan kasih sayang.</p>
+<div class="flex gap-4 pt-4">
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#"><span class="material-symbols-outlined">qr_code_2</span></a>
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#"><span class="material-symbols-outlined">camera_indoor</span></a>
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#"><span class="material-symbols-outlined">video_library</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-on-surface">Quick Links</h4>
+<ul class="space-y-4 text-on-surface-variant">
+<li><a class="hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#">Patient Rights</a></li>
+<li><a class="hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-on-surface">Layanan Kami</h4>
+<ul class="space-y-4 text-on-surface-variant">
+<li><a class="hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#">Medical Check Up</a></li>
+<li><a class="hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#">Telemedicine</a></li>
+<li><a class="hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#">Layanan Farmasi</a></li>
+<li><a class="hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#">Home Care</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-on-surface">Langganan Berita</h4>
+<p class="text-sm text-on-surface-variant mb-4">Dapatkan tips kesehatan terbaru langsung di email Anda.</p>
+<div class="flex flex-col gap-2">
+<input class="bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary outline-none" placeholder="Email Anda" type="email"/>
+<button class="bg-primary text-on-primary py-3 rounded-xl font-button text-button">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 py-8 px-container-padding-mobile text-center">
+<p class="text-on-surface-variant text-label-md">© 2024 AyoSembuh Hospital. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Smooth reveal on scroll for some sections
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        // Apply to some sections for that "Figma-cool" feel
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+
+        // Instant opacity for hero
+        document.querySelector('section').classList.remove('opacity-0', 'translate-y-10');
+    </script>
+</body></html>
