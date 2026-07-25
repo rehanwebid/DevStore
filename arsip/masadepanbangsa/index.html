@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Masadepan Bangsa - Mencetak Generasi Unggul</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&family=Montserrat:wght@100..900&display=swap" rel="stylesheet"/>
+  
+  <!-- ==================== KEAMANAN TAMBAHAN: BLOKIR CTRL+U DAN VIEW CODE ==================== -->
+  <script>
+    // 1. Blokir Klik Kanan (Context Menu)
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      return false;
+    });
+
+    // 2. Blokir Kombinasi Shortcut Keyboard
+    document.onkeydown = function(e) {
+      // Blokir CTRL+U (View Source)
+      if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+        return false;
+      }
+      // Blokir CTRL+SHIFT+I (Developer Tools / Inspect Element)
+      if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+        e.preventDefault();
+        return false;
+      }
+      // Blokir CTRL+SHIFT+J (Console)
+      if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+        e.preventDefault();
+        return false;
+      }
+      // Blokir CTRL+SHIFT+C (Inspect Element Mode)
+      if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+        e.preventDefault();
+        return false;
+      }
+      // Blokir F12 (Developer Tools)
+      if (e.key === 'F12') {
+        e.preventDefault();
+        return false;
+      }
+      // Blokir CTRL+S (Save Page)
+      if (e.ctrlKey && e.key === 's') {
+        e.preventDefault();
+        return false;
+      }
+    };
+
+    // 3. Peringatan Jika Console Dibuka (Deteksi DevTools)
+    (function() {
+      const element = new Image();
+      Object.defineProperty(element, 'id', {
+        get: function() {
+          // Deteksi console terbuka (passive)
+        }
+      });
+      console.log(element);
+    })();
+  </script>
+  <!-- ==================== AKHIR KEAMANAN TAMBAHAN ==================== -->
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+              "secondary-container": "#fd761a",
+              "outline-variant": "#c6c6cd",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed": "#c4e7ff",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#191c1e",
+              "on-secondary-container": "#5c2400",
+              "surface-container-high": "#e6e8ea",
+              "surface-container-low": "#f2f4f6",
+              "tertiary-container": "#001e2c",
+              "error-container": "#ffdad6",
+              "on-surface-variant": "#45464d",
+              "on-error": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed": "#131b2e",
+              "surface-variant": "#e0e3e5",
+              "on-primary-container": "#7c839b",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed-variant": "#783200",
+              "surface-dim": "#d8dadc",
+              "surface-tint": "#565e74",
+              "inverse-primary": "#bec6e0",
+              "surface-container-highest": "#e0e3e5",
+              "primary": "#000000",
+              "background": "#f7f9fb",
+              "error": "#ba1a1a",
+              "on-error-container": "#93000a",
+              "primary-container": "#131b2e",
+              "outline": "#76777d",
+              "surface": "#f7f9fb",
+              "tertiary": "#000000",
+              "surface-container": "#eceef0",
+              "primary-fixed-dim": "#bec6e0",
+              "surface-bright": "#f7f9fb",
+              "on-primary-fixed-variant": "#3f465c",
+              "on-surface": "#191c1e",
+              "on-tertiary-fixed-variant": "#004c69",
+              "tertiary-fixed-dim": "#7bd0ff",
+              "inverse-on-surface": "#eff1f3",
+              "secondary": "#9d4300",
+              "secondary-fixed-dim": "#ffb690",
+              "inverse-surface": "#2d3133",
+              "secondary-fixed": "#ffdbca",
+              "on-tertiary-container": "#008ebf",
+              "on-tertiary-fixed": "#001e2c",
+              "on-secondary-fixed": "#341100",
+              "primary-fixed": "#dae2fd"
+          },
+          "borderRadius": {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "2xl": "1.5rem",
+              "full": "9999px"
+          },
+          "spacing": {
+              "margin-desktop": "40px",
+              "base": "8px",
+              "container-max": "1280px",
+              "margin-mobile": "16px",
+              "section-gap": "80px",
+              "gutter": "24px"
+          },
+          "fontFamily": {
+              "display-lg": ["Montserrat"],
+              "body-md": ["Inter"],
+              "display-lg-mobile": ["Montserrat"],
+              "headline-md": ["Montserrat"],
+              "label-caps": ["JetBrains Mono"],
+              "body-lg": ["Inter"],
+              "button-text": ["Inter"]
+          },
+          "fontSize": {
+              "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+              "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+              "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+              "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+              "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+              "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+              "button-text": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(226, 232, 240, 0.5); }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+    .text-gradient { background: linear-gradient(135deg, #000000 0%, #9d4300 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-mesh { background-image: radial-gradient(at 0% 0%, hsla(28,100%,74%,0.15) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(210,100%,23%,0.05) 0, transparent 50%); }
+  </style>
+</head>
+<body class="bg-background font-body-md text-on-surface overflow-x-hidden">
+
+<!-- 1. Sticky TopNavBar -->
+<header class="fixed top-0 w-full z-50 glass shadow-sm">
+  <nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto">
+    <div class="flex items-center gap-2">
+      <span class="text-headline-md font-headline-md text-primary font-bold">Masadepan <span class="text-secondary">Bangsa</span></span>
+    </div>
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="text-button-text font-button-text text-on-surface-variant hover:text-secondary transition-colors" href="#programs">Programs</a>
+      <a class="text-button-text font-button-text text-on-surface-variant hover:text-secondary transition-colors" href="#facilities">Facilities</a>
+      <a class="text-button-text font-button-text text-on-surface-variant hover:text-secondary transition-colors" href="#teachers">Teachers</a>
+      <a class="text-button-text font-button-text text-on-surface-variant hover:text-secondary transition-colors" href="#events">Events</a>
+      <a class="text-button-text font-button-text text-on-surface-variant hover:text-secondary transition-colors" href="#news">News</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <button class="bg-secondary-container text-white px-6 py-2.5 rounded-full font-button-text text-button-text hover:opacity-90 transition-all shadow-lg shadow-secondary-container/20">
+        Join Us Now
+      </button>
+      <button class="md:hidden p-2">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main class="pt-20">
+  <!-- 2. Hero Section -->
+  <section class="relative min-h-[921px] flex items-center overflow-hidden hero-mesh px-margin-mobile md:px-margin-desktop">
+    <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center py-12">
+      <div class="z-10 text-center md:text-left">
+        <span class="bg-secondary-fixed text-secondary font-label-caps text-label-caps px-4 py-1.5 rounded-full inline-block mb-6">PENERIMAAN 2024/2025 TELAH DIBUKA</span>
+        <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6 leading-tight">Mencetak Generasi <span class="text-gradient">Unggul</span> untuk Masa Depan</h1>
+        <p class="text-body-lg font-body-lg text-on-surface-variant mb-8 max-w-xl mx-auto md:mx-0">Pendidikan berstandar global dengan landasan karakter yang kuat untuk membimbing siswa mencapai potensi terbaik mereka.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <button class="bg-secondary-container text-white px-8 py-4 rounded-full font-button-text text-button-text flex items-center justify-center gap-2 hover:translate-y-[-2px] transition-transform">
+            Daftar Sekarang <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+          <button class="border border-outline-variant text-on-surface-variant px-8 py-4 rounded-full font-button-text text-button-text flex items-center justify-center gap-2 hover:bg-surface-container transition-colors">
+            Lihat Kurikulum
+          </button>
+        </div>
+      </div>
+      <div class="relative mt-12 md:mt-0">
+        <div class="absolute -top-12 -right-12 w-64 h-64 bg-secondary/5 rounded-full blur-3xl animate-pulse"></div>
+        <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700">
+          <img class="w-full aspect-[4/3] object-cover" data-alt="A professional, high-quality photograph of diverse, smiling Indonesian students in modern navy and white school uniforms. They are interacting in a brightly lit, glass-walled contemporary school lobby. The lighting is soft and cinematic, highlighting their optimistic expressions and the clean, architectural lines of the premium campus environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm3xfVz-6nQWbQqh0msgMnvHvSHA5kQzWH2ZDFaYoH4icp4-k6M-Ym7rlqEfEjZAP7GZwJx-W5j6wsUGZ2klpQieIqmzZwx_1P4l1SOoDDLQ0lIlSEziFBkwS45mNqvkVusINStwJFDCPoy9TLsoe5F2KAVGjZfNre0fYji9VDTIFwVzMKmy46rE-xcEJDHMYl2-aOiUNsZQqFLkWYrWiM3rST2o-faYBXy74DiBe5Ckh01p0FmJlSDGXG_6zi_ssa-p7s4hYEoaQ"/>
+        </div>
+        <div class="absolute -bottom-6 -left-6 z-20 glass p-6 rounded-2xl shadow-xl hidden md:block">
+          <div class="flex items-center gap-3">
+            <div class="flex -space-x-3">
+              <div class="w-10 h-10 rounded-full border-2 border-white bg-secondary-fixed"></div>
+              <div class="w-10 h-10 rounded-full border-2 border-white bg-tertiary-fixed"></div>
+              <div class="w-10 h-10 rounded-full border-2 border-white bg-primary-fixed"></div>
+            </div>
+            <div>
+              <p class="text-sm font-bold">120+ Pendaftar Baru</p>
+              <p class="text-xs text-on-surface-variant">Minggu ini</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Stats Section -->
+  <section class="py-12 bg-white px-margin-mobile">
+    <div class="max-w-container-max mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center bg-surface-container-low p-10 rounded-2xl shadow-sm border border-outline-variant/30">
+        <div>
+          <h2 class="text-display-lg text-secondary font-bold mb-2">1500+</h2>
+          <p class="font-label-caps text-on-surface-variant">Siswa Aktif</p>
+        </div>
+        <div class="border-y md:border-y-0 md:border-x border-outline-variant/50 py-8 md:py-0">
+          <h2 class="text-display-lg text-primary font-bold mb-2">100+</h2>
+          <p class="font-label-caps text-on-surface-variant">Guru Berpengalaman</p>
+        </div>
+        <div>
+          <h2 class="text-display-lg text-secondary font-bold mb-2">50+</h2>
+          <p class="font-label-caps text-on-surface-variant">Prestasi Nasional</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Vision & Mission Section -->
+  <section class="py-section-gap px-margin-mobile md:px-margin-desktop overflow-hidden">
+    <div class="max-w-container-max mx-auto">
+      <div class="flex flex-col md:flex-row gap-gutter">
+        <div class="flex-1 bg-primary text-white p-12 rounded-2xl shadow-lg relative overflow-hidden group">
+          <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-secondary opacity-20 rounded-full group-hover:scale-110 transition-transform duration-700"></div>
+          <span class="material-symbols-outlined text-secondary text-5xl mb-6">visibility</span>
+          <h3 class="font-headline-md text-headline-md mb-6">Visi Kami</h3>
+          <p class="text-body-lg font-body-lg text-surface-variant leading-relaxed">"Menjadi institusi pendidikan unggulan yang melahirkan pemimpin masa depan berkarakter mulia, berwawasan global, dan inovatif."</p>
+        </div>
+        <div class="flex-1 space-y-gutter">
+          <div class="bg-white p-8 rounded-2xl border border-outline-variant/30 shadow-sm flex gap-6 items-start">
+            <span class="bg-surface-container p-3 rounded-xl material-symbols-outlined text-secondary">star_rate</span>
+            <div>
+              <h4 class="font-bold text-lg mb-2">Pendidikan Karakter</h4>
+              <p class="text-on-surface-variant">Menanamkan nilai-nilai moral dan etika sebagai pondasi kehidupan.</p>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-2xl border border-outline-variant/30 shadow-sm flex gap-6 items-start">
+            <span class="bg-surface-container p-3 rounded-xl material-symbols-outlined text-secondary">public</span>
+            <div>
+              <h4 class="font-bold text-lg mb-2">Wawasan Global</h4>
+              <p class="text-on-surface-variant">Mempersiapkan siswa untuk bersaing di kancah internasional.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. USP Section -->
+  <section class="py-section-gap bg-surface-container-low px-margin-mobile md:px-margin-desktop">
+    <div class="max-w-container-max mx-auto text-center mb-16">
+      <h2 class="font-headline-md text-headline-md mb-4">Mengapa Memilih Kami?</h2>
+      <div class="h-1 w-20 bg-secondary mx-auto rounded-full"></div>
+    </div>
+    <div class="max-w-container-max mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+      <div class="bg-white p-8 rounded-2xl text-center hover:shadow-xl transition-shadow group">
+        <div class="w-16 h-16 bg-secondary-fixed flex items-center justify-center rounded-full mx-auto mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-3xl">language</span>
+        </div>
+        <h4 class="font-bold text-lg mb-3">Global Curriculum</h4>
+        <p class="text-sm text-on-surface-variant">Kurikulum yang diadaptasi dari standar internasional untuk masa depan.</p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl text-center hover:shadow-xl transition-shadow group">
+        <div class="w-16 h-16 bg-secondary-fixed flex items-center justify-center rounded-full mx-auto mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-3xl">psychology</span>
+        </div>
+        <h4 class="font-bold text-lg mb-3">Character Building</h4>
+        <p class="text-sm text-on-surface-variant">Fokus pada pembentukan akhlak dan kepemimpinan yang kuat.</p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl text-center hover:shadow-xl transition-shadow group">
+        <div class="w-16 h-16 bg-secondary-fixed flex items-center justify-center rounded-full mx-auto mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-3xl">devices</span>
+        </div>
+        <h4 class="font-bold text-lg mb-3">Digital Labs</h4>
+        <p class="text-sm text-on-surface-variant">Fasilitas teknologi mutakhir untuk mendukung literasi digital.</p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl text-center hover:shadow-xl transition-shadow group">
+        <div class="w-16 h-16 bg-secondary-fixed flex items-center justify-center rounded-full mx-auto mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-3xl">mosque</span>
+        </div>
+        <h4 class="font-bold text-lg mb-3">Islamic Values</h4>
+        <p class="text-sm text-on-surface-variant">Integrasi nilai-nilai keislaman dalam setiap aspek pembelajaran.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Curriculum Section -->
+  <section class="py-section-gap px-margin-mobile md:px-margin-desktop" id="programs">
+    <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
+      <div class="bg-white rounded-2xl overflow-hidden border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+        <div class="h-48 relative">
+          <img class="w-full h-full object-cover" data-alt="Playful and colorful interior of a kindergarten classroom with ergonomic wooden furniture, bright educational posters, and soft play mats. Warm, sunny natural lighting through large windows creates a welcoming and safe environment for young children." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjgsPY_NPxwOL-BWooyylEHpCNESe92PQqoTKuRNRY4c4TR6OPna8PNuTNa0CTdYjBX532hom6qlmivNUVfPZgMOKmMQ7JR9b2f9K_2helDlVlf8RpxYMTK6A7pmZ6-4OXjVp4S5tNXiHHGpQp5JssnKLsVBWHSVimKHBRUM-rxkHpj9Co_DM276r0WYl7ELQkbwXe8pGMYz7OM5vYreOpxE2GMFdoN2F8XX-Rnw37VfH6KTBMS-UaGOYce8MSXbU1RPYawRumve8"/>
+          <div class="absolute bottom-4 left-4 bg-white/90 px-4 py-1 rounded-full text-xs font-bold text-secondary">TK</div>
+        </div>
+        <div class="p-6">
+          <h4 class="font-bold text-xl mb-2">Taman Kanak-kanak</h4>
+          <p class="text-sm text-on-surface-variant mb-6">Membangun rasa ingin tahu dan kreativitas melalui bermain sambil belajar.</p>
+          <button class="text-secondary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">Selengkapnya <span class="material-symbols-outlined text-base">arrow_forward</span></button>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl overflow-hidden border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+        <div class="h-48 relative">
+          <img class="w-full h-full object-cover" data-alt="Active primary school students working on a group science project in a modern, collaborative classroom. They are wearing casual uniforms and using tablets for research. The room is decorated with student artwork and science diagrams under bright, diffused LED lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq_8wY_9zBoEf5NTcVR_zTsulqkVamQwp4eXkc3LXK1rnY1698_E0h_gaiEwk3mpSt83m3_QIoOqI8W1lM10vP2y6SujUlOrcalpFS6v4LYkPN1lbCA5FrqyY2e2Dz62kCJRQWpgNnffOQbpK0KIVa3I8xn62OXeqQ5SUIpIsSheh-CZ9VnQr82nmYRtzjfYNMZka7YXn_Fep-3g1hPY_OcvWVdR_0YRZmdcDPqEWu1QZcglOQWfqk6BxESVjlxC97ifG9MYMsOC0"/>
+          <div class="absolute bottom-4 left-4 bg-white/90 px-4 py-1 rounded-full text-xs font-bold text-secondary">SD</div>
+        </div>
+        <div class="p-6">
+          <h4 class="font-bold text-xl mb-2">Sekolah Dasar</h4>
+          <p class="text-sm text-on-surface-variant mb-6">Pondasi dasar akademik dan karakter yang kuat untuk masa depan cerah.</p>
+          <button class="text-secondary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">Selengkapnya <span class="material-symbols-outlined text-base">arrow_forward</span></button>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl overflow-hidden border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+        <div class="h-48 relative">
+          <img class="w-full h-full object-cover" data-alt="Junior high school students in a modern science laboratory equipped with high-end microscopes and sleek workstations. The environment is clean and professional with a cool color palette of blues and whites, emphasizing a focused academic atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNFiMakcsrTZX06JEanpHmX6Pj-2IrIWTr9Lu4dSFda_NPFSoVPhUdkBhJpqsbu5adVZe6tCy4zfmmmCAwHV1XFz0jlOfB_K_BCbiPSflj3lrQJMOy0dc22xQBDR-PbX6IDgV5jAfdlN8_Z6hhi4VbSGTtlrg2ObojtVu4wSD6LMnzIBndmUqyUEF0DP0TRJLhCa4J8IHtdbjXEjOX--YvyXkPTfVmoYKqpcIRSLaMQvsxsxlc_hGcRSI0Y_6E4PYhKTa_0gK245A"/>
+          <div class="absolute bottom-4 left-4 bg-white/90 px-4 py-1 rounded-full text-xs font-bold text-secondary">SMP</div>
+        </div>
+        <div class="p-6">
+          <h4 class="font-bold text-xl mb-2">SMP</h4>
+          <p class="text-sm text-on-surface-variant mb-6">Eksplorasi minat dan bakat dengan pendekatan pemikiran kritis.</p>
+          <button class="text-secondary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">Selengkapnya <span class="material-symbols-outlined text-base">arrow_forward</span></button>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl overflow-hidden border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+        <div class="h-48 relative">
+          <img class="w-full h-full object-cover" data-alt="High school senior students in a university-style lecture hall with modern technology. They are engaged in a professional presentation using a large interactive screen. The lighting is sophisticated, creating an atmosphere of higher education and professional ambition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjke2NqFBPdbGWwd6hz8Mx69nAnLa6wtIYEcVXRhDmFbVMBfjH0AM_jXDnkZDIK-uOOWNR2JQd3Z-egZykHD9OIQ_PjyXhX1A9nRe2_yzn3ybqUCM6EUamwWmhsIPX83n1tjSDZc5Qew9mwY5-nf2G_ttP04xYLeAgj--SRZbD91yPN7cGUZqDW3PkPafqe68EZIlWcA1hxa_yaVT83BEVVjTlygI1bqkeZOIqQUSdg3lApPGX_EghvtiEuVMudhRTiGqsbN8EbCk"/>
+          <div class="absolute bottom-4 left-4 bg-white/90 px-4 py-1 rounded-full text-xs font-bold text-secondary">SMA</div>
+        </div>
+        <div class="p-6">
+          <h4 class="font-bold text-xl mb-2">SMA</h4>
+          <p class="text-sm text-on-surface-variant mb-6">Persiapan matang menuju universitas ternama di dalam dan luar negeri.</p>
+          <button class="text-secondary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">Selengkapnya <span class="material-symbols-outlined text-base">arrow_forward</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Facilities Section (Bento Grid) -->
+  <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-white" id="facilities">
+    <div class="max-w-container-max mx-auto">
+      <div class="mb-12">
+        <h2 class="font-headline-md text-headline-md mb-2">Fasilitas Unggulan</h2>
+        <p class="text-on-surface-variant">Lingkungan belajar kelas dunia untuk mendukung setiap aktivitas siswa.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter h-auto md:h-[600px]">
+        <div class="md:col-span-8 relative rounded-2xl overflow-hidden group">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A wide, stunning photograph of a professional indoor Olympic-sized swimming pool at a high-end educational institution. The water is crystal blue and perfectly still, reflecting the modern architectural roof and floor-to-ceiling windows. Bright natural light floods the space, giving it a premium, energetic feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHoedeaac0e0nzC16lrmDaP-2w_5GPGcot8iOOMG2Z7N_HhgOIFyo3TFAkXlMRkg1jAMECoQJ_qPhR5G2Kci_A3Gpl0nbY3GkpJo8Ud1flgHxq9R20k98tyjdlx_6Da5MSJdgttvEN7_BugRFAUo3cODgn6TxUl7zXfQEsyV02lCNoNJKr31xR3hNvOfpfUd0u3c23hJUUiFXhqNYc-jByXkewiwL2JNkVMf2dlyLBrQ878gTCjm_AROuqxCPaAcQjzWODgxIG7PM"/>
+          <div class="absolute bottom-0 left-0 p-8 bg-gradient-to-t from-black/80 to-transparent w-full">
+            <h5 class="text-white font-bold text-xl">Olympic Pool</h5>
+          </div>
+        </div>
+        <div class="md:col-span-4 relative rounded-2xl overflow-hidden group">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close-up of a futuristic creative hub and robotics lab in a school. Students are working with 3D printers and high-performance computers in a space with neon accents and sleek modular furniture. The lighting is vibrant and technologically inspired." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCxyEau7Ofbprb1lv5Ef1FGqLJh54x9vAGuKlVpUTs9yr8KQato8cdQ7oH3nxbE0c7fznHdnPCnxKhD13x453FeL4V2_SNEgBQeXH4t_CO96hV23oUA9Spxt6YZm69sA8caNgrpimjJraHqJq2PLo95SzfWpiZjZW4t2LCWWbx_hUhALrU2zz8R43_OByaJfx6sz-LSBrMirlFU1DK157joyUVcPrCBuAU_vNNnoPR-T__FKyWH91x5r--Dv2Z_M2RvfRwy2CFHRE"/>
+          <div class="absolute bottom-0 left-0 p-8 bg-gradient-to-t from-black/80 to-transparent w-full">
+            <h5 class="text-white font-bold text-xl">Creative Hub</h5>
+          </div>
+        </div>
+        <div class="md:col-span-4 relative rounded-2xl overflow-hidden group">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A smart classroom with large interactive digital whiteboards and ergonomic seating for students. The design is minimalist and modern, featuring clean white surfaces and natural wood accents under soft, even office lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUOGOUqjLdKh_l78KzAVFXoUb5igNWn1_HfznOB0fYjWZR06Az1vJwuFniIzQNXE6XYv6Fbd77dFcWN9UqyngLmFAIVUrYtegCtprXmRsnHOtANmiD6D-ZR5ROwY8_d9EQ1hKMWvTU4JLyvpxMq2ARcwHwc57g6S0rPZE2SP5_JEshPEXsIacxR4MBpAk32lgX7pbRBVTiyuND4HEoffWV_fQoeD7-WfPw4aRRX3xqFVfTluL8zUCjQDy1pYdUQ0pVj6wR7klnVTY"/>
+          <div class="absolute bottom-0 left-0 p-8 bg-gradient-to-t from-black/80 to-transparent w-full">
+            <h5 class="text-white font-bold text-xl">Smart Classrooms</h5>
+          </div>
+        </div>
+        <div class="md:col-span-8 relative rounded-2xl overflow-hidden group">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A spacious and modern science laboratory with rows of advanced equipment, including digital microscopes and chemical analyzers. The floor is a polished light gray and the lighting is laboratory-grade white, creating a sterile yet inviting professional environment for research." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABpRXZbWB27v9HmlI4HJvGLMUUtLK6KP8jqXovYgQd7F60140B36LPAoas8dngZ40fQOT258yiHsh9fPA0l5Ls1_o0FeCHycEnkkfdF5e7jqYPmQnIXo6I-snoYYDmjphAeD6CND4rA8Arn4QT6pr9kcpzlcmvvT1XI2byOtrgWpbw_bOrDGROdlqsrzoaR46XzNfxPdqcDIH72OgIZ9QEct42FAA0wV83JkyKnGTc54HixwV1ZrDYS8wx7n0xcpCtW_5E6R3vgvA"/>
+          <div class="absolute bottom-0 left-0 p-8 bg-gradient-to-t from-black/80 to-transparent w-full">
+            <h5 class="text-white font-bold text-xl">Advanced Science Lab</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Extracurriculars -->
+  <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+    <div class="max-w-container-max mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="font-headline-md text-headline-md mb-4">Ekstrakurikuler</h2>
+        <p class="max-w-2xl mx-auto text-on-surface-variant">Menyalurkan minat dan bakat siswa melalui berbagai kegiatan non-akademik yang inspiratif.</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-6">
+        <div class="bg-white px-8 py-10 rounded-2xl shadow-sm text-center w-full sm:w-48 hover:-translate-y-2 transition-transform">
+          <span class="material-symbols-outlined text-secondary text-4xl mb-4">smart_toy</span>
+          <p class="font-bold">Robotics</p>
+        </div>
+        <div class="bg-white px-8 py-10 rounded-2xl shadow-sm text-center w-full sm:w-48 hover:-translate-y-2 transition-transform">
+          <span class="material-symbols-outlined text-secondary text-4xl mb-4">rebase_edit</span>
+          <p class="font-bold">Archery</p>
+        </div>
+        <div class="bg-white px-8 py-10 rounded-2xl shadow-sm text-center w-full sm:w-48 hover:-translate-y-2 transition-transform">
+          <span class="material-symbols-outlined text-secondary text-4xl mb-4">music_note</span>
+          <p class="font-bold">Music</p>
+        </div>
+        <div class="bg-white px-8 py-10 rounded-2xl shadow-sm text-center w-full sm:w-48 hover:-translate-y-2 transition-transform">
+          <span class="material-symbols-outlined text-secondary text-4xl mb-4">code</span>
+          <p class="font-bold">Coding</p>
+        </div>
+        <div class="bg-white px-8 py-10 rounded-2xl shadow-sm text-center w-full sm:w-48 hover:-translate-y-2 transition-transform">
+          <span class="material-symbols-outlined text-secondary text-4xl mb-4">palette</span>
+          <p class="font-bold">Arts</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Teachers Section -->
+  <section class="py-section-gap px-margin-mobile md:px-margin-desktop" id="teachers">
+    <div class="max-w-container-max mx-auto">
+      <div class="flex justify-between items-end mb-12">
+        <div>
+          <h2 class="font-headline-md text-headline-md mb-2">Tenaga Pendidik</h2>
+          <p class="text-on-surface-variant">Dibimbing oleh para profesional terbaik di bidangnya.</p>
+        </div>
+        <button class="hidden md:flex items-center gap-2 text-secondary font-bold hover:gap-4 transition-all">Lihat Semua Guru <span class="material-symbols-outlined">east</span></button>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+        <div class="group">
+          <div class="rounded-2xl overflow-hidden mb-4 aspect-[3/4]">
+            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A professional headshot of an Indonesian male teacher in his 40s, wearing a smart casual blazer and a friendly, confident smile. He is standing in a library with soft-focus books in the background. The lighting is warm and flattering, portraying him as a trustworthy and approachable educator." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVqEgVHKJ17sQH-LZKfWdV-zuN0BEvG4WTYo9yyeV7crj5SpQmWVcZ1SiC3vKaWD8WssUInACqiZy6gpa1GeI-S5D1U7kaJapVKO6Ayzvq5m4bMwGKqao249pqkWto0GvSyPEcGIHRkXcdBpTzBrUp4HSMoJAEcF4ENdW7UmDgCwwpE71h87jkvfwe949gU0Ldyomxs4PWtc192fdraIaluW1z8B_cHZZ_PZh9S6yK8oEzLmE_ddMsQlwwQ_jEwr-v33Btwq3W0Fg"/>
+          </div>
+          <h5 class="font-bold text-lg">Dr. Ahmad Ridwan</h5>
+          <p class="text-sm text-on-surface-variant">Kepala Sekolah / Math Specialist</p>
+        </div>
+        <div class="group">
+          <div class="rounded-2xl overflow-hidden mb-4 aspect-[3/4]">
+            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A professional headshot of a friendly female teacher in her 30s, wearing a modern hijab and a professional blouse. She is standing in a bright, modern school garden. The lighting is natural and bright, conveying her enthusiasm and expertise as a science and innovation teacher." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKohVPMEu7eYVqtt_9XaX3VEPeTWlVllOS_O44CnDrb4wzZ4463IfTI5b4aaoPgS9UBtyLipdb14sy-sam06GbcPjut4uSOlQuL1CJEf_s6eywjR-ev7UnRPaZIkNT6GytltdK7CZxAPhGYbZjth7jLGnSydZjl284pletP1B4ZERG53l9XLHwMajGkaRQl2BY8NoZLpygIne4ZaunjCmUK4r8qDuTwPT1TsFuJSUWOo56q-RBR10jnu1hQU2UENfaAzoW4quwKJM"/>
+          </div>
+          <h5 class="font-bold text-lg">Siti Aminah, M.Pd</h5>
+          <p class="text-sm text-on-surface-variant">Wakil Kurikulum / Science Guru</p>
+        </div>
+        <div class="group">
+          <div class="rounded-2xl overflow-hidden mb-4 aspect-[3/4]">
+            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A dynamic headshot of a male IT teacher in his late 20s, wearing a smart polo shirt. He is sitting in a high-tech computer lab. The lighting features subtle blue tech accents, emphasizing his role as a digital literacy and coding instructor for future generations." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-KEjHKleK8Qh0csW3YGXEPMBk5PyWIbRa9SGAJGIm-RhSBk-sCTb5rQ6DCAQ69sPwnVYPcyzuM_DE8dWkmygtydfVOaBCjnxBb-UZ3jEoehcgMGuFpwiNHOB1hUmQFW7uAUBBuLAZt0qkyNJ-qH2cKZ0eLVuK3NC7nHAKF4C5Cg2-HDXixT2muCE2DJm0gTFl7P7BALFz2hdD8XY5_0pvf7Xzgq6MrkvDVmzuYIaVCqDRXzatbbnqJX23B7bGLahXaT7c-DHNX08"/>
+          </div>
+          <h5 class="font-bold text-lg">Budi Santoso, S.Kom</h5>
+          <p class="text-sm text-on-surface-variant">IT & Robotics Instructor</p>
+        </div>
+        <div class="group">
+          <div class="rounded-2xl overflow-hidden mb-4 aspect-[3/4]">
+            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A professional headshot of an elegant female teacher in her 50s, wearing a traditional yet modern batik attire. She is in a classical arts room with cultural artifacts. The lighting is soft and respectful, portraying her as an experienced mentor in character building and arts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASiumEsvIS8OojI_JH76Cvw7BzEy2MLwvfdS30Zx3eKzVO6_NOHZfef9IMH7tx2W6jLntEMtuhtvwq2ZEyPBUNq3JFzki_xc_VlIRReA2GEZZZSYA5cIASRIbj0-IrEXqiIRhek8D3umuGbpKPMg5FuhTnYaQapqZnkLGuhDVatr6hctGuZ_xi-KT5jL8rrOvl4Mj2Wjetpno-BRtkG7lLgy5wKm5idnJQLQNvz8j6y4nAL57U07MLFRmM5GhLUYODw0Xl9doQUG0"/>
+          </div>
+          <h5 class="font-bold text-lg">Dra. Ratna Sari</h5>
+          <p class="text-sm text-on-surface-variant">Character Development Mentor</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Methodology -->
+  <section class="py-section-gap bg-primary text-white px-margin-mobile md:px-margin-desktop overflow-hidden relative">
+    <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none"></div>
+    <div class="max-w-container-max mx-auto relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+        <div>
+          <h2 class="text-display-lg-mobile md:text-display-lg font-bold mb-8">Cara Kami Belajar</h2>
+          <div class="space-y-8">
+            <div class="flex gap-6">
+              <div class="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-white">devices</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-xl mb-2">Hybrid Learning</h4>
+                <p class="text-surface-variant">Integrasi pembelajaran tatap muka dan digital yang fleksibel namun tetap terstruktur.</p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-white">rocket_launch</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-xl mb-2">Project Based Learning</h4>
+                <p class="text-surface-variant">Siswa belajar memecahkan masalah nyata melalui proyek yang menantang kreativitas.</p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-white">group</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-xl mb-2">Mentorship</h4>
+                <p class="text-surface-variant">Setiap siswa memiliki mentor pribadi untuk bimbingan akademik dan pengembangan diri.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:block">
+          <img class="w-full h-auto drop-shadow-2xl" data-alt="A high-concept digital illustration representing modern education. It shows a holographic 3D model of a sustainable city being interacted with by students' hands using VR and AR. The style is clean, vibrant, and futuristic with a high-key color palette that emphasizes technological optimism and human-centric design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsAjiPfzOAlI7_p61TwxAYwLL-vnkgpkNKVO2AJsMptMWN6OJrSFZ2X9rPNk1hSz2jAfywfCRabTfFxoE7LzXXbIdrnLu_u_71JRTNtBZKE8GDqQO89wWkIb_YptLjvyZ55OyPIvN-5jiUxgblK2kyQCPFbqvDGy7Pto1GZRnz_rlbBMA0A_jzLOGocUu2cq2R8TxPPbIQQ7krMzEPjXe9yAACCmjFNRd3mWaeSVWhcE4jHYCImGpATzMXPwhznChpTb_mJWi4-J4"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Testimonials -->
+  <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-white">
+    <div class="max-w-container-max mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="font-headline-md text-headline-md mb-2">Apa Kata Orang Tua</h2>
+        <p class="text-on-surface-variant">Cerita sukses dan pengalaman bersama Masadepan Bangsa.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <div class="bg-surface-container-low p-8 rounded-2xl relative">
+          <span class="material-symbols-outlined text-secondary/20 text-6xl absolute top-6 right-6">format_quote</span>
+          <p class="text-on-surface-variant italic mb-8 relative z-10">"Sangat bersyukur menyekolahkan anak saya di sini. Perkembangan karakter dan kepercayaan dirinya luar biasa meningkat dalam satu tahun terakhir."</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full overflow-hidden">
+              <img class="w-full h-full object-cover" data-alt="A photograph of a friendly Indonesian father in his 40s, looking happy and content. He is wearing professional attire. The shot is a warm, close-up portrait with soft background bokeh." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfGaUv6wl3xdNJDZ2jQxsnbIircDacMfQOGb1GEPmD6g2Ia0MrT9c3VnIUXHhD8w549B-un-cJe_305RCltwFL_3auRkFPoqZ1K1UcehltU-RHy-EOOoeBD8sOsJC1IPZ_RTuT6ks0rRkoGTdz3kvi_dT8GWEJSi1Amuht5HyU4V7bcB7jZyd5q5JDyhnYoOUyI1Xe38gGFeq6mz2mjq4giewNfJZlmWKwn_IXQjYDtBi0mpsbUkj5aOxwvemhU8o-jCLRnPK6va8"/>
+            </div>
+            <div>
+              <h6 class="font-bold">Pak Hendra</h6>
+              <p class="text-xs text-on-surface-variant">Orang Tua Siswa SD</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-surface-container-low p-8 rounded-2xl relative">
+          <span class="material-symbols-outlined text-secondary/20 text-6xl absolute top-6 right-6">format_quote</span>
+          <p class="text-on-surface-variant italic mb-8 relative z-10">"Kurikulum internasionalnya benar-benar terasa dampaknya. Anak saya jadi lebih kritis dan berani mengutarakan pendapat dalam Bahasa Inggris."</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full overflow-hidden">
+              <img class="w-full h-full object-cover" data-alt="A photograph of a modern Indonesian mother in her 30s, smiling warmly. She is wearing a stylish modest outfit. The lighting is soft and bright, suggesting a domestic yet successful lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOIvBe9XCiqVrLMCAeSATfzZsmFE17UYF7dFqSE4KYMTliuYkPtLOFlOPs1Ct8f-taem38FFhIo3xeOb-Wo_-w-VpmMrEJ9T9LqJMB-h5itdeJ67mCX0Q6HbIbfg4Dqrs77a5rfrpYVkmj_jrw1iFmQgeXMQhWOG6bFPJ80yP0iw_7RbPblne98yMpJPHK-rJCTpVnxgwIlh1FJ-2oPS3RJ40UE9kJj2RGxiqj9htMhZJDJ7OjOG6SYC5inTt7rCR1X4yWqkVEF2U"/>
+            </div>
+            <div>
+              <h6 class="font-bold">Ibu Maya</h6>
+              <p class="text-xs text-on-surface-variant">Orang Tua Siswa SMP</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-surface-container-low p-8 rounded-2xl relative">
+          <span class="material-symbols-outlined text-secondary/20 text-6xl absolute top-6 right-6">format_quote</span>
+          <p class="text-on-surface-variant italic mb-8 relative z-10">"Fasilitas digitalnya sangat membantu pembelajaran selama masa pandemi. Transisi ke sistem hybrid berjalan sangat mulus dan efisien."</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full overflow-hidden">
+              <img class="w-full h-full object-cover" data-alt="A portrait of a senior professional Indonesian man in his 50s with a kind expression. He is wearing a formal batik shirt. The background is a blurred office environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcShi36vUGvl9rC0hwasIp0vnkeC9ILtv2YpaFRQnwkHgBwf21NZq7R6GE-cJdjMkI2Wqr95XBtCnEVL3-peqkl1SPfJ9zN0CQoPgeNH-HmFDug0nl4jJdJdwlN1F1jTEXL-n-VxBQcdA-Sm2NrimopsxBB1mdY5PDA70tDuB59DHmubFeFIDBtshuQdEIUF8HNg5zB5dFUTsX3HmVCzOiyqlNX_LAhzVG_Cf2FfGrKj78L1AIMcLtT84PoopPbUIMKLgNwITA0y0"/>
+            </div>
+            <div>
+              <h6 class="font-bold">Pak Agus</h6>
+              <p class="text-xs text-on-surface-variant">Orang Tua Siswa SMA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. Awards (Logo Cloud) -->
+  <section class="py-12 border-y border-outline-variant/30">
+    <div class="max-w-container-max mx-auto px-margin-mobile">
+      <div class="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all">
+        <div class="h-10 w-32 bg-primary/20 rounded flex items-center justify-center font-bold text-xs">EDUCATION AWARD 2023</div>
+        <div class="h-10 w-32 bg-primary/20 rounded flex items-center justify-center font-bold text-xs">GLOBAL STANDARD ISO</div>
+        <div class="h-10 w-32 bg-primary/20 rounded flex items-center justify-center font-bold text-xs">BEST CAMPUS UI/UX</div>
+        <div class="h-10 w-32 bg-primary/20 rounded flex items-center justify-center font-bold text-xs">GREEN SCHOOL 2024</div>
+        <div class="h-10 w-32 bg-primary/20 rounded flex items-center justify-center font-bold text-xs">TECH INNOVATOR</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. Events Section -->
+  <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low" id="events">
+    <div class="max-w-container-max mx-auto">
+      <div class="flex justify-between items-center mb-12">
+        <h2 class="font-headline-md text-headline-md">Agenda Mendatang</h2>
+        <a class="text-secondary font-bold" href="#">Lihat Kalender <span class="material-symbols-outlined text-sm">open_in_new</span></a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col">
+          <div class="p-6 border-b border-outline-variant/30 bg-secondary-fixed">
+            <div class="text-3xl font-bold text-secondary">25</div>
+            <div class="text-sm font-label-caps text-on-secondary-fixed-variant">OKTOBER 2024</div>
+          </div>
+          <div class="p-6 flex-grow">
+            <h4 class="font-bold text-lg mb-2">School Open House</h4>
+            <p class="text-sm text-on-surface-variant mb-4">Kesempatan orang tua untuk melihat fasilitas dan bertemu dengan guru kami secara langsung.</p>
+            <span class="text-xs flex items-center gap-2 text-outline"><span class="material-symbols-outlined text-sm">schedule</span> 09:00 - 15:00 WIB</span>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col">
+          <div class="p-6 border-b border-outline-variant/30 bg-surface-container">
+            <div class="text-3xl font-bold text-primary">12</div>
+            <div class="text-sm font-label-caps text-on-surface-variant">NOVEMBER 2024</div>
+          </div>
+          <div class="p-6 flex-grow">
+            <h4 class="font-bold text-lg mb-2">National Science Fair</h4>
+            <p class="text-sm text-on-surface-variant mb-4">Kompetisi sains tingkat nasional yang diselenggarakan di kampus Masadepan Bangsa.</p>
+            <span class="text-xs flex items-center gap-2 text-outline"><span class="material-symbols-outlined text-sm">location_on</span> Main Hall Campus</span>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col">
+          <div class="p-6 border-b border-outline-variant/30 bg-surface-container">
+            <div class="text-3xl font-bold text-primary">05</div>
+            <div class="text-sm font-label-caps text-on-surface-variant">DESEMBER 2024</div>
+          </div>
+          <div class="p-6 flex-grow">
+            <h4 class="font-bold text-lg mb-2">Art & Culture Festival</h4>
+            <p class="text-sm text-on-surface-variant mb-4">Pertunjukan seni dan pameran budaya oleh siswa dari seluruh jenjang pendidikan.</p>
+            <span class="text-xs flex items-center gap-2 text-outline"><span class="material-symbols-outlined text-sm">stadium</span> Theater Room</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. News Section -->
+  <section class="py-section-gap px-margin-mobile md:px-margin-desktop" id="news">
+    <div class="max-w-container-max mx-auto">
+      <h2 class="font-headline-md text-headline-md mb-12">Berita Terbaru</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+        <article class="group cursor-pointer">
+          <div class="rounded-2xl overflow-hidden mb-6 aspect-video">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant photograph of school students celebrating their victory at a national robotics competition, holding a golden trophy and banners. The scene is filled with confetti and joyful energy, set in a modern convention center under professional event lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq48wIvbF9pfrLyHQNOrueiqsYS14dMrmdnzPrl-tJ_BCszuO9v-CNO3LKKzfi4ZcscZT5N3wzCsHns5kJoC8p3BhcY-KvhSZW6QTvFxztL6mhZJDWcu2Zbotp78EA2SxjTGus0uCRoCgS8fSK1uMpuN28BP9swy8Di98ETcyTzqAAe_upPiay-jsqyl1kVZySB2eiGe5LwdUUwx4-egOCuzTK-OPKOHueKJFYrHVX6_8VPUC0-aBn7D2ksrOVj11xF2BI_HN9ZqU"/>
+          </div>
+          <span class="text-secondary font-label-caps text-xs mb-2 block">ACHIEVEMENT</span>
+          <h4 class="font-bold text-xl mb-3 group-hover:text-secondary transition-colors">Siswa SMA MB Menang Kompetisi Robotik Nasional</h4>
+          <p class="text-on-surface-variant text-sm line-clamp-2">Tim robotik sekolah berhasil meraih medali emas dalam kategori inovasi teknologi tepat guna di Jakarta...</p>
+        </article>
+        <article class="group cursor-pointer">
+          <div class="rounded-2xl overflow-hidden mb-6 aspect-video">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern computer lab with students wearing VR headsets and using gesture controllers. A teacher is guiding them in the background. The space is sleek with minimalist furniture and cool blue LED accents, representing advanced digital learning." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzCtzvBVzcqabjj08aHQeNSeu4yNU8MtxGxK2q11L0kpGpjYA4LE2Id4u43h-CScSwHsN55h6YF5xee9qqd8pJnAyd6KK93zDtn4trdgYnK4cdFXWbRqU913kd_dMzb2YWooHgAn8c5uk5awjzl8TImHgNdOuqjm2uxR2iHSA1zkKmSGUlR2zH8TliMfK5dDVVFwXLpIFIrh8eLqOv9btI-pcOdeUr-U4f9GTx1GdhUrirvZ9NwHeOSbNY1-p4wt5OTckTTs1osNA"/>
+          </div>
+          <span class="text-secondary font-label-caps text-xs mb-2 block">CAMPUS LIFE</span>
+          <h4 class="font-bold text-xl mb-3 group-hover:text-secondary transition-colors">Peluncuran Digital Learning Hub Baru</h4>
+          <p class="text-on-surface-variant text-sm line-clamp-2">Masadepan Bangsa resmi meluncurkan fasilitas hub digital tercanggih untuk mendukung riset siswa...</p>
+        </article>
+        <article class="group cursor-pointer">
+          <div class="rounded-2xl overflow-hidden mb-6 aspect-video">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A heartwarming scene of a primary school graduation ceremony. Young students in academic gowns are laughing and hugging their parents in a sunlit outdoor garden decorated with balloons and flowers. The atmosphere is joyous and celebratory." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXtdwjOHpYdQLo-cS9EPsdu9ufj807sLdhBpjqOZHJV1DbCcUNJdgwvV6gMDgukAzn1Co8OyT4sJGafe5tujN-pj9xIsFzVG7jknTQtO6KXSof4CCOfrsoDpqGI68PjzQR_wuUALVRXxyjx2nCPwO2AewuZ218YhkhEeKFES52xdaIFLkBdvxTZt2GTX7OIrrFU4Tq5stWVc5HSohNWJP68mgGtJYgJsJYNYI1x3G68AqcRH3Ks_R0zgnYkrNexO9q3LPIuwxNrcE"/>
+          </div>
+          <span class="text-secondary font-label-caps text-xs mb-2 block">EVENT</span>
+          <h4 class="font-bold text-xl mb-3 group-hover:text-secondary transition-colors">Momen Bahagia Wisuda Angkatan ke-15</h4>
+          <p class="text-on-surface-variant text-sm line-clamp-2">Kemeriahan perayaan kelulusan tahun ini berlangsung khidmat dengan dihadiri oleh tokoh pendidikan...</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. FAQ Section -->
+  <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-white">
+    <div class="max-w-container-max mx-auto max-w-3xl">
+      <h2 class="font-headline-md text-headline-md mb-12 text-center">Pertanyaan Umum</h2>
+      <div class="space-y-4">
+        <div class="border border-outline-variant/50 rounded-2xl overflow-hidden">
+          <button class="w-full p-6 text-left flex justify-between items-center hover:bg-surface-container transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden')">
+            <span class="font-bold">Kapan pendaftaran siswa baru dimulai?</span>
+            <span class="material-symbols-outlined">expand_more</span>
+          </button>
+          <div class="p-6 pt-0 text-on-surface-variant border-t border-outline-variant/30 hidden">
+            Pendaftaran siswa baru untuk tahun ajaran 2024/2025 telah dibuka mulai tanggal 1 Agustus 2023 hingga kuota terpenuhi.
+          </div>
+        </div>
+        <div class="border border-outline-variant/50 rounded-2xl overflow-hidden">
+          <button class="w-full p-6 text-left flex justify-between items-center hover:bg-surface-container transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden')">
+            <span class="font-bold">Apakah ada beasiswa yang tersedia?</span>
+            <span class="material-symbols-outlined">expand_more</span>
+          </button>
+          <div class="p-6 pt-0 text-on-surface-variant border-t border-outline-variant/30 hidden">
+            Ya, kami menyediakan berbagai skema beasiswa mulai dari beasiswa prestasi akademik, non-akademik, hingga beasiswa bantuan sosial.
+          </div>
+        </div>
+        <div class="border border-outline-variant/50 rounded-2xl overflow-hidden">
+          <button class="w-full p-6 text-left flex justify-between items-center hover:bg-surface-container transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden')">
+            <span class="font-bold">Bagaimana kurikulum yang diterapkan?</span>
+            <span class="material-symbols-outlined">expand_more</span>
+          </button>
+          <div class="p-6 pt-0 text-on-surface-variant border-t border-outline-variant/30 hidden">
+            Kami mengintegrasikan Kurikulum Nasional dengan standar Cambridge International, diperkaya dengan program Character Building dan nilai-nilai keislaman.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 16. Enrollment Steps -->
+  <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+    <div class="max-w-container-max mx-auto">
+      <h2 class="font-headline-md text-headline-md mb-16 text-center">Langkah Pendaftaran</h2>
+      <div class="relative flex flex-col md:flex-row justify-between gap-12 md:gap-4">
+        <div class="hidden md:block absolute top-10 left-0 w-full h-0.5 bg-outline-variant -z-0"></div>
+        <div class="relative z-10 flex-1 text-center group">
+          <div class="w-20 h-20 bg-secondary text-white rounded-full flex items-center justify-center mx-auto mb-6 font-bold text-2xl shadow-lg group-hover:scale-110 transition-transform">1</div>
+          <h4 class="font-bold mb-2">Registrasi Online</h4>
+          <p class="text-sm text-on-surface-variant">Isi formulir melalui website resmi kami.</p>
+        </div>
+        <div class="relative z-10 flex-1 text-center group">
+          <div class="w-20 h-20 bg-white text-primary border-4 border-secondary rounded-full flex items-center justify-center mx-auto mb-6 font-bold text-2xl shadow-lg group-hover:scale-110 transition-transform">2</div>
+          <h4 class="font-bold mb-2">Ujian Seleksi</h4>
+          <p class="text-sm text-on-surface-variant">Tes potensi akademik dan psikologi siswa.</p>
+        </div>
+        <div class="relative z-10 flex-1 text-center group">
+          <div class="w-20 h-20 bg-white text-primary border-4 border-secondary rounded-full flex items-center justify-center mx-auto mb-6 font-bold text-2xl shadow-lg group-hover:scale-110 transition-transform">3</div>
+          <h4 class="font-bold mb-2">Wawancara</h4>
+          <p class="text-sm text-on-surface-variant">Pertemuan tatap muka orang tua dan calon siswa.</p>
+        </div>
+        <div class="relative z-10 flex-1 text-center group">
+          <div class="w-20 h-20 bg-white text-primary border-4 border-secondary rounded-full flex items-center justify-center mx-auto mb-6 font-bold text-2xl shadow-lg group-hover:scale-110 transition-transform">4</div>
+          <h4 class="font-bold mb-2">Selamat Datang!</h4>
+          <p class="text-sm text-on-surface-variant">Penyelesaian administrasi dan orientasi siswa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 17. Final CTA Section -->
+  <section class="py-section-gap px-margin-mobile">
+    <div class="max-w-container-max mx-auto bg-primary rounded-3xl overflow-hidden relative p-12 md:p-20 text-center">
+      <div class="absolute inset-0 opacity-20"></div>
+      <div class="relative z-10 max-w-2xl mx-auto">
+        <h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-8">Siap Memulai Perjalanan Pendidikan Anda?</h2>
+        <p class="text-surface-variant text-body-lg mb-12">Jangan lewatkan kesempatan untuk bergabung dengan komunitas belajar terbaik dan jadilah pemimpin masa depan.</p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <button class="bg-secondary-container text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-xl transition-all">Hubungi Tim Admisi</button>
+          <button class="border border-white/30 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition-all">Download Brosur (PDF)</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 18. Footer -->
+<footer class="bg-surface-container-lowest py-section-gap">
+  <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+    <div class="md:col-span-1">
+      <span class="text-headline-md font-bold text-primary mb-6 block">Masadepan <span class="text-secondary">Bangsa</span></span>
+      <p class="text-on-surface-variant mb-6 text-sm">Sekolah berkualitas dunia untuk mencetak generasi unggul yang berkarakter dan inovatif.</p>
+      <div class="flex gap-4">
+        <a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-secondary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-lg">qr_code_2</span></a>
+        <a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-secondary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-lg">camera_alt</span></a>
+        <a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-secondary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-lg">video_camera_front</span></a>
+      </div>
+    </div>
+    <div class="md:col-span-1">
+      <h5 class="font-bold mb-6">Quick Links</h5>
+      <ul class="space-y-3 text-on-surface-variant text-sm">
+        <li><a class="hover:text-secondary transition-colors" href="#">Curriculum</a></li>
+        <li><a class="hover:text-secondary transition-colors" href="#">Admissions</a></li>
+        <li><a class="hover:text-secondary transition-colors" href="#">Privacy Policy</a></li>
+        <li><a class="hover:text-secondary transition-colors" href="#">Terms of Service</a></li>
+        <li><a class="hover:text-secondary transition-colors" href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="md:col-span-1">
+      <h5 class="font-bold mb-6">Programs</h5>
+      <ul class="space-y-3 text-on-surface-variant text-sm">
+        <li><a class="hover:text-secondary transition-colors" href="#">Kindergarten</a></li>
+        <li><a class="hover:text-secondary transition-colors" href="#">Primary School</a></li>
+        <li><a class="hover:text-secondary transition-colors" href="#">Junior High</a></li>
+        <li><a class="hover:text-secondary transition-colors" href="#">Senior High</a></li>
+        <li><a class="hover:text-secondary transition-colors" href="#">International Track</a></li>
+      </ul>
+    </div>
+    <div class="md:col-span-1">
+      <h5 class="font-bold mb-6">Kontak Kami</h5>
+      <ul class="space-y-4 text-on-surface-variant text-sm">
+        <li class="flex gap-3">
+          <span class="material-symbols-outlined text-secondary">location_on</span>
+          <span>Jl. Pendidikan No. 123, Jakarta Selatan, Indonesia</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="material-symbols-outlined text-secondary">phone</span>
+          <span>+62 21 5555 1234</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="material-symbols-outlined text-secondary">mail</span>
+          <span>info@masadepanbangsa.sch.id</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-20 pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p class="text-sm text-on-surface-variant">© 2024 Masadepan Bangsa. Built for the Future.</p>
+    <div class="flex gap-8 text-sm text-on-surface-variant">
+      <a class="hover:text-secondary transition-colors" href="#">Privacy</a>
+      <a class="hover:text-secondary transition-colors" href="#">Cookies</a>
+      <a class="hover:text-secondary transition-colors" href="#">Legal</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+    // Simple scroll behavior for header glass effect
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 20) {
+            header.classList.add('shadow-md');
+            header.classList.remove('shadow-sm');
+        } else {
+            header.classList.add('shadow-sm');
+            header.classList.remove('shadow-md');
+        }
+    });
+</script>
+
+</body>
+</html>
