@@ -119,6 +119,64 @@
             cursor: pointer;
         }
 
+        /* ==================== SEARCH BAR ==================== */
+        .search-container {
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 600px;
+            z-index: 9;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 14px 50px 14px 20px;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: white;
+            font-size: 15px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-bar::placeholder {
+            color: #666;
+            font-size: 15px;
+        }
+
+        .search-bar:focus {
+            border-color: #00BFFF;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            fill: #666;
+            pointer-events: none;
+        }
+
+        .no-results {
+            display: none;
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+            padding: 60px 20px;
+            grid-column: 1 / -1;
+        }
+
+        .no-results.show {
+            display: block;
+        }
+        /* ==================== AKHIR SEARCH BAR ==================== */
+
         .whatsapp-container {
             position: fixed;
             bottom: 20px;
@@ -151,7 +209,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 100px 40px 40px 40px;
+            padding: 160px 40px 40px 40px;
         }
 
         .projects-grid {
@@ -171,6 +229,11 @@
             display: flex;
             flex-direction: column;
             cursor: pointer;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .project-card.hidden {
+            display: none;
         }
 
         .project-image {
@@ -263,6 +326,10 @@
             .tiktok-username {
                 font-size: 11px;
             }
+
+            .search-container {
+                top: 70px;
+            }
         }
 
         /* Mobile */
@@ -273,7 +340,7 @@
             }
 
             .projects-section {
-                padding: 100px 20px 40px 20px;
+                padding: 150px 20px 40px 20px;
             }
 
             .header {
@@ -317,6 +384,26 @@
             .whatsapp-icon {
                 width: 20px;
                 height: 20px;
+            }
+
+            .search-container {
+                top: 65px;
+                width: 85%;
+            }
+
+            .search-bar {
+                padding: 12px 45px 12px 16px;
+                font-size: 14px;
+            }
+
+            .search-bar::placeholder {
+                font-size: 14px;
+            }
+
+            .search-icon {
+                width: 18px;
+                height: 18px;
+                right: 14px;
             }
         }
     </style>
@@ -434,6 +521,77 @@
             window.open('https://wa.me/6289684219904', '_blank');
         }
 
+        // ==================== FITUR SEARCH ====================
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const projectCards = document.querySelectorAll('.project-card');
+            const noResults = document.getElementById('noResults');
+            const projectsGrid = document.querySelector('.projects-grid');
+
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
+                let visibleCount = 0;
+
+                // Array untuk menyimpan kartu yang match
+                const matchStart = []; // Yang judulnya diawali searchTerm
+                const matchContain = []; // Yang judulnya mengandung searchTerm (tapi bukan di awal)
+                const noMatch = []; // Yang gak match
+
+                projectCards.forEach(function(card) {
+                    const title = card.querySelector('.project-title').textContent.toLowerCase();
+                    
+                    if (searchTerm === '') {
+                        // Kalau search kosong, tampilkan semua dengan urutan awal
+                        card.classList.remove('hidden');
+                        visibleCount++;
+                    } else if (title.startsWith(searchTerm)) {
+                        // Match di awal judul
+                        matchStart.push(card);
+                        visibleCount++;
+                    } else if (title.includes(searchTerm)) {
+                        // Match di tengah/belakang
+                        matchContain.push(card);
+                        visibleCount++;
+                    } else {
+                        // Gak match
+                        noMatch.push(card);
+                    }
+                });
+
+                if (searchTerm === '') {
+                    // Reset ke urutan awal
+                    projectCards.forEach(function(card) {
+                        projectsGrid.appendChild(card);
+                    });
+                    noResults.classList.remove('show');
+                } else {
+                    // Sembunyikan yang gak match
+                    noMatch.forEach(function(card) {
+                        card.classList.add('hidden');
+                    });
+
+                    // Tampilkan yang match dengan urutan: diawali dulu, baru yang mengandung
+                    matchStart.forEach(function(card) {
+                        card.classList.remove('hidden');
+                        projectsGrid.appendChild(card);
+                    });
+
+                    matchContain.forEach(function(card) {
+                        card.classList.remove('hidden');
+                        projectsGrid.appendChild(card);
+                    });
+
+                    // Tampilkan no results jika gak ada yang match
+                    if (visibleCount === 0) {
+                        noResults.classList.add('show');
+                    } else {
+                        noResults.classList.remove('show');
+                    }
+                }
+            });
+        });
+        // ==================== AKHIR FITUR SEARCH ====================
+
         // Double-tap 'c' untuk scroll linear pelan sampai bawah
 let lastTapTime = 0;
 
@@ -485,13 +643,22 @@ function startSmoothScroll() {
         </div>
     </div>
 
+    <!-- ==================== SEARCH BAR ==================== -->
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-bar" placeholder="Search pro.." autocomplete="off">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+        </svg>
+    </div>
+    <!-- ==================== AKHIR SEARCH BAR ==================== -->
+
     <div class="projects-section">
         <div class="projects-grid">
 
             <!-- ============================================ -->
             <!-- PROJECT 1 - UBAH JUDUL, DESKRIPSI, TANGGAL, DAN LINK DISINI -->
             <!-- ============================================ -->
-             <div class="project-card">
+            <div class="project-card">
                 <div class="project-image">
                     <img src="arsip/ayosembuh/ayosembuh.webp" alt="Project 1">
                 </div>
@@ -709,9 +876,11 @@ function startSmoothScroll() {
             </div>
 
             <!-- ============================================ -->
-            <!-- PROJECT 11-100 - FORMAT SAMA, TINGGAL COPY PASTE -->
+            <!-- NO RESULTS MESSAGE -->
             <!-- ============================================ -->
-            <!-- Setiap project menggunakan src="sampul.webp" untuk gambar 16:9 -->
+            <div class="no-results" id="noResults">
+                Project tidak ditemukan
+            </div>
 
         </div>
     </div>
