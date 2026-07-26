@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Arsip Media | Gerbang Digital Menuju Pengetahuan</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+  
+  <!-- ==================== KEAMANAN TAMBAHAN: BLOKIR CTRL+U DAN VIEW CODE ==================== -->
+  <script>
+    // 1. Blokir Klik Kanan (Context Menu)
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      return false;
+    });
+
+    // 2. Blokir Kombinasi Shortcut Keyboard
+    document.onkeydown = function(e) {
+      // Blokir CTRL+U (View Source)
+      if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+        return false;
+      }
+      // Blokir CTRL+SHIFT+I (Developer Tools / Inspect Element)
+      if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+        e.preventDefault();
+        return false;
+      }
+      // Blokir CTRL+SHIFT+J (Console)
+      if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+        e.preventDefault();
+        return false;
+      }
+      // Blokir CTRL+SHIFT+C (Inspect Element Mode)
+      if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+        e.preventDefault();
+        return false;
+      }
+      // Blokir F12 (Developer Tools)
+      if (e.key === 'F12') {
+        e.preventDefault();
+        return false;
+      }
+      // Blokir CTRL+S (Save Page)
+      if (e.ctrlKey && e.key === 's') {
+        e.preventDefault();
+        return false;
+      }
+    };
+
+    // 3. Peringatan Jika Console Dibuka (Deteksi DevTools)
+    (function() {
+      const element = new Image();
+      Object.defineProperty(element, 'id', {
+        get: function() {
+          // Deteksi console terbuka (passive)
+        }
+      });
+      console.log(element);
+    })();
+  </script>
+  <!-- ==================== AKHIR KEAMANAN TAMBAHAN ==================== -->
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "surface-bright": "#f7f9fb",
+                  "surface-container": "#eceef0",
+                  "surface-container-lowest": "#ffffff",
+                  "surface-container-highest": "#e0e3e5",
+                  "on-primary-fixed-variant": "#3c475a",
+                  "inverse-on-surface": "#eff1f3",
+                  "primary-fixed": "#d8e3fb",
+                  "surface-variant": "#e0e3e5",
+                  "on-tertiary-fixed-variant": "#004395",
+                  "primary-container": "#1e293b",
+                  "tertiary-fixed-dim": "#adc6ff",
+                  "on-error-container": "#93000a",
+                  "error-container": "#ffdad6",
+                  "tertiary": "#001334",
+                  "on-tertiary-fixed": "#001a42",
+                  "secondary-container": "#86f2e4",
+                  "inverse-primary": "#bcc7de",
+                  "on-secondary-fixed": "#00201d",
+                  "secondary-fixed": "#89f5e7",
+                  "background": "#f7f9fb",
+                  "on-surface": "#191c1e",
+                  "on-surface-variant": "#45474c",
+                  "on-secondary": "#ffffff",
+                  "outline-variant": "#c5c6cd",
+                  "secondary": "#006a61",
+                  "primary": "#091426",
+                  "on-error": "#ffffff",
+                  "primary-fixed-dim": "#bcc7de",
+                  "outline": "#75777d",
+                  "on-secondary-fixed-variant": "#005049",
+                  "on-primary-container": "#8590a6",
+                  "on-secondary-container": "#006f66",
+                  "surface-dim": "#d8dadc",
+                  "on-tertiary-container": "#4c8dff",
+                  "on-background": "#191c1e",
+                  "surface-container-low": "#f2f4f6",
+                  "on-primary-fixed": "#111c2d",
+                  "tertiary-container": "#00275b",
+                  "on-primary": "#ffffff",
+                  "surface-tint": "#545f73",
+                  "error": "#ba1a1a",
+                  "tertiary-fixed": "#d8e2ff",
+                  "surface": "#f7f9fb",
+                  "secondary-fixed-dim": "#6bd8cb",
+                  "inverse-surface": "#2d3133",
+                  "on-tertiary": "#ffffff",
+                  "surface-container-high": "#e6e8ea"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "md": "24px",
+                  "base": "8px",
+                  "lg": "48px",
+                  "xs": "4px",
+                  "sm": "12px",
+                  "xl": "80px",
+                  "container-max": "1280px",
+                  "gutter": "24px"
+          },
+          "fontFamily": {
+                  "label-md": ["Inter"],
+                  "headline-lg": ["Plus Jakarta Sans"],
+                  "caption": ["Inter"],
+                  "display-lg": ["Plus Jakarta Sans"],
+                  "body-lg": ["Inter"],
+                  "headline-xl": ["Plus Jakarta Sans"],
+                  "body-md": ["Inter"],
+                  "headline-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+                  "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                  "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                  "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                  "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                  "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                  "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                  "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                  "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+    .scroll-hide::-webkit-scrollbar {
+        display: none;
+    }
+    .scroll-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+
+<!-- 1. Navigation (TopNavBar) -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-primary/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+  <div class="max-w-container-max mx-auto flex justify-between items-center h-20 px-md md:px-xl">
+    <div class="text-headline-md font-headline-md font-bold text-primary dark:text-surface-bright tracking-tight">Arsip Media</div>
+    <div class="hidden md:flex gap-md items-center">
+      <a class="text-secondary dark:text-secondary-fixed font-bold border-b-2 border-secondary py-1 text-label-md" href="#">Collections</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-surface-bright transition-colors text-label-md" href="#">Categories</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-surface-bright transition-colors text-label-md" href="#">Pricing</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-surface-bright transition-colors text-label-md" href="#">Curator</a>
+      <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-surface-bright transition-colors text-label-md" href="#">FAQ</a>
+    </div>
+    <div class="flex items-center gap-md">
+      <button class="hidden md:block px-md py-sm bg-primary text-on-primary rounded-full font-label-md hover:bg-primary-container transition-all">Sign In</button>
+      <button class="md:hidden text-primary"><span class="material-symbols-outlined">menu</span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- 2. Hero Section -->
+<header class="relative pt-32 pb-xl overflow-hidden">
+  <div class="max-w-container-max mx-auto px-md md:px-xl flex flex-col lg:flex-row items-center gap-xl">
+    <div class="flex-1 space-y-md text-center lg:text-left">
+      <h1 class="text-display-lg font-display-lg text-primary leading-tight">
+        Gerbang Digital Menuju Pengetahuan <span class="text-secondary">Tanpa Batas</span>
+      </h1>
+      <p class="text-body-lg text-on-surface-variant max-w-xl mx-auto lg:mx-0">
+        Akses jutaan koleksi literasi, rekaman sejarah, dan karya seni digital terbaik dari seluruh dunia dalam satu platform terintegrasi.
+      </p>
+      <div class="relative max-w-2xl mx-auto lg:mx-0 group">
+        <div class="absolute inset-y-0 left-md flex items-center pointer-events-none">
+          <span class="material-symbols-outlined text-outline">search</span>
+        </div>
+        <input class="w-full pl-xl pr-32 py-md rounded-full border-none shadow-xl focus:ring-2 focus:ring-secondary/20 bg-white text-body-md" placeholder="Cari buku, audio, atau video..." type="text"/>
+        <button class="absolute right-xs top-xs bottom-xs px-lg bg-gradient-to-r from-[#0D9488] to-[#0F766E] text-white rounded-full font-label-md">Cari</button>
+      </div>
+    </div>
+    <div class="flex-1 relative w-full aspect-square lg:aspect-auto h-96 md:h-[500px]">
+      <div class="absolute inset-0 bg-secondary/10 rounded-[40px] rotate-3 animate-pulse"></div>
+      <img class="w-full h-full object-cover rounded-[40px] shadow-2xl relative z-10 -rotate-3 transition-transform hover:rotate-0 duration-500" data-alt="A sophisticated 3D isometric illustration of a futuristic digital archive room. Glowing holographic books and data streams float in a midnight blue space with teal light streaks. The style is ultra-modern, clean, and highly detailed, representing an infinite library of the future with a corporate glassmorphism aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO6vmOO0vsT8Tt_gU56woJTOn-TJWyfW9y0d-v4C3lpaCFYt8zDNnX6L9lKCjjDZrdPAyugOxM3SrR85sjaWB9Y_TgIYZgexzQrZWNpuoSqYelmhRrBL8VBtHvCy0FXOxXffh9QrvYq-VwN70HD2z66GlXeZ0UBnvis2k1EMYk3TGLlg2Q6zVqz782CsdGRWCqQ1Fyuwk2swvKGcO2EXTgz0LHiuDWaY9_8Nqm7V1MkhbsUgRHjYkU54LsDW3O-IOfpCP_pwZ_wtg"/>
+    </div>
+  </div>
+</header>
+
+<!-- 3. Stats Bar -->
+<section class="bg-primary py-lg">
+  <div class="max-w-container-max mx-auto px-md md:px-xl">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-md text-center">
+      <div class="space-y-xs">
+        <div class="text-headline-xl text-secondary-fixed font-headline-xl">1.2M+</div>
+        <div class="text-label-md text-on-primary/60">Buku Digital</div>
+      </div>
+      <div class="space-y-xs">
+        <div class="text-headline-xl text-secondary-fixed font-headline-xl">500k+</div>
+        <div class="text-label-md text-on-primary/60">Audio</div>
+      </div>
+      <div class="space-y-xs">
+        <div class="text-headline-xl text-secondary-fixed font-headline-xl">200k+</div>
+        <div class="text-label-md text-on-primary/60">Video</div>
+      </div>
+      <div class="space-y-xs">
+        <div class="text-headline-xl text-secondary-fixed font-headline-xl">50k+</div>
+        <div class="text-label-md text-on-primary/60">Pengguna Aktif</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Featured Collections -->
+<section class="py-xl">
+  <div class="max-w-container-max mx-auto px-md md:px-xl">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-lg gap-md">
+      <div class="space-y-xs">
+        <h2 class="text-headline-lg font-headline-lg text-primary">Koleksi Unggulan</h2>
+        <p class="text-body-md text-on-surface-variant">Terpilih untuk memperluas cakrawala berpikir Anda.</p>
+      </div>
+      <a class="text-secondary font-label-md flex items-center gap-xs group" href="#">
+        Lihat Semua <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+      </a>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-md">
+      <!-- Card 1 -->
+      <div class="group cursor-pointer">
+        <div class="relative overflow-hidden rounded-xl aspect-[3/4] mb-md shadow-lg">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High-quality book cover for a book titled 'Arsitektur Masa Depan' featuring minimalist teal geometric shapes on a dark navy background. Professional graphic design style, matte finish, elegant typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZKs7c-C_9G2xR2TIsBkYEOKMVgKLVxdu0nsShtowMZYkZ6duunSS1qkNnw6BBDxVYSTUzbRmK0cvcQ4NotQvllKxLlaMXa-b5iUcpuhlAC_mn8bQ_3tTUmZ46BuCTlSLKTPHBV2ey8XT1_TvlVTpI0--rycZSNclxXGNQRusNYDx4cf1jAvYP7Dp4X3SIvFilLanC-pn8xZB9SE5lSKBNYV1NyyOuFfBXdGraxCzxn93C-4FP3h9vbrSZnTkXEzp3aPCU1oAFDUA"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-md">
+            <span class="text-white text-label-md font-label-md">Buka Koleksi</span>
+          </div>
+        </div>
+        <span class="bg-secondary/10 text-secondary px-sm py-1 rounded-full text-caption mb-base inline-block">Arsitektur</span>
+        <h3 class="text-headline-md font-headline-md text-primary truncate">Arsitektur Masa Depan</h3>
+        <p class="text-body-md text-on-surface-variant">Prof. Dr. Ir. Hadiansyah</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="group cursor-pointer">
+        <div class="relative overflow-hidden rounded-xl aspect-[3/4] mb-md shadow-lg">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High-quality book cover titled 'Sejarah Nusantara' showing a stylized gold pattern on a deep forest green background. Elegant, academic look with clean serif fonts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4O2jm5rhIGUHEKndJ5LjPaAqY7AeUDqaS5JjIxXAV5IW7d0g01AwKvXUc9KV054n-BZG-kaZmx5zfkuSYwq6OTFIoOK_JVY2ecelI1yz78_HIufnIDRZClM9lTChEj9dkNVhAyBWZn2mA4ob6W7YugV3zZ3h92U8keZBoabR2MrTBarOhtlbCtHFNSwAo9ZjSYG9tYisEBCrYFstorTzI0LFnq5ZZuamBNRc3t_g4ZoFjHSQK0jZnfAa-1eRd_puyTqqGmbhghJM"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-md">
+            <span class="text-white text-label-md font-label-md">Buka Koleksi</span>
+          </div>
+        </div>
+        <span class="bg-secondary/10 text-secondary px-sm py-1 rounded-full text-caption mb-base inline-block">Sejarah</span>
+        <h3 class="text-headline-md font-headline-md text-primary truncate">Sejarah Nusantara</h3>
+        <p class="text-body-md text-on-surface-variant">Lembaga Budaya Nasional</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="group cursor-pointer">
+        <div class="relative overflow-hidden rounded-xl aspect-[3/4] mb-md shadow-lg">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern book cover for 'Algoritma Kehidupan' featuring abstract blue data visualizations and DNA structures. Science-focused aesthetic, clean lines, futuristic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHjXbHoaPZHtRnJNB4e8T-EnOqPgUUzb14SIDtbu_LKTJN9FlZ-mt3WOeBzjoGyiWBAIj1qXi-GWIbcKsUcXjWW7uvNKi9IwaOlNSj14Wpd5654GUpo-P0Q_UJyS0QXD0fF0Bu2puMI78_WvQ8FSyCVPlzPl0trk-RX-AqEdYqFY0mufdtWFc1BjGrEdQGxcfMKwrHwnPLsah_VuJWcMvhgoTrq73z8UeyK0ss37Q0RWOQSDSBYIX4z9QoAZZ7aKSIx_r8-g07vqw"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-md">
+            <span class="text-white text-label-md font-label-md">Buka Koleksi</span>
+          </div>
+        </div>
+        <span class="bg-secondary/10 text-secondary px-sm py-1 rounded-full text-caption mb-base inline-block">Sains</span>
+        <h3 class="text-headline-md font-headline-md text-primary truncate">Algoritma Kehidupan</h3>
+        <p class="text-body-md text-on-surface-variant">Dian Sastro, Ph.D.</p>
+      </div>
+      <!-- Card 4 -->
+      <div class="group cursor-pointer">
+        <div class="relative overflow-hidden rounded-xl aspect-[3/4] mb-md shadow-lg">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A stunning book cover for 'Antologi Puisi Modern' with soft watercolor texture in shades of indigo and teal. Artistic, poetic feel, elegant handwritten font accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE4nYOv6JSdFPUlZMQ9i9bVlRAiqjzPFYwpIcSJCowsNvorX9ODYwrWUI7lkOGGxO9q2le7VPIPWR6_ZyNQ6FP5joIK1-Xv-DJ5vpiBcFII78SH0cQqSrMMSW8sIt4glKkF67HTl132tTIP9d3-0-D9lLg9OMTpU_VJS8bpMG-ifVGqdn8cO7L3NpM-cAML2CvOYEbHi1NoUcO5LJvVT2W36kVKZE4fK36PFvzACoiUDuwNqk4G6YBu7vfLjjGs_vKyfzl43aJ2KU"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-md">
+            <span class="text-white text-label-md font-label-md">Buka Koleksi</span>
+          </div>
+        </div>
+        <span class="bg-secondary/10 text-secondary px-sm py-1 rounded-full text-caption mb-base inline-block">Sastra</span>
+        <h3 class="text-headline-md font-headline-md text-primary truncate">Antologi Puisi Modern</h3>
+        <p class="text-body-md text-on-surface-variant">Berbagai Penulis</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Categories Grid -->
+<section class="py-xl bg-surface-container-low">
+  <div class="max-w-container-max mx-auto px-md md:px-xl">
+    <h2 class="text-headline-lg font-headline-lg text-primary text-center mb-xl">Kategori Pengetahuan</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-md">
+      <div class="bg-white p-lg rounded-2xl flex flex-col items-center gap-sm hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer group">
+        <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-secondary group-hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-[32px]">history</span>
+        </div>
+        <span class="font-label-md text-primary">Sejarah</span>
+      </div>
+      <div class="bg-white p-lg rounded-2xl flex flex-col items-center gap-sm hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer group">
+        <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-secondary group-hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-[32px]">science</span>
+        </div>
+        <span class="font-label-md text-primary">Sains</span>
+      </div>
+      <div class="bg-white p-lg rounded-2xl flex flex-col items-center gap-sm hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer group">
+        <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-secondary group-hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-[32px]">palette</span>
+        </div>
+        <span class="font-label-md text-primary">Seni</span>
+      </div>
+      <div class="bg-white p-lg rounded-2xl flex flex-col items-center gap-sm hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer group">
+        <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-secondary group-hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-[32px]">menu_book</span>
+        </div>
+        <span class="font-label-md text-primary">Fiksi</span>
+      </div>
+      <div class="bg-white p-lg rounded-2xl flex flex-col items-center gap-sm hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer group">
+        <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-secondary group-hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-[32px]">memory</span>
+        </div>
+        <span class="font-label-md text-primary">Teknologi</span>
+      </div>
+      <div class="bg-white p-lg rounded-2xl flex flex-col items-center gap-sm hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer group">
+        <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-secondary group-hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-[32px]">psychology</span>
+        </div>
+        <span class="font-label-md text-primary">Filsafat</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Process Section -->
+<section class="py-xl overflow-hidden">
+  <div class="max-w-container-max mx-auto px-md md:px-xl">
+    <div class="text-center mb-xl">
+      <h2 class="text-headline-lg font-headline-lg text-primary">3 Langkah Mudah Menjelajah</h2>
+      <p class="text-body-md text-on-surface-variant">Memulai perjalanan intelektual Anda tidak pernah semudah ini.</p>
+    </div>
+    <div class="relative flex flex-col md:flex-row gap-xl items-center justify-between">
+      <div class="absolute top-1/2 left-0 w-full h-1 bg-surface-container hidden md:block -z-10"></div>
+      <div class="flex-1 text-center space-y-md">
+        <div class="w-20 h-20 rounded-full bg-white shadow-lg border-4 border-surface-container flex items-center justify-center mx-auto relative z-10 text-secondary">
+          <span class="material-symbols-outlined text-[40px]">search</span>
+        </div>
+        <h3 class="text-headline-md font-headline-md text-primary">Cari</h3>
+        <p class="text-body-md text-on-surface-variant">Gunakan filter pintar untuk menemukan konten yang Anda butuhkan.</p>
+      </div>
+      <div class="flex-1 text-center space-y-md">
+        <div class="w-20 h-20 rounded-full bg-white shadow-lg border-4 border-surface-container flex items-center justify-center mx-auto relative z-10 text-secondary">
+          <span class="material-symbols-outlined text-[40px]">bookmark</span>
+        </div>
+        <h3 class="text-headline-md font-headline-md text-primary">Pinjam</h3>
+        <p class="text-body-md text-on-surface-variant">Simpan ke perpustakaan pribadi Anda secara instan.</p>
+      </div>
+      <div class="flex-1 text-center space-y-md">
+        <div class="w-20 h-20 rounded-full bg-white shadow-lg border-4 border-surface-container flex items-center justify-center mx-auto relative z-10 text-secondary">
+          <span class="material-symbols-outlined text-[40px]">school</span>
+        </div>
+        <h3 class="text-headline-md font-headline-md text-primary">Pelajari</h3>
+        <p class="text-body-md text-on-surface-variant">Baca, dengar, atau tonton kapan saja dan di mana saja.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Trending Media -->
+<section class="py-xl bg-primary text-on-primary overflow-hidden">
+  <div class="max-w-container-max mx-auto px-md md:px-xl">
+    <h2 class="text-headline-lg font-headline-lg mb-lg">Sedang Tren Pekan Ini</h2>
+    <div class="flex gap-md overflow-x-auto pb-lg scroll-hide">
+      <div class="min-w-[300px] bg-white/5 rounded-2xl p-md border border-white/10 group cursor-pointer hover:bg-white/10 transition-all">
+        <div class="aspect-video mb-md overflow-hidden rounded-lg">
+          <img class="w-full h-full object-cover" data-alt="A cinematic video thumbnail showing a drone shot over a misty mountain range at sunrise. Professional nature documentary style with atmospheric teal and gold lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARRNDeZULPBdl_m_RobLsTQdMkoliTdPYTNqntTRDQNFVp_6ZDUcbVJhvQzqCRI-V2V8OY30A9RfEdfpoiJkjy6cOfWYpIORBRr37G7iDQ-__zCPA0wf_OlO2C8ovm5P1Su0FC4XFLu36ywoVsSOcfEQxJfdE7rW0lz7qHushMm05iUleHXFelnOHd5_5SDJglpr16Xg7Sr99p4XD-gEtkxd2oMIK_ijfWF7O1Gi_Bb9HFPOH-6aQzBk6J2SRIL21gYLioaIOlLhE"/>
+        </div>
+        <div class="flex justify-between items-start mb-xs">
+          <h4 class="font-headline-md text-white">Ekspedisi Gletser</h4>
+          <span class="material-symbols-outlined text-secondary-fixed">play_circle</span>
+        </div>
+        <p class="text-caption text-on-primary/60">Video Dokumenter • 45 Menit</p>
+      </div>
+      <div class="min-w-[300px] bg-white/5 rounded-2xl p-md border border-white/10 group cursor-pointer hover:bg-white/10 transition-all">
+        <div class="aspect-video mb-md overflow-hidden rounded-lg">
+          <img class="w-full h-full object-cover" data-alt="Podcast cover art for 'Dialog Masa Kini' featuring a high-end microphone in a dark studio setting with neon teal accents. Modern, crisp design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGzyP2WVgKFJdTAUWLxqWZErrSnxDDycbASZDbWHovpotRNaQ3NPLy9sBgNPSMDjzU8FdNm5ReD1Owg7g2UxkrvFc9S2CznTHjA3qlsGx_NlOcArfv4ilV9_DzM0Fh74ZhJn_1vgvRWB2uTgjMdBQ7SrogLXNuwAwr7xFlC_OjCNPlk5greerJbumJymOJ4J7HnlQmf-vnlMk3VA8z9ttLb9pCT45m5n7i1BQbE6pacmdmuwyJqFNtZCDms14Ex11AsMo1nRddy4o"/>
+        </div>
+        <div class="flex justify-between items-start mb-xs">
+          <h4 class="font-headline-md text-white">Dialog Masa Kini</h4>
+          <span class="material-symbols-outlined text-secondary-fixed">mic</span>
+        </div>
+        <p class="text-caption text-on-primary/60">Podcast Episode 42 • 30 Menit</p>
+      </div>
+      <div class="min-w-[300px] bg-white/5 rounded-2xl p-md border border-white/10 group cursor-pointer hover:bg-white/10 transition-all">
+        <div class="aspect-video mb-md overflow-hidden rounded-lg">
+          <img class="w-full h-full object-cover" data-alt="A collection of vintage maps and compasses displayed on a rustic wooden table. Warm lighting, antique library aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC88_fQ1dbR9KxH7VrinGb85bQRjIzhUKDcmvNyRq1i5iJMlPhAqUziY8wHAvRnFBDAA8zEeE-LdZpeYb9RJ5DkhadTvdgk1zOpBG46WYR9Jw2JwjZ51L6o261EGO7XZGQYvs2nCGitqOiG9dqY09-MH9ckLedQlg163a1m7gG3sD5VSWJSZOwavFCC-7EIwcLUkQLyqP3Q8gLJOdgZq9r45zavSUMvawqt7owlo5kIChOfANSbecQyjhXqm9lj5g73WmV8FbWjhNM"/>
+        </div>
+        <div class="flex justify-between items-start mb-xs">
+          <h4 class="font-headline-md text-white">Kartografi Kuno</h4>
+          <span class="material-symbols-outlined text-secondary-fixed">photo_library</span>
+        </div>
+        <p class="text-caption text-on-primary/60">Galeri Digital • 12 Koleksi</p>
+      </div>
+      <div class="min-w-[300px] bg-white/5 rounded-2xl p-md border border-white/10 group cursor-pointer hover:bg-white/10 transition-all">
+        <div class="aspect-video mb-md overflow-hidden rounded-lg">
+          <img class="w-full h-full object-cover" data-alt="An artistic shot of a musician playing a cello in a dimly lit, modern concert hall. Emotional, high-contrast lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcopCXbWPNW0rDGXQgDWVxcOJs0uJ17cmlIxhhUf3l3pnckhnynVPdfbkhunpL08sdBeNmcIYz4HJz-uySw27EXQB89s6iJwnpazST4uJU9zcH9Id085HpGOmSXOD63C8Hu5w1TI-kohsWv8pHvMg-czdEXOeB3xfZ6faXEgyWG_pLviZ1OcEwhL4nlD3M-tji7g6n6GOLN2oSzihfbnHq-QGL8XBRZqhK43kSZb1aePI5RvBSjDIuSTI8wbe2nWifcD-O6K67I8w"/>
+        </div>
+        <div class="flex justify-between items-start mb-xs">
+          <h4 class="font-headline-md text-white">Simfoni Malam</h4>
+          <span class="material-symbols-outlined text-secondary-fixed">music_note</span>
+        </div>
+        <p class="text-caption text-on-primary/60">Audio Hi-Fi • 120 Menit</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Pricing/Access -->
+<section class="py-xl">
+  <div class="max-w-container-max mx-auto px-md md:px-xl">
+    <div class="text-center mb-xl">
+      <h2 class="text-headline-lg font-headline-lg text-primary">Pilih Akses Anda</h2>
+      <p class="text-body-md text-on-surface-variant">Dukungan Anda membantu kami melestarikan pengetahuan.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+      <!-- Free Tier -->
+      <div class="p-lg rounded-2xl border border-outline-variant bg-white flex flex-col space-y-md hover:shadow-xl transition-shadow">
+        <div class="text-label-md text-on-surface-variant uppercase tracking-wider">Pelajar</div>
+        <div class="text-headline-xl font-headline-xl text-primary">Gratis</div>
+        <p class="text-body-md text-on-surface-variant">Untuk eksplorasi dasar dan pembelajaran harian.</p>
+        <ul class="space-y-sm flex-grow">
+          <li class="flex items-center gap-sm text-body-md"><span class="material-symbols-outlined text-secondary">check</span> Akses 100k+ Buku Umum</li>
+          <li class="flex items-center gap-sm text-body-md text-outline"><span class="material-symbols-outlined">close</span> Koleksi Video Premium</li>
+          <li class="flex items-center gap-sm text-body-md text-outline"><span class="material-symbols-outlined">close</span> Download Offline</li>
+        </ul>
+        <button class="w-full py-md rounded-lg border border-primary text-primary font-label-md hover:bg-surface-container transition-colors">Daftar Sekarang</button>
+      </div>
+      <!-- Pro Tier -->
+      <div class="p-lg rounded-2xl bg-primary text-on-primary flex flex-col space-y-md shadow-2xl relative overflow-hidden transform scale-105">
+        <div class="absolute top-4 right-4 bg-secondary text-on-secondary px-sm py-xs rounded-full text-caption">Terpopuler</div>
+        <div class="text-label-md text-on-primary/60 uppercase tracking-wider">Kurator</div>
+        <div class="flex items-baseline gap-xs">
+          <span class="text-headline-xl font-headline-xl">Rp 99k</span>
+          <span class="text-body-md text-on-primary/60">/ bulan</span>
+        </div>
+        <p class="text-body-md text-on-primary/80">Akses tak terbatas untuk para peneliti dan kolektor digital.</p>
+        <ul class="space-y-sm flex-grow">
+          <li class="flex items-center gap-sm text-body-md"><span class="material-symbols-outlined text-secondary-fixed">check</span> Semua Koleksi (1.2M+)</li>
+          <li class="flex items-center gap-sm text-body-md"><span class="material-symbols-outlined text-secondary-fixed">check</span> Video 4K & Audio Hi-Fi</li>
+          <li class="flex items-center gap-sm text-body-md"><span class="material-symbols-outlined text-secondary-fixed">check</span> 10 Perangkat Sekaligus</li>
+        </ul>
+        <button class="w-full py-md rounded-lg bg-secondary text-on-secondary font-label-md hover:opacity-90 transition-opacity">Berlangganan Pro</button>
+      </div>
+      <!-- Library Partner -->
+      <div class="p-lg rounded-2xl border border-outline-variant bg-white flex flex-col space-y-md hover:shadow-xl transition-shadow">
+        <div class="text-label-md text-on-surface-variant uppercase tracking-wider">Institusi</div>
+        <div class="text-headline-xl font-headline-xl text-primary">Custom</div>
+        <p class="text-body-md text-on-surface-variant">Solusi untuk perpustakaan sekolah dan universitas.</p>
+        <ul class="space-y-sm flex-grow">
+          <li class="flex items-center gap-sm text-body-md"><span class="material-symbols-outlined text-secondary">check</span> Dashboard Admin Khusus</li>
+          <li class="flex items-center gap-sm text-body-md"><span class="material-symbols-outlined text-secondary">check</span> Integrasi API</li>
+          <li class="flex items-center gap-sm text-body-md"><span class="material-symbols-outlined text-secondary">check</span> Lisensi Edukasi Masif</li>
+        </ul>
+        <button class="w-full py-md rounded-lg border border-primary text-primary font-label-md hover:bg-surface-container transition-colors">Hubungi Kami</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. Mobile App -->
+<section class="py-xl bg-secondary/5">
+  <div class="max-w-container-max mx-auto px-md md:px-xl">
+    <div class="flex flex-col md:flex-row items-center gap-xl">
+      <div class="flex-1 space-y-md">
+        <h2 class="text-display-lg font-display-lg text-primary">Arsip di Saku Anda</h2>
+        <p class="text-body-lg text-on-surface-variant">Baca offline, dengarkan podcast di perjalanan, dan simpan catatan penting langsung dari aplikasi mobile Arsip Media.</p>
+        <div class="flex gap-md pt-md">
+          <button class="flex items-center gap-sm bg-primary text-on-primary px-lg py-md rounded-xl hover:bg-primary-container transition-colors">
+            <span class="material-symbols-outlined">play_arrow</span>
+            <div class="text-left">
+              <div class="text-caption leading-none">Get it on</div>
+              <div class="font-bold">Google Play</div>
+            </div>
+          </button>
+          <button class="flex items-center gap-sm bg-primary text-on-primary px-lg py-md rounded-xl hover:bg-primary-container transition-colors">
+            <span class="material-symbols-outlined">file_download</span>
+            <div class="text-left">
+              <div class="text-caption leading-none">Download on the</div>
+              <div class="font-bold">App Store</div>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div class="flex-1 relative">
+        <div class="w-64 md:w-80 mx-auto relative z-10">
+          <img class="w-full h-auto drop-shadow-2xl" data-alt="A modern smartphone mockup displaying the Arsip Media app interface. The app has a clean, dark-mode library theme with grid layouts of book covers and a sleek audio player. Teal and midnight blue color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIxL1SotcCfihubUkWgnmxMd15FVr7O5BBqW-SB9KG091_5eeN8neX_PQ54pcY_-w_D8sp9F2f-egTl8nLoDlQkntPKOw0gm3iVRbl4sqdQ_XXD5pE7ahviN7PavVjglYf1TCw5WvHVyL7VDcnsSDorXsqx9IokbirNbEVca-tb21JP-Lgx3aQ90x2VIchEx1FDgnYndjQ85r93Uf7BRNd0QISqCaX3oKPVsZBHPvelhcgA2zc4uzkc6lR6wIiU_VsImCJxjBnr5I"/>
+        </div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-secondary/10 blur-[100px] rounded-full -z-10"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Testimonials -->
+<section class="py-xl">
+  <div class="max-w-container-max mx-auto px-md md:px-xl">
+    <h2 class="text-headline-lg font-headline-lg text-primary text-center mb-xl">Apa Kata Mereka</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+      <div class="p-lg bg-surface-container-low rounded-2xl space-y-md border border-outline-variant/30">
+        <div class="flex gap-1 text-secondary">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+        </div>
+        <p class="text-body-md text-on-surface italic">"Sebagai peneliti sejarah, platform ini adalah tambang emas. Dokumen langka yang sulit ditemukan di fisik, tersedia dengan kualitas digital luar biasa di sini."</p>
+        <div class="flex items-center gap-md">
+          <img class="w-12 h-12 rounded-full object-cover" data-alt="Professional headshot of a middle-aged academic man with glasses, smiling warmly. Soft office background, high-key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd9VlRQDuK6DIrtO9C0DG5ypibf2Zr5fz8TUSLaNXXpSeCj-c6wA1K_YfZvKqrogvPVVX7K44qMd__gR0IPiWpsoep3vPZYUeQC8MXSRZ_d33wKGg22B5ycHL-ZEedL55TL7GVSNYLqQpJC9Cs-xG8ekUX8WGZljfrZul9CRnoqeQy7cdVIHV7Mp8utM7PflvSIt8zFxhV4UVM7mWD5mPNZRTwbszNSYXLdsqch-yupjSqDRFTJ-7kHNzGPEgZlD0rQTrkKAaBonk"/>
+          <div>
+            <div class="font-bold text-primary">Dr. Anton Wijaya</div>
+            <div class="text-caption text-on-surface-variant">Sejarawan Senior</div>
+          </div>
+        </div>
+      </div>
+      <div class="p-lg bg-surface-container-low rounded-2xl space-y-md border border-outline-variant/30">
+        <div class="flex gap-1 text-secondary">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+        </div>
+        <p class="text-body-md text-on-surface italic">"UI-nya sangat modern dan mudah digunakan. Mencari referensi untuk tugas kuliah jadi jauh lebih cepat dan akurat. Benar-benar perpustakaan masa depan."</p>
+        <div class="flex items-center gap-md">
+          <img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of a young female university student with a creative look, smiling. Bright outdoor natural lighting, blurry university campus background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCat6bIIkYutCQyZTGJefqCjzDnKQi3yXE1aOiZoYCxbPxLxl7_PWm2AYsM7g5fLJTHNMzEN28g35_U8VtM4ujg0BDPXL72EsWjciMbL9WOG4zhcdKc0DhuP0k--tb_fo7wZjaXaBUnMpt1k8JoDuQ1jdNdj9vxC2chlTJSHHL0eIHg8WMm0rEle44e80BKJyevjkYhDNA11v9tX38cUCgQPvxoaDO4vFJNlln8JwpS38IJgqHioq2YCva8BgZ3ZevzDJ4jlTNxyCs"/>
+          <div>
+            <div class="font-bold text-primary">Siska Amalia</div>
+            <div class="text-caption text-on-surface-variant">Mahasiswi Desain</div>
+          </div>
+        </div>
+      </div>
+      <div class="p-lg bg-surface-container-low rounded-2xl space-y-md border border-outline-variant/30">
+        <div class="flex gap-1 text-secondary">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+        </div>
+        <p class="text-body-md text-on-surface italic">"Koleksi audionya sangat membantu saya belajar di tengah kemacetan. Kualitas suaranya jernih dan narasinya sangat profesional."</p>
+        <div class="flex items-center gap-md">
+          <img class="w-12 h-12 rounded-full object-cover" data-alt="Close-up portrait of a young professional man in a suit, confident expression. Modern studio lighting, corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8ytsOKjAJgMX0iYNn2ocZvjWHt_PGjsgy3LU2SEaGfeYKbpw-3s8zanIjeyOkBq6hHL8_CtNP9g3ozQPXBis3seuiyakyPzFU-Q5WwTNLJrHSDBBkWE3wIS2ryPS-fhxecEEXYPPPtaxJsCmD_QM14SvygH7Ra7VITwXcj0MGmg4Vu6hwQs9BSQ1K1cK6bEg3QkanGtwdrltqP2h6Ak616Dc8WXSIcmITgCzsgQPlYf41S9vjqJOrEkLKQ8vQQD-RS2u_562Fowc"/>
+          <div>
+            <div class="font-bold text-primary">Budi Santoso</div>
+            <div class="text-caption text-on-surface-variant">Manajer IT</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. Trusted By -->
+<section class="py-lg border-y border-outline-variant/20 bg-white">
+  <div class="max-w-container-max mx-auto px-md md:px-xl">
+    <p class="text-center text-label-md text-outline uppercase mb-lg">Dipercaya Oleh Institusi Terkemuka</p>
+    <div class="flex flex-wrap justify-center items-center gap-xl grayscale opacity-50">
+      <div class="h-12 w-32 bg-slate-200 rounded flex items-center justify-center font-bold text-slate-400">UNI.ID</div>
+      <div class="h-12 w-32 bg-slate-200 rounded flex items-center justify-center font-bold text-slate-400">RISET.ORG</div>
+      <div class="h-12 w-32 bg-slate-200 rounded flex items-center justify-center font-bold text-slate-400">EDU.NET</div>
+      <div class="h-12 w-32 bg-slate-200 rounded flex items-center justify-center font-bold text-slate-400">LAB.HUB</div>
+      <div class="h-12 w-32 bg-slate-200 rounded flex items-center justify-center font-bold text-slate-400">TECH.INST</div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. News & Insights -->
+<section class="py-xl">
+  <div class="max-w-container-max mx-auto px-md md:px-xl">
+    <div class="flex justify-between items-end mb-lg">
+      <h2 class="text-headline-lg font-headline-lg text-primary">Warta & Inspirasi</h2>
+      <a class="text-secondary font-label-md" href="#">Lihat Blog</a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+      <article class="group cursor-pointer">
+        <div class="aspect-video overflow-hidden rounded-xl mb-md">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A digital visualization of a networking neural map in deep blue and teal. High-tech, data-driven look, perfect for an article about digital literacy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu7IKpj4Y_qH2_arNrFzVEWurzsc_xb-o4rc4EUWem0xyOO6mCJM_4LLxZPCbPNqtkZDALvFWf9705dN1IeGM0SvoDuVPBCMOrzazIDMay5Wu91AtCLcDgH0JobXfDHRYPi1RXZVMwTS5Q4m1EefgIaendMcJ0W5ilRIWXLyVoWBXzs4ZK7AjG3K_X4xcAPudJPi6-R0rgVky-t_XxIyhiE1z3lSHvpl9D8FnE80pzKIOUZ0Ta4PDzQhpM8cKImCAwCYoOLoY7ZCE"/>
+        </div>
+        <time class="text-caption text-on-surface-variant">12 Mei 2024</time>
+        <h3 class="text-headline-md font-headline-md text-primary group-hover:text-secondary transition-colors mt-xs">Literasi Digital di Era Kecerdasan Buatan</h3>
+        <p class="text-body-md text-on-surface-variant line-clamp-2 mt-sm">Bagaimana kita menyaring informasi valid di tengah gempuran konten generatif AI...</p>
+      </article>
+      <article class="group cursor-pointer">
+        <div class="aspect-video overflow-hidden rounded-xl mb-md">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A macro shot of a single old manuscript page with golden ink calligraphy under a magnifying glass. Dramatic lighting, texture-focused, historical aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv_lu1dPDBuYRzf4bkisajl2eQXBfc6WvzohUaCte1hadSgvTjCTlb4vpYG_wF3yU_P1LyiaQT_9P-LFjtx6CuHFYxOQypHNtk0-D1z3u1NDDglF0aeMMuf0C_g4zpdt8ZXreaNdqvo4CBYN2t_TrQ92rlWVS7rg9sw6liL1xHwrWH7mbbn2gWXNuq56p5W7HOcfkM2wMCYYb1-Fjr6jvBa5MkLMhL0vQ97lCdX9tx5YrSQqQG38PtD4lNRfaBvZQnI8_yraS-RPQ"/>
+        </div>
+        <time class="text-caption text-on-surface-variant">08 Mei 2024</time>
+        <h3 class="text-headline-md font-headline-md text-primary group-hover:text-secondary transition-colors mt-xs">Menelusuri Jejak Manuskrip Nusantara</h3>
+        <p class="text-body-md text-on-surface-variant line-clamp-2 mt-sm">Arsip Media memulai proyek digitalisasi besar-besaran untuk serat-serat kuno dari Jawa Timur...</p>
+      </article>
+      <article class="group cursor-pointer">
+        <div class="aspect-video overflow-hidden rounded-xl mb-md">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A clean, minimalist home library setup with a tablet on a wooden desk. Bright, airy lighting, Scandinavian interior design style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkPk07zKPmOyVD6BctWvaNFK9uD36YUEOT9hoKggNeCOhTs5CTTdhb-whO36vaeWXLqIWqn0vCVxc2Eje6IB9ph4f4feaYz98nxu6a1eCEuv0pW3rTTraYypz4D728fZS1mlfeudaY_ANfMGmAzZ5b1818hm299bFNTq1MZF-R55ItoJ8JSV6LzhOJtT60TFgWs7e8slLqjIC4gzesWSrmrHxq4VYaoSd7I6Kgg_C_MdshLkQzmzk8YN1JlIXSXv_t_UniKpdT7DE"/>
+        </div>
+        <time class="text-caption text-on-surface-variant">01 Mei 2024</time>
+        <h3 class="text-headline-md font-headline-md text-primary group-hover:text-secondary transition-colors mt-xs">Tips Membangun Perpustakaan Digital Pribadi</h3>
+        <p class="text-body-md text-on-surface-variant line-clamp-2 mt-sm">Kelola koleksi buku dan dokumen Anda agar tetap rapi dan mudah ditemukan kembali...</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 13. Curator's Choice -->
+<section class="py-xl">
+  <div class="max-w-container-max mx-auto px-md md:px-xl">
+    <div class="bg-primary-container rounded-[32px] overflow-hidden flex flex-col lg:flex-row items-center">
+      <div class="flex-1 p-lg md:p-xl space-y-md">
+        <span class="text-secondary-fixed text-label-md uppercase tracking-widest font-bold">Pilihan Kurator</span>
+        <h2 class="text-display-lg font-display-lg text-white">Antologi Fotografi Jurnalistik 1945</h2>
+        <p class="text-body-lg text-on-primary-container">Koleksi langka yang mengabadikan momen-momen krusial di balik layar perjuangan kemerdekaan, dipulihkan secara digital dengan teknologi AI terbaru untuk detail yang memukau.</p>
+        <button class="px-xl py-md bg-secondary text-on-secondary rounded-full font-label-md hover:scale-105 transition-transform">Eksplorasi Koleksi</button>
+      </div>
+      <div class="flex-1 w-full h-96 lg:h-[600px] relative">
+        <img class="w-full h-full object-cover" data-alt="A dramatic black and white historical photograph showing a group of independence fighters in a candid moment. High contrast, authentic grain texture, professionally restored look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnOwmKTh3paDyhxf6-KDaLlxYSu0r0WH856RZrZYRF9j7Jo2A9ljDva8dd4pa80iPDY9NaWSVjtYBk_RMrFWnFPUJpfSrKDevgd_b-nHHwn9Fyix2Rb9A4Q0fupJGFqCM36PCsMZQTLLLTKinj_0xmVxZ3CjaX4yjJefkgK38VQeUVyI7glp2WQqTS251GexzKtXvAq0Afnnr_hJD8rrjF8033bJoihjc43OWNEG-ZYGIG-msJjvv_TVVFl2vh56LtTHBRbw4f828"/>
+        <div class="absolute inset-0 bg-gradient-to-r from-primary-container lg:via-transparent to-transparent"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 14. FAQ -->
+<section class="py-xl bg-surface">
+  <div class="max-w-container-max mx-auto px-md md:px-xl max-w-3xl">
+    <h2 class="text-headline-lg font-headline-lg text-primary text-center mb-xl">Pertanyaan Umum</h2>
+    <div class="space-y-md">
+      <div class="border-b border-outline-variant pb-md">
+        <button class="w-full flex justify-between items-center text-left group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.arrow').classList.toggle('rotate-180')">
+          <span class="text-headline-md font-headline-md text-primary">Apakah koleksi di sini legal?</span>
+          <span class="material-symbols-outlined arrow transition-transform">expand_more</span>
+        </button>
+        <div class="mt-md text-body-md text-on-surface-variant hidden">
+          Ya, seluruh koleksi di Arsip Media dilindungi oleh hak cipta yang sah atau merupakan domain publik. Kami bekerja sama langsung dengan penerbit dan pemegang hak cipta untuk memastikan kepatuhan hukum.
+        </div>
+      </div>
+      <div class="border-b border-outline-variant pb-md">
+        <button class="w-full flex justify-between items-center text-left group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.arrow').classList.toggle('rotate-180')">
+          <span class="text-headline-md font-headline-md text-primary">Bagaimana cara meminjam buku?</span>
+          <span class="material-symbols-outlined arrow transition-transform">expand_more</span>
+        </button>
+        <div class="mt-md text-body-md text-on-surface-variant hidden">
+          Cukup login ke akun Anda, pilih buku yang Anda inginkan, dan klik tombol 'Pinjam'. Buku akan tersedia di rak digital Anda selama 14 hari sebelum dikembalikan secara otomatis.
+        </div>
+      </div>
+      <div class="border-b border-outline-variant pb-md">
+        <button class="w-full flex justify-between items-center text-left group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.arrow').classList.toggle('rotate-180')">
+          <span class="text-headline-md font-headline-md text-primary">Dapatkah saya mengunduh koleksi untuk offline?</span>
+          <span class="material-symbols-outlined arrow transition-transform">expand_more</span>
+        </button>
+        <div class="mt-md text-body-md text-on-surface-variant hidden">
+          Fitur unduhan tersedia bagi pengguna paket Pro melalui aplikasi mobile kami. Konten yang diunduh tetap terenkripsi dan hanya dapat diakses melalui aplikasi.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 15. Newsletter -->
+<section class="py-xl">
+  <div class="max-w-container-max mx-auto px-md md:px-xl">
+    <div class="bg-secondary p-xl rounded-[40px] text-center space-y-md text-on-secondary relative overflow-hidden">
+      <h2 class="text-display-lg font-display-lg relative z-10">Ikuti Jejak Pengetahuan</h2>
+      <p class="text-body-lg max-w-2xl mx-auto opacity-90 relative z-10">Dapatkan update koleksi terbaru dan wawasan eksklusif dari kurator kami langsung di inbox Anda.</p>
+      <div class="flex flex-col sm:flex-row gap-md max-w-lg mx-auto pt-md relative z-10">
+        <input class="flex-grow px-lg py-md rounded-full border-none focus:ring-2 focus:ring-primary text-primary" placeholder="Alamat email Anda" type="email"/>
+        <button class="bg-primary text-on-primary px-xl py-md rounded-full font-label-md hover:bg-primary-container transition-colors">Langganan</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 16. Contact Section -->
+<section class="py-xl bg-surface-container-low">
+  <div class="max-w-container-max mx-auto px-md md:px-xl">
+    <div class="flex flex-col lg:flex-row gap-xl">
+      <div class="flex-1 space-y-lg">
+        <h2 class="text-headline-lg font-headline-lg text-primary">Hubungi Kami</h2>
+        <div class="space-y-md">
+          <div class="flex items-start gap-md">
+            <span class="material-symbols-outlined text-secondary">location_on</span>
+            <div>
+              <div class="font-bold">Kantor Pusat</div>
+              <div class="text-on-surface-variant">Gedung Literasi Lt. 4, Jakarta Pusat, Indonesia</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-md">
+            <span class="material-symbols-outlined text-secondary">mail</span>
+            <div>
+              <div class="font-bold">Email</div>
+              <div class="text-on-surface-variant">kontak@arsipmedia.id</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-md">
+          <a class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-secondary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+          <a class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-secondary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+          <a class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-secondary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+        </div>
+        <div class="w-full h-64 rounded-2xl overflow-hidden shadow-inner grayscale contrast-125">
+          <img class="w-full h-full object-cover" data-alt="A stylized minimalist map of Jakarta city center with a glowing teal pin on a deep navy grid background. Clean vector style map design." data-location="Jakarta" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAELOzvY0jz45SwNwINNjhOVg3G0PBlVzpSzkbye_ubIF6s6xk0DlxXfxa1_T4QGWr25xjGDXY6n_KiON6qGJdkYfRhKQMURJqtSXWrcv86EtXA4q7A6vN6gqFBy8OWM8z0-LgsVZOfAIo3onGRvIFD-YZ_imE8p61OAaqsHThm-wJXiRr1o63CcajBq2ZYbBwjMsvd3wRHEA19OrvFkieLQD5sleeBMc1d1kBYmmqeiqyo8NHUU32FStNyO_jJxLWspL1_ceO9vno"/>
+        </div>
+      </div>
+      <div class="flex-1 bg-white p-lg md:p-xl rounded-3xl shadow-xl border border-outline-variant/30">
+        <form class="space-y-md">
+          <div class="space-y-xs">
+            <label class="text-label-md text-primary">Nama Lengkap</label>
+            <input class="w-full px-md py-sm rounded-lg border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary" placeholder="Masukkan nama Anda" type="text"/>
+          </div>
+          <div class="space-y-xs">
+            <label class="text-label-md text-primary">Email</label>
+            <input class="w-full px-md py-sm rounded-lg border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary" placeholder="Masukkan email Anda" type="email"/>
+          </div>
+          <div class="space-y-xs">
+            <label class="text-label-md text-primary">Pesan</label>
+            <textarea class="w-full px-md py-sm rounded-lg border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary" placeholder="Apa yang ingin Anda tanyakan?" rows="4"></textarea>
+          </div>
+          <button class="w-full py-md bg-gradient-to-r from-[#0D9488] to-[#0F766E] text-white rounded-lg font-label-md shadow-lg shadow-secondary/20 hover:opacity-90 transition-opacity" type="submit">Kirim Pesan</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 17. Footer -->
+<footer class="bg-primary text-on-primary py-xl">
+  <div class="max-w-container-max mx-auto px-md md:px-xl grid grid-cols-1 md:grid-cols-4 gap-lg">
+    <div class="space-y-md">
+      <div class="text-headline-md font-headline-md font-extrabold text-surface-bright">Arsip Media</div>
+      <p class="text-body-md opacity-70">© 2024 Arsip Media. Preserving the digital frontier for future generations.</p>
+    </div>
+    <div class="space-y-md">
+      <div class="font-bold text-secondary-fixed">Platform</div>
+      <ul class="space-y-sm">
+        <li><a class="text-on-primary-container hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a></li>
+        <li><a class="text-on-primary-container hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a></li>
+        <li><a class="text-on-primary-container hover:text-secondary-fixed transition-colors" href="#">Archive Rules</a></li>
+      </ul>
+    </div>
+    <div class="space-y-md">
+      <div class="font-bold text-secondary-fixed">Resources</div>
+      <ul class="space-y-sm">
+        <li><a class="text-on-primary-container hover:text-secondary-fixed transition-colors" href="#">API Documentation</a></li>
+        <li><a class="text-on-primary-container hover:text-secondary-fixed transition-colors" href="#">Contact Support</a></li>
+        <li><a class="text-on-primary-container hover:text-secondary-fixed transition-colors" href="#">Global Careers</a></li>
+      </ul>
+    </div>
+    <div class="space-y-md">
+      <div class="font-bold text-secondary-fixed">Newsletter</div>
+      <p class="text-caption opacity-70">Jadilah yang pertama tahu tentang koleksi digital terbaru.</p>
+      <div class="flex">
+        <input class="w-full bg-white/10 border-none rounded-l-lg text-white text-sm focus:ring-0" placeholder="Email" type="text"/>
+        <button class="bg-secondary px-md rounded-r-lg"><span class="material-symbols-outlined">send</span></button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+    // Micro-interaction for Sticky Header
+    window.onscroll = function() {
+        const nav = document.querySelector('nav');
+        if (window.pageYOffset > 50) {
+            nav.classList.add('py-1', 'shadow-md');
+            nav.classList.remove('h-20');
+        } else {
+            nav.classList.remove('py-1', 'shadow-md');
+            nav.classList.add('h-20');
+        }
+    };
+
+    // Scroll reveal animation basic logic
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+        observer.observe(section);
+    });
+    
+    // Double-tap 'c' untuk scroll linear pelan sampai bawah
+let lastTapTime = 0;
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'c' || e.key === 'C') {
+    const currentTime = new Date().getTime();
+    const tapGap = currentTime - lastTapTime;
+    
+    if (tapGap < 500 && tapGap > 0) {
+      e.preventDefault();
+      startSmoothScroll();
+      lastTapTime = 0;
+    } else {
+      lastTapTime = currentTime;
+    }
+  }
+});
+
+function startSmoothScroll() {
+  const target = document.documentElement.scrollHeight - window.innerHeight;
+  
+  // ⬇️⬇️⬇️ ATUR KECEPATAN DI SINI ⬇️⬇️⬇️
+  const speed = 4; // <<<< GANTI ANGKA INI (pixel per frame)
+  // ⬆️⬆️⬆️ ATUR KECEPATAN DI SINI ⬆️⬆️⬆️
+  // 1 = pelan banget, 2 = pelan, 5 = sedang, 10 = cepat
+  // Scroll akan jalan terus sampai mentok di bawah
+  
+  function scroll() {
+    window.scrollBy(0, speed);
+    
+    if (window.pageYOffset < target) {
+      requestAnimationFrame(scroll);
+    }
+  }
+  
+  scroll();
+}
+</script>
+
+</body>
+</html>
