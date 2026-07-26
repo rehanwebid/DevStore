@@ -75,6 +75,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         .header-left {
@@ -121,23 +123,18 @@
 
         /* ==================== SEARCH BAR ==================== */
         .search-container {
-            position: fixed;
-            top: 80px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 600px;
-            z-index: 9;
+            position: relative;
+            width: 100%;
         }
 
         .search-bar {
             width: 100%;
-            padding: 14px 50px 14px 20px;
+            padding: 10px 44px 10px 16px;
             background-color: #1a1a1a;
             border: 1px solid #333;
-            border-radius: 8px;
+            border-radius: 6px;
             color: white;
-            font-size: 15px;
+            font-size: 14px;
             font-family: inherit;
             outline: none;
             transition: border-color 0.3s ease;
@@ -145,7 +142,7 @@
 
         .search-bar::placeholder {
             color: #666;
-            font-size: 15px;
+            font-size: 14px;
         }
 
         .search-bar:focus {
@@ -154,11 +151,11 @@
 
         .search-icon {
             position: absolute;
-            right: 16px;
+            right: 14px;
             top: 50%;
             transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             fill: #666;
             pointer-events: none;
         }
@@ -204,12 +201,36 @@
             fill: black;
         }
 
+        /* ==================== SCROLL TO TOP BUTTON ==================== */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #00BFFF;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            border: none;
+        }
+
+        .scroll-top-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: black;
+        }
+        /* ==================== AKHIR SCROLL TO TOP BUTTON ==================== */
+
         .projects-section {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 160px 40px 40px 40px;
+            padding: 100px 40px 40px 40px;
         }
 
         .projects-grid {
@@ -327,8 +348,8 @@
                 font-size: 11px;
             }
 
-            .search-container {
-                top: 70px;
+            .projects-section {
+                padding: 120px 40px 40px 40px;
             }
         }
 
@@ -340,11 +361,12 @@
             }
 
             .projects-section {
-                padding: 150px 20px 40px 20px;
+                padding: 130px 20px 40px 20px;
             }
 
             .header {
-                padding: 15px;
+                padding: 14px;
+                gap: 10px;
             }
 
             .brand {
@@ -386,24 +408,31 @@
                 height: 20px;
             }
 
-            .search-container {
-                top: 65px;
-                width: 85%;
-            }
-
             .search-bar {
-                padding: 12px 45px 12px 16px;
-                font-size: 14px;
+                padding: 9px 40px 9px 14px;
+                font-size: 13px;
             }
 
             .search-bar::placeholder {
-                font-size: 14px;
+                font-size: 13px;
             }
 
             .search-icon {
-                width: 18px;
-                height: 18px;
-                right: 14px;
+                width: 16px;
+                height: 16px;
+                right: 12px;
+            }
+
+            .scroll-top-btn {
+                width: 38px;
+                height: 38px;
+                bottom: 16px;
+                left: 16px;
+            }
+
+            .scroll-top-btn svg {
+                width: 20px;
+                height: 20px;
             }
         }
     </style>
@@ -532,45 +561,37 @@
                 const searchTerm = this.value.toLowerCase().trim();
                 let visibleCount = 0;
 
-                // Array untuk menyimpan kartu yang match
-                const matchStart = []; // Yang judulnya diawali searchTerm
-                const matchContain = []; // Yang judulnya mengandung searchTerm (tapi bukan di awal)
-                const noMatch = []; // Yang gak match
+                const matchStart = [];
+                const matchContain = [];
+                const noMatch = [];
 
                 projectCards.forEach(function(card) {
                     const title = card.querySelector('.project-title').textContent.toLowerCase();
                     
                     if (searchTerm === '') {
-                        // Kalau search kosong, tampilkan semua dengan urutan awal
                         card.classList.remove('hidden');
                         visibleCount++;
                     } else if (title.startsWith(searchTerm)) {
-                        // Match di awal judul
                         matchStart.push(card);
                         visibleCount++;
                     } else if (title.includes(searchTerm)) {
-                        // Match di tengah/belakang
                         matchContain.push(card);
                         visibleCount++;
                     } else {
-                        // Gak match
                         noMatch.push(card);
                     }
                 });
 
                 if (searchTerm === '') {
-                    // Reset ke urutan awal
                     projectCards.forEach(function(card) {
                         projectsGrid.appendChild(card);
                     });
                     noResults.classList.remove('show');
                 } else {
-                    // Sembunyikan yang gak match
                     noMatch.forEach(function(card) {
                         card.classList.add('hidden');
                     });
 
-                    // Tampilkan yang match dengan urutan: diawali dulu, baru yang mengandung
                     matchStart.forEach(function(card) {
                         card.classList.remove('hidden');
                         projectsGrid.appendChild(card);
@@ -581,7 +602,6 @@
                         projectsGrid.appendChild(card);
                     });
 
-                    // Tampilkan no results jika gak ada yang match
                     if (visibleCount === 0) {
                         noResults.classList.add('show');
                     } else {
@@ -591,6 +611,36 @@
             });
         });
         // ==================== AKHIR FITUR SEARCH ====================
+
+        // ==================== SCROLL TO TOP ====================
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            
+            scrollTopBtn.addEventListener('click', function() {
+                const currentPosition = window.pageYOffset;
+                const distance = currentPosition;
+                const duration = 800; // Durasi dalam ms (semakin kecil semakin cepat)
+                let startTime = null;
+                
+                function animation(currentTime) {
+                    if (startTime === null) startTime = currentTime;
+                    const timeElapsed = currentTime - startTime;
+                    const progress = Math.min(timeElapsed / duration, 1);
+                    
+                    // Easing function biar smooth
+                    const ease = 1 - Math.pow(1 - progress, 3);
+                    
+                    window.scrollTo(0, currentPosition - (distance * ease));
+                    
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animation);
+                    }
+                }
+                
+                requestAnimationFrame(animation);
+            });
+        });
+        // ==================== AKHIR SCROLL TO TOP ====================
 
         // Double-tap 'c' untuk scroll linear pelan sampai bawah
 let lastTapTime = 0;
@@ -641,16 +691,15 @@ function startSmoothScroll() {
             </svg>
             <span class="tiktok-username">@devstore.space</span>
         </div>
+        <!-- ==================== SEARCH BAR ==================== -->
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-bar" placeholder="Search pro.." autocomplete="off">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+        </div>
+        <!-- ==================== AKHIR SEARCH BAR ==================== -->
     </div>
-
-    <!-- ==================== SEARCH BAR ==================== -->
-    <div class="search-container">
-        <input type="text" id="searchInput" class="search-bar" placeholder="Search pro.." autocomplete="off">
-        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-        </svg>
-    </div>
-    <!-- ==================== AKHIR SEARCH BAR ==================== -->
 
     <div class="projects-section">
         <div class="projects-grid">
@@ -884,6 +933,14 @@ function startSmoothScroll() {
 
         </div>
     </div>
+
+    <!-- ==================== SCROLL TO TOP BUTTON ==================== -->
+    <button class="scroll-top-btn" id="scrollTopBtn" title="Kembali ke atas">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+        </svg>
+    </button>
+    <!-- ==================== AKHIR SCROLL TO TOP BUTTON ==================== -->
 
     <div class="whatsapp-container" onclick="openWhatsApp()">
         <span class="whatsapp-text">Get started</span>
