@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>FlashSky Airport | Gerbang Anda Menuju Langit Luas</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
+  <!-- ==================== KEAMANAN TAMBAHAN: BLOKIR CTRL+U DAN VIEW CODE ==================== -->
+  <script>
+    // 1. Blokir Klik Kanan (Context Menu)
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      return false;
+    });
+
+    // 2. Blokir Kombinasi Shortcut Keyboard
+    document.onkeydown = function(e) {
+      // Blokir CTRL+U (View Source)
+      if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+        return false;
+      }
+      // Blokir CTRL+SHIFT+I (Developer Tools / Inspect Element)
+      if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+        e.preventDefault();
+        return false;
+      }
+      // Blokir CTRL+SHIFT+J (Console)
+      if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+        e.preventDefault();
+        return false;
+      }
+      // Blokir CTRL+SHIFT+C (Inspect Element Mode)
+      if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+        e.preventDefault();
+        return false;
+      }
+      // Blokir F12 (Developer Tools)
+      if (e.key === 'F12') {
+        e.preventDefault();
+        return false;
+      }
+      // Blokir CTRL+S (Save Page)
+      if (e.ctrlKey && e.key === 's') {
+        e.preventDefault();
+        return false;
+      }
+    };
+
+    // 3. Peringatan Jika Console Dibuka (Deteksi DevTools)
+    (function() {
+      const element = new Image();
+      Object.defineProperty(element, 'id', {
+        get: function() {
+          // Deteksi console terbuka (passive)
+        }
+      });
+      console.log(element);
+    })();
+  </script>
+  <!-- ==================== AKHIR KEAMANAN TAMBAHAN ==================== -->
+
+  <!-- Tailwind Configuration -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-secondary": "#ffffff",
+                  "secondary-fixed": "#dae2fd",
+                  "error": "#ba1a1a",
+                  "background": "#f7f9fb",
+                  "primary": "#0058bc",
+                  "surface-tint": "#005bc1",
+                  "secondary": "#565e74",
+                  "on-background": "#191c1e",
+                  "surface-container-low": "#f2f4f6",
+                  "on-secondary-fixed-variant": "#3f465c",
+                  "primary-container": "#0070eb",
+                  "outline": "#717786",
+                  "on-secondary-container": "#5c647a",
+                  "on-tertiary": "#ffffff",
+                  "on-error-container": "#93000a",
+                  "inverse-on-surface": "#eff1f3",
+                  "on-surface-variant": "#414755",
+                  "on-surface": "#191c1e",
+                  "outline-variant": "#c1c6d7",
+                  "on-tertiary-fixed-variant": "#653e00",
+                  "secondary-container": "#dae2fd",
+                  "inverse-primary": "#adc6ff",
+                  "on-tertiary-container": "#fffbff",
+                  "surface-container": "#eceef0",
+                  "tertiary-fixed-dim": "#ffb95f",
+                  "on-primary-fixed": "#001a41",
+                  "on-primary": "#ffffff",
+                  "surface-bright": "#f7f9fb",
+                  "on-error": "#ffffff",
+                  "surface-variant": "#e0e3e5",
+                  "surface": "#f7f9fb",
+                  "surface-dim": "#d8dadc",
+                  "on-primary-fixed-variant": "#004493",
+                  "primary-fixed": "#d8e2ff",
+                  "surface-container-highest": "#e0e3e5",
+                  "tertiary-fixed": "#ffddb8",
+                  "surface-container-lowest": "#ffffff",
+                  "on-tertiary-fixed": "#2a1700",
+                  "on-secondary-fixed": "#131b2e",
+                  "primary-fixed-dim": "#adc6ff",
+                  "on-primary-container": "#fefcff",
+                  "error-container": "#ffdad6",
+                  "inverse-surface": "#2d3133",
+                  "surface-container-high": "#e6e8ea",
+                  "tertiary": "#825100",
+                  "tertiary-container": "#a36700",
+                  "secondary-fixed-dim": "#bec6e0"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "gutter": "24px",
+                  "xs": "4px",
+                  "base": "8px",
+                  "xl": "80px",
+                  "md": "24px",
+                  "container-max": "1280px",
+                  "sm": "12px",
+                  "lg": "48px"
+          },
+          "fontFamily": {
+                  "label-sm": ["Inter"],
+                  "display-lg-mobile": ["Montserrat"],
+                  "body-md": ["Inter"],
+                  "headline-md": ["Montserrat"],
+                  "display-lg": ["Montserrat"],
+                  "body-lg": ["Inter"]
+          },
+          "fontSize": {
+                  "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                  "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                  "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                  "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                  "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .flight-path-active {
+        background: linear-gradient(90deg, #0058bc 0%, #0070eb 100%);
+    }
+    .hero-gradient {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(25, 28, 30, 0.8));
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+
+<!-- 1. TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-white/70 backdrop-blur-xl border-b border-white/40 shadow-sm transition-all duration-300">
+  <div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
+    <div class="font-headline-md text-headline-md font-extrabold text-primary tracking-tight">FlashSky <span class="font-light">Airport</span></div>
+    <div class="hidden md:flex gap-md items-center">
+      <a class="font-label-sm text-label-sm uppercase tracking-widest text-primary border-b-2 border-primary pb-1" href="#about">About</a>
+      <a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#facilities">Facilities</a>
+      <a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#schedules">Schedules</a>
+      <a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#services">Services</a>
+      <a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#guide">Travel Guide</a>
+    </div>
+    <div class="flex items-center gap-sm">
+      <div class="hidden md:block relative">
+        <input class="bg-surface-container-low border-outline-variant/30 rounded-full py-2 px-4 pr-10 text-sm focus:ring-primary focus:border-primary" placeholder="Cari info penerbangan..." type="text"/>
+        <span class="material-symbols-outlined absolute right-3 top-2 text-outline text-lg">search</span>
+      </div>
+      <button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-sm uppercase tracking-wider hover:opacity-90 transition-all active:scale-95">Book Now</button>
+    </div>
+  </div>
+</nav>
+
+<!-- 2. Hero Section -->
+<section class="relative h-[90vh] w-full flex items-center overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <div class="w-full h-full bg-cover bg-center" data-alt="A cinematic, wide-angle shot of a state-of-the-art airport terminal at sunrise, with massive glass windows reflecting the golden and sky blue light. In the background, a modern wide-body aircraft is gracefully taking off into a clear sky. The overall aesthetic is premium, clean, and airy, featuring a sophisticated palette of deep blues and bright whites. The composition uses leading lines to create a sense of vastness and forward momentum." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC3U-6nRzayfoRlx-jZbdZ8n4VG7uY4kZP1J7dGHT9XVK0QMcombuw_mJGyApX0lfGPvGIvxnrb75iQB5_Hd-G3o_HjFLR02xzJFxJZBHHpKhNSqC7eIoQfbiEcSRmTPfOjdBQWfxJcdCvmF275lL0YI-Y4z8WD0BsdoHGcSFtIrucXWuPuPYcx7Q_Y55HthlsvMcW1-WnX0b6dZeYzua3eWANMc9LZfposIxm5mZqiLI-QVsB6LtUsSm9die12Nqyc8LgemAIiALg');"></div>
+    <div class="absolute inset-0 hero-gradient"></div>
+  </div>
+  <div class="relative z-10 max-w-container-max mx-auto px-gutter w-full">
+    <div class="max-w-2xl text-white">
+      <h1 class="font-display-lg text-display-lg mb-4 leading-tight">Gerbang Anda Menuju Langit Luas</h1>
+      <p class="font-body-lg text-body-lg opacity-90 mb-8">Nikmati pengalaman perjalanan kelas dunia dengan teknologi mutakhir dan keramahan yang tak tertandingi di FlashSky International.</p>
+      <div class="flex gap-4">
+        <button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-xl font-headline-md flex items-center gap-2 hover:translate-y-[-2px] transition-transform">
+          Cek Penerbangan <span class="material-symbols-outlined">flight_takeoff</span>
+        </button>
+        <button class="bg-white/90 backdrop-blur-md text-primary px-8 py-4 rounded-xl font-headline-md border border-white/50 hover:bg-white transition-colors shadow-lg">
+          Jelajahi Terminal
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Tentang Kami -->
+<section class="py-xl bg-surface-container-lowest" id="about">
+  <div class="max-w-container-max mx-auto px-gutter grid md:grid-cols-2 gap-lg items-center">
+    <div class="space-y-md">
+      <div class="inline-block px-4 py-1 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-label-sm uppercase font-bold tracking-widest">Sejarah Kami</div>
+      <h2 class="font-headline-md text-display-lg-mobile md:text-display-lg text-primary">Inovasi di Atas Awan Sejak 1998</h2>
+      <p class="font-body-lg text-on-surface-variant leading-relaxed">FlashSky Airport didirikan dengan visi untuk mendefinisikan ulang standar efisiensi penerbangan global. Berawal dari hub regional kecil, kini kami bertransformasi menjadi pusat transit internasional paling canggih di Asia Tenggara, melayani lebih dari 50 juta penumpang setiap tahun dengan presisi dan keamanan tingkat tinggi.</p>
+      <div class="grid grid-cols-2 gap-4 pt-4">
+        <div class="p-4 border-l-4 border-primary bg-surface-container">
+          <div class="text-3xl font-bold text-primary">120+</div>
+          <div class="text-label-sm text-secondary uppercase">Destinasi Global</div>
+        </div>
+        <div class="p-4 border-l-4 border-primary bg-surface-container">
+          <div class="text-3xl font-bold text-primary">4.8/5</div>
+          <div class="text-label-sm text-secondary uppercase">Kepuasan Pelanggan</div>
+        </div>
+      </div>
+    </div>
+    <div class="relative group">
+      <div class="rounded-3xl overflow-hidden shadow-2xl h-[500px]">
+        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A detailed shot of a luxury airport control tower featuring futuristic architecture with curved glass and steel structures. The lighting is soft evening light, with hints of orange and purple in the sky. The foreground shows a manicured green space, emphasizing the clean and eco-friendly nature of the airport facility. The style is professional architectural photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBWCX95dgUj2Ja7gnQzjyc4hQA3nIyiTSapTwp_m9lbtcELQ6tpylH4DnR1EIvnPUiQr3mP1nt9dRM85Yn4AZo4L1_cmRq7drBZHL9wNNHDd2dsSFdlkpMrEJQ-xyT7pyQ60qYSEe1T22xU0_cn707CxxFyyhoXOKOX2bBKrFWXRu85kKyvSe9niPyew04oloSHV9vzF1zJLbn4Fn6MrOwECK8HWt0j8j49weRbZWh6wi-YYFIAI7wmez85KhM4AT7wq29SybDMBk"/>
+      </div>
+      <div class="absolute -bottom-6 -left-6 glass-card p-6 rounded-2xl hidden md:block">
+        <p class="font-label-sm text-primary font-bold">MISI KAMI</p>
+        <p class="text-body-md text-on-surface italic max-w-xs">"Menghubungkan dunia melalui keamanan, inovasi, dan keberlanjutan."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Fasilitas Terminal -->
+<section class="py-xl bg-background" id="facilities">
+  <div class="max-w-container-max mx-auto px-gutter text-center mb-lg">
+    <h2 class="font-headline-md text-display-lg-mobile md:text-headline-md text-on-surface mb-2">Fasilitas Terminal Unggulan</h2>
+    <p class="text-on-surface-variant max-w-xl mx-auto font-body-lg">Kenyamanan Anda adalah prioritas utama kami dengan standar fasilitas bintang lima.</p>
+  </div>
+  <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-md">
+    <!-- Facility 1 -->
+    <div class="glass-card p-8 rounded-3xl hover:shadow-xl transition-all border-t-4 border-t-primary">
+      <div class="w-16 h-16 bg-primary-fixed rounded-2xl flex items-center justify-center mb-6">
+        <span class="material-symbols-outlined text-primary text-4xl">wifi</span>
+      </div>
+      <h3 class="font-headline-md text-primary mb-3">Free Wi-Fi 6</h3>
+      <p class="text-on-surface-variant leading-relaxed">Nikmati koneksi internet super cepat hingga 1Gbps di seluruh area terminal untuk mendukung produktivitas Anda.</p>
+    </div>
+    <!-- Facility 2 -->
+    <div class="glass-card p-8 rounded-3xl hover:shadow-xl transition-all border-t-4 border-t-tertiary">
+      <div class="w-16 h-16 bg-tertiary-fixed rounded-2xl flex items-center justify-center mb-6">
+        <span class="material-symbols-outlined text-tertiary text-4xl">battery_charging_full</span>
+      </div>
+      <h3 class="font-headline-md text-tertiary mb-3">Charging Stations</h3>
+      <p class="text-on-surface-variant leading-relaxed">Lebih dari 500 titik pengisian daya nirkabel dan USB-C tersebar di setiap gate dan area tunggu.</p>
+    </div>
+    <!-- Facility 3 -->
+    <div class="glass-card p-8 rounded-3xl hover:shadow-xl transition-all border-t-4 border-t-secondary">
+      <div class="w-16 h-16 bg-secondary-fixed rounded-2xl flex items-center justify-center mb-6">
+        <span class="material-symbols-outlined text-secondary text-4xl">child_care</span>
+      </div>
+      <h3 class="font-headline-md text-secondary mb-3">Baby Care Rooms</h3>
+      <p class="text-on-surface-variant leading-relaxed">Ruang privasi yang nyaman untuk ibu dan bayi, dilengkapi dengan fasilitas sanitasi dan area bermain kecil.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Jadwal Penerbangan -->
+<section class="py-xl bg-surface-container-low" id="schedules">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-lg gap-4">
+      <div>
+        <h2 class="font-headline-md text-display-lg-mobile md:text-headline-md text-primary mb-2">Jadwal Real-Time</h2>
+        <p class="text-on-surface-variant">Informasi keberangkatan dan kedatangan terbaru.</p>
+      </div>
+      <div class="flex bg-white rounded-xl p-1 shadow-sm border border-outline-variant/30">
+        <button class="px-6 py-2 bg-primary text-white rounded-lg text-sm font-bold">Keberangkatan</button>
+        <button class="px-6 py-2 text-on-surface-variant hover:bg-surface-container rounded-lg text-sm transition-colors">Kedatangan</button>
+      </div>
+    </div>
+    <div class="glass-card rounded-3xl overflow-hidden shadow-sm">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left">
+          <thead class="bg-primary text-on-primary">
+            <tr>
+              <th class="px-gutter py-4 font-label-sm uppercase tracking-widest">Waktu</th>
+              <th class="px-gutter py-4 font-label-sm uppercase tracking-widest">No. Penerbangan</th>
+              <th class="px-gutter py-4 font-label-sm uppercase tracking-widest">Tujuan</th>
+              <th class="px-gutter py-4 font-label-sm uppercase tracking-widest">Gate</th>
+              <th class="px-gutter py-4 font-label-sm uppercase tracking-widest">Status</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-outline-variant/20">
+            <tr class="hover:bg-white/50 transition-colors">
+              <td class="px-gutter py-5 font-bold">08:45</td>
+              <td class="px-gutter py-5 text-primary font-mono">FS-204</td>
+              <td class="px-gutter py-5">Tokyo (NRT)</td>
+              <td class="px-gutter py-5 font-mono">A-12</td>
+              <td class="px-gutter py-5">
+                <span class="px-3 py-1 bg-teal-100 text-teal-800 rounded-full text-xs font-bold uppercase">On Time</span>
+              </td>
+            </tr>
+            <tr class="hover:bg-white/50 transition-colors">
+              <td class="px-gutter py-5 font-bold">09:15</td>
+              <td class="px-gutter py-5 text-primary font-mono">GA-882</td>
+              <td class="px-gutter py-5">London (LHR)</td>
+              <td class="px-gutter py-5 font-mono">C-08</td>
+              <td class="px-gutter py-5">
+                <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-bold uppercase">Delayed</span>
+              </td>
+            </tr>
+            <tr class="hover:bg-white/50 transition-colors">
+              <td class="px-gutter py-5 font-bold">10:30</td>
+              <td class="px-gutter py-5 text-primary font-mono">SQ-101</td>
+              <td class="px-gutter py-5">Singapore (SIN)</td>
+              <td class="px-gutter py-5 font-mono">B-05</td>
+              <td class="px-gutter py-5">
+                <span class="px-3 py-1 bg-teal-100 text-teal-800 rounded-full text-xs font-bold uppercase">On Time</span>
+              </td>
+            </tr>
+            <tr class="hover:bg-white/50 transition-colors">
+              <td class="px-gutter py-5 font-bold">11:00</td>
+              <td class="px-gutter py-5 text-primary font-mono">EK-356</td>
+              <td class="px-gutter py-5">Dubai (DXB)</td>
+              <td class="px-gutter py-5 font-mono">D-21</td>
+              <td class="px-gutter py-5">
+                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-bold uppercase">Boarding</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="mt-8 text-center">
+      <a class="text-primary font-bold hover:underline underline-offset-4 flex items-center justify-center gap-2" href="#">
+        Lihat Semua Jadwal <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Transportasi Darat -->
+<section class="py-xl bg-background">
+  <div class="max-w-container-max mx-auto px-gutter grid md:grid-cols-2 gap-lg items-center">
+    <div class="order-2 md:order-1 h-[400px] rounded-3xl overflow-hidden relative shadow-lg">
+      <img class="w-full h-full object-cover" data-alt="A sleek, ultra-modern electric airport train arriving at a clean, high-tech station with glass walls and minimalist signage. The scene is bright and well-lit, emphasizing speed and efficiency. Passengers are waiting in a queue, reflecting a busy but orderly environment. The color scheme is consistent with the primary blue and clean whites of the FlashSky brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBE2pULKu6iCcssgmrTQc3jhtfAT130QClDhhMI_q3bEOBKb1uTsNYOI7g6VXs-FCjH6LFYoFvWZdSA15Ov3mMaIwC40ETkBTZrGOzGrfCBHP284ec1ByYr85CXk-MSNfqKQyGveoFF_HMh21aEuaRXFW6syP4ULMSO4KK0rzEMTdZguSXIj72oWpf6XMVQ5LN1p5Ai2Pxt9YKBic_T_iaUVA2-aEjSdCuIuu31OddYkeVJpZlOt89yjmlzM8jVij_qRqk1wtr9B4"/>
+    </div>
+    <div class="order-1 md:order-2 space-y-6">
+      <h2 class="font-headline-md text-display-lg-mobile md:text-headline-md text-on-surface">Konektivitas Tanpa Batas</h2>
+      <p class="font-body-lg text-on-surface-variant">Lanjutkan perjalanan Anda dengan berbagai pilihan transportasi darat premium langsung dari pintu keluar terminal.</p>
+      <div class="space-y-4">
+        <div class="flex items-center gap-4 p-4 glass-card rounded-2xl hover:bg-white transition-colors cursor-pointer">
+          <div class="w-12 h-12 bg-primary text-on-primary rounded-xl flex items-center justify-center">
+            <span class="material-symbols-outlined">train</span>
+          </div>
+          <div>
+            <h4 class="font-bold">FlashSky Express Train</h4>
+            <p class="text-sm text-on-surface-variant">Hanya 25 menit menuju pusat kota. Berangkat setiap 15 menit.</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 p-4 glass-card rounded-2xl hover:bg-white transition-colors cursor-pointer">
+          <div class="w-12 h-12 bg-secondary text-on-secondary rounded-xl flex items-center justify-center">
+            <span class="material-symbols-outlined">local_taxi</span>
+          </div>
+          <div>
+            <h4 class="font-bold">Premium Taxi & Rideshare</h4>
+            <p class="text-sm text-on-surface-variant">Layanan 24 jam dengan zona penjemputan khusus di Pintu 1 & 3.</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 p-4 glass-card rounded-2xl hover:bg-white transition-colors cursor-pointer">
+          <div class="w-12 h-12 bg-tertiary text-on-tertiary rounded-xl flex items-center justify-center">
+            <span class="material-symbols-outlined">directions_bus</span>
+          </div>
+          <div>
+            <h4 class="font-bold">Bus Antar Kota</h4>
+            <p class="text-sm text-on-surface-variant">Rute nyaman menuju kota-kota satelit dengan armada mewah.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Belanja & Kuliner -->
+<section class="py-xl bg-surface-container-low overflow-hidden">
+  <div class="max-w-container-max mx-auto px-gutter mb-lg">
+    <h2 class="font-headline-md text-display-lg-mobile md:text-headline-md text-on-surface text-center">Belanja & Kuliner Eksklusif</h2>
+  </div>
+  <div class="flex gap-md overflow-x-auto px-gutter pb-8 no-scrollbar scroll-smooth">
+    <div class="min-w-[300px] md:min-w-[400px] h-[500px] relative rounded-3xl overflow-hidden group">
+      <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Interior of a luxury duty-free shop in an airport terminal. High-end perfumes and designer bags are displayed under warm, elegant spotlights. The floors are polished marble, and the overall atmosphere is sophisticated and expensive. The style is premium retail photography with soft bokeh." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADXgwn5q_sx6kb-mWba9w1-lOjXafTN2NbDm6A74LqRlCyyj9h_YQcK6sy28ulgk4DCH7nGSsjRY_sxzBybAMq9xe_2Fa-13vH6TbaKAihOyP-qfCnVO3kNJnN5gqLGlzXSEBvTxFcIAMr1pFx5RQzw3BQnaHw17WDvkZxeepdqcvVDnwwwMTQB_w-kOcLpqXFeBRuBzhRT-D3sqy6T017Vjf-fQKbXVzBejM-P0DnmnttMP6abWmHrvrMMWHEeF4RZAGub9UXWmY"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
+        <h4 class="text-white font-headline-md">Sky-High Duty Free</h4>
+        <p class="text-white/80 text-sm">Merek internasional ternama dengan harga bebas pajak.</p>
+      </div>
+    </div>
+    <div class="min-w-[300px] md:min-w-[400px] h-[500px] relative rounded-3xl overflow-hidden group">
+      <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A premium airport restaurant with an open kitchen and floor-to-ceiling windows overlooking the runway. Chefs in white uniforms are preparing gourmet dishes. The interior design features mid-century modern furniture and warm wood accents. The lighting is intimate and upscale." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK6fyfj4cgoWBq8pqogcgfRvmUxpRmVaSpKmQDp1p_DpwW6Xp5nyDI-YkjdcEJdwiiKJH-Dz0J8wHeCbzvl3K4fGL9AER2sNwvsv7V8OlmvFnV1lr08jGC9PEx63CuytyO07FE757F2ohQf0W_WeuomtDWh8i0aG-E4gKynLXLTlSc3MVsrJWZdw27KwXSb44SWEGhcBaSwcntVggFyAUrypSdRnMgcjzuz6ssGBQqwnWU5QHRA2qzeWo79Z4TSz-u58oxcjcw2nk"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
+        <h4 class="text-white font-headline-md">The Horizon Dining</h4>
+        <p class="text-white/80 text-sm">Kuliner nusantara dan internasional dari koki berbintang Michelin.</p>
+      </div>
+    </div>
+    <div class="min-w-[300px] md:min-w-[400px] h-[500px] relative rounded-3xl overflow-hidden group">
+      <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A modern, high-tech coffee shop inside an airport terminal. Sleek minimalist counters, digital menu boards, and baristas working with precision. The environment is vibrant and energized, with travelers sitting at high tables with laptops." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAcxZfQgkyN8ZLx6cGZNd3k0se1LdFmqPEaYH-arvIpBeCOvf8zjv9Kkgauz2C24TNhbG-RUO8aCaNFx0V39qlN5XgdyNCCKBqlvPh9VrAxrpE1C3GLcw2QJIkvVinQsIIHzZGT9s-vAoLzfdB0XhHRNfto-3H46ui7CtsL6jzw4lp5rC3cVscra-sV2wluxZewS9G9oYmk02kBDYPYa07qxSzVP2NF_ppb7TapVIYzcTKswtD2Mx3eZee87eMPV4Zl0aA3PMYn1A"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
+        <h4 class="text-white font-headline-md">Flash Brew Coffee</h4>
+        <p class="text-white/80 text-sm">Biji kopi pilihan terbaik untuk memulai perjalanan Anda.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Lounge VIP -->
+<section class="relative py-xl overflow-hidden bg-primary-fixed-dim">
+  <div class="absolute inset-0 opacity-20">
+    <div class="w-full h-full bg-cover bg-center" data-alt="A wide-angle interior shot of a luxury VIP airport lounge. The room features plush velvet armchairs, private workstations, a marble bar area, and expansive windows showing airplanes on the tarmac. The lighting is soft and golden, creating a peaceful, sanctuary-like atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC3U-6nRzayfoRlx-jZbdZ8n4VG7uY4kZP1J7dGHT9XVK0QMcombuw_mJGyApX0lfGPvGIvxnrb75iQB5_Hd-G3o_HjFLR02xzJFxJZBHHpKhNSqC7eIoQfbiEcSRmTPfOjdBQWfxJcdCvmF275lL0YI-Y4z8WD0BsdoHGcSFtIrucXWuPuPYcx7Q_Y55HthlsvMcW1-WnX0b6dZeYzua3eWANMc9LZfposIxm5mZqiLI-QVsB6LtUsSm9die12Nqyc8LgemAIiALg');"></div>
+  </div>
+  <div class="max-w-container-max mx-auto px-gutter relative z-10">
+    <div class="glass-card max-w-2xl p-10 md:p-16 rounded-[40px] shadow-2xl border-white/20">
+      <div class="flex items-center gap-2 mb-4 text-tertiary">
+        <span class="material-symbols-outlined">stars</span>
+        <span class="font-label-sm uppercase tracking-widest font-bold">Akses Eksklusif</span>
+      </div>
+      <h2 class="font-headline-md text-display-lg-mobile md:text-display-lg text-primary mb-6">The SkyLounge</h2>
+      <p class="font-body-lg text-on-surface-variant mb-8 leading-relaxed">Lepaskan lelah sejenak dalam suasana tenang sebelum penerbangan Anda. Dilengkapi dengan shower premium, area tidur, buffet gourmet, dan layanan concierge pribadi.</p>
+      <div class="flex flex-wrap gap-4">
+        <button class="bg-primary text-on-primary px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform shadow-lg">Reservasi Sekarang</button>
+        <button class="bg-white/90 backdrop-blur-md text-primary px-8 py-4 rounded-xl font-headline-md border border-white/50 hover:bg-white transition-colors shadow-lg">Jelajahi Terminal</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. Destinasi Populer -->
+<section class="py-xl bg-background">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="text-center mb-lg">
+      <h2 class="font-headline-md text-on-surface mb-2">Destinasi Populer Bulan Ini</h2>
+      <p class="text-on-surface-variant">Terbang langsung ke pusat dunia dari terminal kami.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+      <!-- Dest 1 -->
+      <div class="group cursor-pointer">
+        <div class="relative h-80 rounded-3xl overflow-hidden mb-4 shadow-md">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A stunning street-level view of Tokyo, Japan at night, with vibrant neon signs, busy pedestrian crossings, and the iconic Tokyo Tower in the distance. The lighting is high-contrast and colorful, conveying a sense of energy and modern urban life." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-NVPzv6-yHhhBv0YWCzaQzKzTBENyLyXpSNPIj7b3cjfCa04lTNpUzy7lplg1wiVz2ebTP3flvBEnbPtD1J_GKglq_XP7l7faIP4DRqYhMzuzQN0F_Rqz6ehdPR9wqe99HjQvO5XH_uFR-PaIRrG_BEb9qNKgmqWJTpKZhE3jjHuo0FABfiJ3RhrL7wIQuyh_WrGC3OLXuohv2dw0CphvtD1aS0YXxx49OnN22A7JypAxOO7D2oEiySNWactFZcpTdWNsbWNH6rk"/>
+          <div class="absolute top-4 right-4 px-4 py-2 bg-white/90 backdrop-blur rounded-full text-primary font-bold text-sm">Mulai Rp 4.5jt</div>
+        </div>
+        <h4 class="font-headline-md text-on-surface">Tokyo, Japan</h4>
+        <p class="text-on-surface-variant">Keindahan tradisi bertemu teknologi futuristik.</p>
+      </div>
+      <!-- Dest 2 -->
+      <div class="group cursor-pointer">
+        <div class="relative h-80 rounded-3xl overflow-hidden mb-4 shadow-md">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A cinematic sunset view of the London skyline, featuring Big Ben, the Houses of Parliament, and the London Eye. The River Thames reflects the warm orange and pink hues of the sky. The overall feeling is classic, majestic, and romantic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5giGWDWZPty18zpdbrRVvMb-U501auH4aYInKdliTNIlD6urICxR1vaR8apbq0O2wHghyKIt_PJOe67SWw9fDqtM7gsjkv0-NgrIPp5RoKaYHk4oImW_21xAESTak4ixCXAEA8dUPjz754BOvnHOguq72R07XdtRpwZrHc3zQ0-nGB1vAMClLs4kk1Srvj_1o2WKUVP6XqwtdTCpfEUB9-6r1l0ulANaKLyyMSKBs_Zcj1m5Jkc4i2pOcDSwcQ7n7koRXDcGLYiI"/>
+          <div class="absolute top-4 right-4 px-4 py-2 bg-white/90 backdrop-blur rounded-full text-primary font-bold text-sm">Mulai Rp 8.2jt</div>
+        </div>
+        <h4 class="font-headline-md text-on-surface">London, UK</h4>
+        <p class="text-on-surface-variant">Pusat sejarah global dan keanggunan Eropa.</p>
+      </div>
+      <!-- Dest 3 -->
+      <div class="group cursor-pointer">
+        <div class="relative h-80 rounded-3xl overflow-hidden mb-4 shadow-md">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="An aerial view of the New York City skyline during blue hour, with the Empire State Building illuminated and the grid of lights from the streets below. The atmosphere is grand, ambitious, and iconic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAphSAg0oPM11BV5zOyDhO9iP_yZaYOw1z0CHe68fsb4B_mENLCmYybuO55UplS3-LhyoDj0sPX0UmmZNVO2-MiArSygN7xD1vYs3BaPc-ybKEG-h35yCa-gMbCb9Nup7Wwx2Nn4SjYs6Msg6id4imHoeyR08sC18rFyRmUJBU4hMB5qUzooEUAmgWki8IletDumhoa8CoyPFzEUqCSJZE58SjT8NAtlE4sPQA_4sTsidJsynqrsA6fPrehHIsShmyL4NbVZM0GDZo"/>
+          <div class="absolute top-4 right-4 px-4 py-2 bg-white/90 backdrop-blur rounded-full text-primary font-bold text-sm">Mulai Rp 12.5jt</div>
+        </div>
+        <h4 class="font-headline-md text-on-surface">New York, USA</h4>
+        <p class="text-on-surface-variant">Kota yang tidak pernah tidur dengan peluang tanpa batas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Peta Bandara -->
+<section class="py-xl bg-surface-container">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="glass-card rounded-[40px] overflow-hidden flex flex-col md:flex-row h-[600px] border border-white/50 shadow-2xl">
+      <div class="md:w-1/3 p-10 flex flex-col justify-center bg-white/50">
+        <h2 class="font-headline-md text-primary mb-4">Navigasi Terminal</h2>
+        <p class="text-on-surface-variant mb-6">Jangan tersesat. Temukan gate, toko, dan lounge favorit Anda dengan peta terminal interaktif kami.</p>
+        <div class="space-y-4">
+          <button class="w-full text-left p-4 rounded-2xl bg-primary text-on-primary flex justify-between items-center">
+            <span>Lantai 1: Kedatangan</span>
+            <span class="material-symbols-outlined">map</span>
+          </button>
+          <button class="w-full text-left p-4 rounded-2xl hover:bg-white transition-colors border border-outline-variant/30 flex justify-between items-center">
+            <span>Lantai 2: Keberangkatan</span>
+            <span class="material-symbols-outlined">map</span>
+          </button>
+          <button class="w-full text-left p-4 rounded-2xl hover:bg-white transition-colors border border-outline-variant/30 flex justify-between items-center">
+            <span>Lantai 3: Lounge & Makan</span>
+            <span class="material-symbols-outlined">map</span>
+          </button>
+        </div>
+      </div>
+      <div class="md:w-2/3 relative bg-surface-dim">
+        <div class="absolute inset-0 flex items-center justify-center p-8">
+          <div class="w-full h-full rounded-2xl">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUKUk3GjE3R3t1W4tuHFBuHIyGL3FvAT6nucKJSjyEjMVElCDtuWe5iU0H4hu-WqtzInukRzcCLAlMtoPhk3TwL2LwEUuDfoOr1Ckamkk9GzA1SR7I9gynsC9mn4lD0yskHCtbjYY8UtiuPsHNa-GW-afzIrv86xx9DrW9Pi4OplQdho18h-f5dxHxiaUshHSx1g5N6aqeZOduEtcDzLxoStMyQOxRzyF_-B9uPPHbzqJ2rlIEC-CfpTcIbui6tns_3Y80IprMttE" alt="Interactive Terminal Map" class="w-full h-full object-cover rounded-2xl"/>
+          </div>
+        </div>
+        <div class="hidden" data-location="Jakarta"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. Inisiatif Keberlanjutan -->
+<section class="py-xl bg-background overflow-hidden">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="grid md:grid-cols-2 gap-lg items-center">
+      <div>
+        <div class="flex items-center gap-2 mb-4 text-teal-600">
+          <span class="material-symbols-outlined">eco</span>
+          <span class="font-label-sm uppercase tracking-widest font-bold">Masa Depan Hijau</span>
+        </div>
+        <h2 class="font-headline-md text-display-lg-mobile md:text-display-lg text-on-surface mb-6">Bandara Ramah Lingkungan</h2>
+        <p class="font-body-lg text-on-surface-variant mb-8 leading-relaxed">FlashSky berkomitmen untuk mencapai Net-Zero Emissions pada tahun 2040. Kami menggunakan panel surya terintegrasi, sistem daur ulang air hujan, dan pengurangan plastik sekali pakai di seluruh terminal.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-6 bg-teal-50 rounded-2xl flex gap-4">
+            <span class="material-symbols-outlined text-teal-600">solar_power</span>
+            <div>
+              <h5 class="font-bold text-teal-900">Energi Terbarukan</h5>
+              <p class="text-sm text-teal-800/70">40% energi berasal dari solar farm mandiri.</p>
+            </div>
+          </div>
+          <div class="p-6 bg-teal-50 rounded-2xl flex gap-4">
+            <span class="material-symbols-outlined text-teal-600">recycling</span>
+            <div>
+              <h5 class="font-bold text-teal-900">Zero Waste</h5>
+              <p class="text-sm text-teal-800/70">Program pengolahan sampah terintegrasi.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="rounded-full w-[400px] h-[400px] border-8 border-teal-100 overflow-hidden mx-auto">
+          <img class="w-full h-full object-cover" data-alt="A lush vertical garden inside a high-tech airport terminal, with sunlight streaming through a glass roof. The greenery is thick and vibrant, contrasting beautifully with the white steel architecture. There are comfortable benches nearby, creating a serene botanical environment for travelers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl01Yvwob5qOPdb1C0tm6kpjuzeDhcwAPC3ymP38Pa3H_OO5fUFfeiD8jXpyd-xDaecep1wZl29ZmODCn30aVaJDJdGi3QIV4cQN_SI7kLUkAw2A_2Mx4F1ZsJq0HlkcurQnzqTaSPxIMQ30Xz-FxZ1FToARlKLwJJsAuFstar5GRzP8sKUcS-vUtboJ7eCUErpOtjY9uqnhJENppcQ2pAc_dazfG8Q2XxuRk5C-1wKwehPVm6OV1ddaFvPcgtpN7EIyBJ7n2-qAQ"/>
+        </div>
+        <div class="absolute top-0 right-0 p-8 glass-card rounded-full bg-teal-600 text-white font-bold text-center w-32 h-32 flex items-center justify-center">
+          -35% CO2
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. Karir -->
+<section class="py-xl bg-primary" id="careers">
+  <div class="max-w-container-max mx-auto px-gutter text-center text-on-primary">
+    <h2 class="font-headline-md text-display-lg-mobile md:text-display-lg mb-4">Terbang Lebih Tinggi Bersama Kami</h2>
+    <p class="font-body-lg opacity-80 mb-lg max-w-2xl mx-auto">Bergabunglah dengan tim profesional terbaik di industri aviasi. Kami mencari talenta yang berdedikasi untuk menciptakan pengalaman perjalanan yang luar biasa.</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <button class="bg-white text-primary px-8 py-4 rounded-xl font-bold hover:bg-surface-container transition-all">Lihat Lowongan Kerja</button>
+      <button class="border border-white/40 px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-all">Program Internship</button>
+    </div>
+    <div class="mt-lg grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
+        <h4 class="text-3xl font-bold mb-1">5k+</h4>
+        <p class="text-xs uppercase tracking-widest opacity-70">Karyawan</p>
+      </div>
+      <div class="p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
+        <h4 class="text-3xl font-bold mb-1">20+</h4>
+        <p class="text-xs uppercase tracking-widest opacity-70">Departemen</p>
+      </div>
+      <div class="p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
+        <h4 class="text-3xl font-bold mb-1">92%</h4>
+        <p class="text-xs uppercase tracking-widest opacity-70">Retensi Staff</p>
+      </div>
+      <div class="p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
+        <h4 class="text-3xl font-bold mb-1">Gold</h4>
+        <p class="text-xs uppercase tracking-widest opacity-70">Employer Award</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13. Berita & Acara -->
+<section class="py-xl bg-background overflow-hidden">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="flex justify-between items-end mb-lg">
+      <h2 class="font-headline-md text-on-surface">Berita & Acara Terbaru</h2>
+      <div class="flex gap-2">
+        <button class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined">chevron_left</span></button>
+        <button class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined">chevron_right</span></button>
+      </div>
+    </div>
+    <div class="flex gap-md">
+      <div class="min-w-[300px] md:min-w-[400px] bg-white rounded-3xl overflow-hidden shadow-sm border border-outline-variant/10 group">
+        <div class="h-56 overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="A photo of a grand opening ceremony at a new airport wing. Red ribbons are being cut, and there are celebrations with balloons and corporate branding in the background. The lighting is bright and festive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcObT7gTo1OHU3SWWfh9xlg_a9jP_tOkuoAe6LsXcilWzWlbAZf4FUrX_OgxcC3eTebqY8vmPkQ_Wdm7jv5l1e6Ifa1S4qnUf0vKXw_1-q58oVdkHFFkgygRrY4-ahi-Sc8rAOs6VmLax6rcZZ5TmcVUrQS_aBKnEENYTMOACYmR_1roteOOBDJ7ODnHJjz8cpn9uCr5WuKUvUzPx2sfcNF8l2X1-qqQDu0Sa6zhiHhcvsndt6YbEAUmXBhy4Nga5gPqciEFUQiSg"/>
+        </div>
+        <div class="p-6">
+          <p class="text-xs text-primary font-bold uppercase mb-2">PENGUMUMAN | 20 OKT 2023</p>
+          <h4 class="font-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">Pembukaan Wing Utara: Lebih Banyak Gate, Lebih Nyaman</h4>
+          <p class="text-on-surface-variant text-sm line-clamp-2">Kapasitas terminal bertambah dengan fasilitas self-boarding gate tercanggih di dunia.</p>
+        </div>
+      </div>
+      <div class="min-w-[300px] md:min-w-[400px] bg-white rounded-3xl overflow-hidden shadow-sm border border-outline-variant/10 group">
+        <div class="h-56 overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="A portrait of a smiling airport customer service representative helping a traveler with a digital tablet. The background is a clean, bright terminal hallway. The mood is friendly and helpful." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAI_3rvEg_Y2GzQljtTRFzW7-UeCR5AaTpp-jHpWkuHFlx2H0Pik9UaMfElqo5TrvK-OVTsZqjj9vlWoM_qr6vxWUH3Navfjt5QNpMxtafBnXPx6wRv_y6crRHaLz7tzs5Ndq1DykaCz6QNGCOZp24hJoT380qq9XAukkjyhzSte9gdzIdaxCIZqDafsaupoPHTAhvbKc4ic2D3VPKLA-8yYHu9pVpM9Z-WoILg2VsPwefOuXlIJPf7m3wJOFrqmwWLbcg7TiVpHk"/>
+        </div>
+        <div class="p-6">
+          <p class="text-xs text-primary font-bold uppercase mb-2">Layanan | 15 OKT 2023</p>
+          <h4 class="font-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">FlashSky Meraih Penghargaan Bandara Terbaik 2023</h4>
+          <p class="text-on-surface-variant text-sm line-clamp-2">Dedikasi kami untuk pelayanan pelanggan kembali diakui oleh Skytrax World Airport Awards.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 14. Panduan Penumpang -->
+<section class="py-xl bg-surface-container-lowest" id="guide">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <h2 class="font-headline-md text-on-surface text-center mb-lg">Panduan Perjalanan Anda</h2>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-md">
+      <div class="text-center p-6 space-y-4">
+        <div class="w-20 h-20 mx-auto bg-primary-container text-on-primary-container rounded-full flex items-center justify-center">
+          <span class="material-symbols-outlined text-4xl">how_to_reg</span>
+        </div>
+        <h4 class="font-bold">Check-In</h4>
+        <p class="text-sm text-on-surface-variant">Tiba di bandara setidaknya 3 jam sebelum keberangkatan internasional.</p>
+      </div>
+      <div class="text-center p-6 space-y-4">
+        <div class="w-20 h-20 mx-auto bg-primary-container text-on-primary-container rounded-full flex items-center justify-center">
+          <span class="material-symbols-outlined text-4xl">lock</span>
+        </div>
+        <h4 class="font-bold">Keamanan</h4>
+        <p class="text-sm text-on-surface-variant">Siapkan boarding pass dan kartu identitas Anda untuk pemeriksaan cepat.</p>
+      </div>
+      <div class="text-center p-6 space-y-4">
+        <div class="w-20 h-20 mx-auto bg-primary-container text-on-primary-container rounded-full flex items-center justify-center">
+          <span class="material-symbols-outlined text-4xl">luggage</span>
+        </div>
+        <h4 class="font-bold">Bagasi</h4>
+        <p class="text-sm text-on-surface-variant">Pastikan berat bagasi sesuai ketentuan maskapai untuk menghindari biaya tambahan.</p>
+      </div>
+      <div class="text-center p-6 space-y-4">
+        <div class="w-20 h-20 mx-auto bg-primary-container text-on-primary-container rounded-full flex items-center justify-center">
+          <span class="material-symbols-outlined text-4xl">flight_land</span>
+        </div>
+        <h4 class="font-bold">Imigrasi</h4>
+        <p class="text-sm text-on-surface-variant">Gunakan autogate bagi pemegang paspor elektronik untuk menghindari antrean.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 15. Kontak & Lokasi -->
+<section class="py-xl bg-background">
+  <div class="max-w-container-max mx-auto px-gutter grid md:grid-cols-2 gap-lg overflow-hidden">
+    <div class="space-y-6">
+      <h2 class="font-headline-md text-on-surface">Hubungi & Kunjungi Kami</h2>
+      <p class="text-on-surface-variant">Kami siap membantu Anda kapan saja. Silakan hubungi pusat informasi kami untuk bantuan mendesak.</p>
+      <div class="space-y-4">
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 bg-surface-container rounded-full flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined">call</span>
+          </div>
+          <div>
+            <p class="text-xs text-on-surface-variant uppercase font-bold">Hotline 24/7</p>
+            <p class="font-bold">+62 21 8888 9999</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 bg-surface-container rounded-full flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined">mail</span>
+          </div>
+          <div>
+            <p class="text-xs text-on-surface-variant uppercase font-bold">Email Support</p>
+            <p class="font-bold">info@flashsky-airport.com</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 bg-surface-container rounded-full flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined">location_on</span>
+          </div>
+          <div>
+            <p class="text-xs text-on-surface-variant uppercase font-bold">Alamat Utama</p>
+            <p class="font-bold">Jl. Aviasi Raya No. 1, FlashSky AeroCity, Indonesia</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="h-80 md:h-full min-h-[300px] rounded-[32px] overflow-hidden bg-surface-dim relative border border-outline-variant/30">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTTXoUhH2ReFBmY7t5iK0vNjuLSr_GfJrIFcbNlM_a0Z55y7WXNep-0yiDoG5T3GRUcVTvyR78okHRTQnNK_lUEgqiorExdQQNx4owtDEqj-sCpiDKIUnQx2gY8KMuSDMujNPz1NBJzbJH6zMypiT81b8ZaaulzqXSGE9_Rp0nDeYmRcQUBUH0ztwUxpdZ6OBL5qLYFr-muTDxs-EBq2835VRiUYznbV18TjCbx0aKVujLupHwwYmRlS_T3SiW2F0Zy8CSsYB1Jlg" alt="Interactive Google Maps - FlashSky International Airport" class="w-full h-full object-cover rounded-2xl"/>
+      <div class="hidden" data-location="Jakarta International Airport"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 16. Newsletter -->
+<section class="py-lg bg-surface-container-highest">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="glass-card p-10 md:p-16 rounded-[40px] border border-white/50 text-center space-y-6">
+      <h2 class="font-headline-md text-primary">Dapatkan Info Promo & Update</h2>
+      <p class="text-on-surface-variant max-w-xl mx-auto">Berlangganan buletin kami untuk mendapatkan berita terbaru, penawaran belanja duty-free, dan panduan perjalanan eksklusif.</p>
+      <form class="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
+        <input class="flex-1 bg-white border-outline-variant/30 rounded-2xl px-6 py-4 focus:ring-primary focus:border-primary" placeholder="Masukkan email Anda" type="email"/>
+        <button class="bg-primary text-on-primary px-10 py-4 rounded-2xl font-bold hover:scale-105 transition-transform">Daftar Sekarang</button>
+      </form>
+      <p class="text-xs text-on-surface-variant opacity-70">Kami menghargai privasi Anda. Batalkan langganan kapan saja.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 17. Footer -->
+<footer class="bg-surface-container-lowest py-lg border-t border-outline-variant/30">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-md mb-lg">
+      <div class="col-span-1 md:col-span-1">
+        <div class="font-headline-md text-headline-md text-primary font-extrabold mb-6">FlashSky <span class="font-light">Airport</span></div>
+        <p class="text-secondary text-sm leading-relaxed mb-6">Membawa standar baru dalam layanan bandara kelas dunia di Indonesia. Presisi dalam setiap keberangkatan, kenyamanan dalam setiap kedatangan.</p>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+            <span class="material-symbols-outlined text-lg">public</span>
+          </a>
+          <a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+            <span class="material-symbols-outlined text-lg">mail</span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h5 class="font-bold text-on-surface mb-6">Informasi</h5>
+        <ul class="space-y-3">
+          <li><a class="text-secondary hover:text-primary transition-colors text-sm" href="#">Tentang Bandara</a></li>
+          <li><a class="text-secondary hover:text-primary transition-colors text-sm" href="#">Informasi Flight</a></li>
+          <li><a class="text-secondary hover:text-primary transition-colors text-sm" href="#">Berita & Media</a></li>
+          <li><a class="text-secondary hover:text-primary transition-colors text-sm" href="#">CSR & Keberlanjutan</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="font-bold text-on-surface mb-6">Layanan</h5>
+        <ul class="space-y-3">
+          <li><a class="text-secondary hover:text-primary transition-colors text-sm" href="#">VIP Skylounge</a></li>
+          <li><a class="text-secondary hover:text-primary transition-colors text-sm" href="#">Duty Free</a></li>
+          <li><a class="text-secondary hover:text-primary transition-colors text-sm" href="#">Ground Transport</a></li>
+          <li><a class="text-secondary hover:text-primary transition-colors text-sm" href="#">Hotel Bandara</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="font-bold text-on-surface mb-6">Bantuan</h5>
+        <ul class="space-y-3">
+          <li><a class="text-secondary hover:text-primary transition-colors text-sm" href="#">Pusat Bantuan</a></li>
+          <li><a class="text-secondary hover:text-primary transition-colors text-sm" href="#">Hubungi Kami</a></li>
+          <li><a class="text-secondary hover:text-primary transition-colors text-sm" href="#">Kehilangan Barang</a></li>
+          <li><a class="text-secondary hover:text-primary transition-colors text-sm" href="#">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-base border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+      <div class="text-secondary">© 2024 FlashSky International Airport. Precision in every departure.</div>
+      <div class="flex gap-6">
+        <a class="text-secondary hover:text-primary transition-colors" href="#">Privacy Policy</a>
+        <a class="text-secondary hover:text-primary transition-colors" href="#">Terms of Service</a>
+        <a class="text-secondary hover:text-primary transition-colors" href="#">Security</a>
+        <a class="text-secondary hover:text-primary transition-colors" href="#">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+    // Simple scroll interaction for Nav
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 50) {
+            nav.classList.add('py-2', 'shadow-md');
+            nav.classList.remove('py-0');
+        } else {
+            nav.classList.remove('py-2', 'shadow-md');
+        }
+    });
+    
+    // Double-tap 'c' untuk scroll linear pelan sampai bawah
+    let lastTapTime = 0;
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'c' || e.key === 'C') {
+        const currentTime = new Date().getTime();
+        const tapGap = currentTime - lastTapTime;
+        
+        if (tapGap < 500 && tapGap > 0) {
+          e.preventDefault();
+          startSmoothScroll();
+          lastTapTime = 0;
+        } else {
+          lastTapTime = currentTime;
+        }
+      }
+    });
+
+    function startSmoothScroll() {
+      const target = document.documentElement.scrollHeight - window.innerHeight;
+      const speed = 4; // pixel per frame
+
+      function scroll() {
+        window.scrollBy(0, speed);
+        if (window.pageYOffset < target) {
+          requestAnimationFrame(scroll);
+        }
+      }
+      
+      scroll();
+    }
+</script>
+
+</body>
+</html>
