@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Melisa Apriani | Math Specialist</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+  
+  <!-- ==================== KEAMANAN TAMBAHAN: BLOKIR CTRL+U DAN VIEW CODE ==================== -->
+  <script>
+    // 1. Blokir Klik Kanan (Context Menu)
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      return false;
+    });
+
+    // 2. Blokir Kombinasi Shortcut Keyboard
+    document.onkeydown = function(e) {
+      // Blokir CTRL+U (View Source)
+      if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+        return false;
+      }
+      // Blokir CTRL+SHIFT+I (Developer Tools / Inspect Element)
+      if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+        e.preventDefault();
+        return false;
+      }
+      // Blokir CTRL+SHIFT+J (Console)
+      if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+        e.preventDefault();
+        return false;
+      }
+      // Blokir CTRL+SHIFT+C (Inspect Element Mode)
+      if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+        e.preventDefault();
+        return false;
+      }
+      // Blokir F12 (Developer Tools)
+      if (e.key === 'F12') {
+        e.preventDefault();
+        return false;
+      }
+      // Blokir CTRL+S (Save Page)
+      if (e.ctrlKey && e.key === 's') {
+        e.preventDefault();
+        return false;
+      }
+    };
+
+    // 3. Peringatan Jika Console Dibuka (Deteksi DevTools)
+    (function() {
+      const element = new Image();
+      Object.defineProperty(element, 'id', {
+        get: function() {
+          // Deteksi console terbuka (passive)
+        }
+      });
+      console.log(element);
+    })();
+  </script>
+  <!-- ==================== AKHIR KEAMANAN TAMBAHAN ==================== -->
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-secondary-fixed": "#002022",
+                  "outline": "#777683",
+                  "on-primary-container": "#9da1ff",
+                  "surface-bright": "#f7f9fb",
+                  "tertiary": "#676000",
+                  "surface-tint": "#4f54b4",
+                  "secondary-container": "#00f1fe",
+                  "surface-variant": "#e0e3e5",
+                  "primary-fixed-dim": "#c0c1ff",
+                  "on-surface": "#191c1e",
+                  "on-tertiary-fixed-variant": "#4e4800",
+                  "on-primary-fixed": "#04006d",
+                  "surface": "#f7f9fb",
+                  "error": "#ba1a1a",
+                  "primary": "#15157d",
+                  "on-secondary-container": "#006a70",
+                  "secondary-fixed": "#74f5ff",
+                  "surface-container-highest": "#e0e3e5",
+                  "secondary-fixed-dim": "#00dbe7",
+                  "on-primary-fixed-variant": "#373a9b",
+                  "outline-variant": "#c7c5d4",
+                  "on-primary": "#ffffff",
+                  "inverse-on-surface": "#eff1f3",
+                  "on-secondary": "#ffffff",
+                  "inverse-primary": "#c0c1ff",
+                  "inverse-surface": "#2d3133",
+                  "primary-container": "#2e3192",
+                  "surface-container-high": "#e6e8ea",
+                  "on-surface-variant": "#464652",
+                  "surface-container-lowest": "#ffffff",
+                  "primary-fixed": "#e1e0ff",
+                  "on-error-container": "#93000a",
+                  "on-tertiary-fixed": "#1f1c00",
+                  "on-background": "#191c1e",
+                  "secondary": "#00696f",
+                  "on-tertiary-container": "#464100",
+                  "tertiary-fixed": "#f1e574",
+                  "surface-container-low": "#f2f4f6",
+                  "on-secondary-fixed-variant": "#004f54",
+                  "tertiary-container": "#b8ae43",
+                  "on-tertiary": "#ffffff",
+                  "tertiary-fixed-dim": "#d4c95c",
+                  "background": "#f7f9fb",
+                  "on-error": "#ffffff",
+                  "error-container": "#ffdad6",
+                  "surface-container": "#eceef0",
+                  "surface-dim": "#d8dadc"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "container-max": "1280px",
+                  "stack-md": "24px",
+                  "unit": "8px",
+                  "stack-sm": "12px",
+                  "gutter": "32px",
+                  "stack-lg": "48px",
+                  "section-padding": "120px"
+          },
+          "fontFamily": {
+                  "display-hero-mobile": ["Plus Jakarta Sans"],
+                  "body-md": ["Inter"],
+                  "headline-md": ["Plus Jakarta Sans"],
+                  "headline-lg": ["Plus Jakarta Sans"],
+                  "display-hero": ["Plus Jakarta Sans"],
+                  "label-caps": ["Inter"],
+                  "stat-number": ["Plus Jakarta Sans"],
+                  "body-lg": ["Inter"]
+          },
+          "fontSize": {
+                  "display-hero-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                  "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                  "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                  "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "display-hero": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                  "label-caps": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                  "stat-number": ["56px", {"lineHeight": "1.0", "fontWeight": "800"}],
+                  "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 20px 40px rgba(46, 49, 146, 0.08);
+    }
+    .math-grid {
+      background-image: radial-gradient(#2e3192 0.5px, transparent 0.5px);
+      background-size: 24px 24px;
+      opacity: 0.05;
+    }
+    .floating-math {
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+
+<!-- 1. Navigation -->
+<nav class="bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 docked full-width top-0 sticky z-50 shadow-sm">
+  <div class="flex justify-between items-center max-w-container-max mx-auto px-gutter py-4">
+    <div class="flex items-center gap-3">
+      <img alt="Melisa Apriani Logo" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWtPAf0ZiOXYMegtvTFXI9dy-pz9ufTwHo4-Wt97b3Wh5lWPhhqqn-0Tk8fKCMKTlimmNLrjoGGr2n3bmfgOWiqEQqcemOvRG397ZO_I_I5YLlHMnwPhZTkejOFSxEdkGsCY6eHoy6Am3vYL8gRnu0wiKxt-Bp_SkUwrvlDNl8DL4SQCVKWHvb0VUfzX3a3ZPBR1dCuVYrADpQK3yAH6Hut0qH_Ab-K6AKzMfLAA7RxdYpJJsA22037RA2L_rQQCgPitHHq4HrSztL"/>
+      <span class="font-headline-md text-headline-md font-bold text-primary">Melisa Apriani</span>
+    </div>
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="text-secondary font-bold border-b-2 border-secondary font-body-md text-body-md transition-colors" href="#">Home</a>
+      <a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary transition-colors" href="#about">About</a>
+      <a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary transition-colors" href="#methodology">Methodology</a>
+      <a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary transition-colors" href="#pricing">Pricing</a>
+      <a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary transition-colors" href="#success">Success Stories</a>
+      <a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary transition-colors" href="#contact">Contact</a>
+      <button class="bg-tertiary-container text-on-tertiary-container px-6 py-2 rounded-xl font-bold hover:scale-95 duration-150">Book Now</button>
+    </div>
+    <div class="md:hidden">
+      <span class="material-symbols-outlined text-primary text-3xl">menu</span>
+    </div>
+  </div>
+</nav>
+
+<!-- 2. Hero Section -->
+<header class="relative overflow-hidden py-section-padding">
+  <div class="absolute inset-0 math-grid"></div>
+  <div class="max-w-container-max mx-auto px-gutter relative z-10 grid md:grid-cols-2 items-center gap-stack-lg">
+    <div>
+      <span class="font-label-caps text-label-caps text-secondary mb-4 block uppercase tracking-widest">Master Your Mind</span>
+      <h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-primary mb-6 leading-tight">
+        Unlock Your <span class="text-secondary-container bg-primary px-4 rounded-xl">Math</span> Potential
+      </h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-lg">
+        Empowering ambitious students with elite mathematical strategies. Over 10 years of specialized experience in turning confusion into clarity and mastery.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold text-lg hover:shadow-[0_0_20px_rgba(0,241,254,0.4)] transition-all">Book Free Consultation</button>
+        <button class="border border-primary text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary/5 transition-all">Explore Methodology</button>
+      </div>
+    </div>
+    <div class="relative">
+      <div class="glass-card rounded-[2rem] p-4 relative overflow-hidden group">
+        <img class="w-full h-[500px] object-cover rounded-[1.5rem] transition-transform duration-700 group-hover:scale-105" data-alt="A sophisticated portrait of Melisa Apriani, a female math expert in a modern high-end office environment. She is smiling confidently, wearing professional business attire with deep indigo tones. The background features a soft-focus geometric glass wall and subtle math symbols projected in light cyan. High-key lighting highlights her professional demeanor in a bright, modern, and trustworthy aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC77SNaVPCBJ_-FvB3oVuE8WqkglnSHvAeSlZk2TKj33yHLRq6ps1TFvExS7J8OyiVrW7skXDUr_92KqS3I1rMtCz1s605z2Mc9hTAf7muJ7ifvd5BZimzonDuwq9v2c8RFd_C06hA3BUJ5rBSsmteCqfvgS1QzaZnbU4ZRxJKCZ1Ga-DOKsoncSlBadB4Y4ypT8Jm31QpZ3E0PvqqvNGhku3ZnjYEQEjp1NGM9WZfC5TtHxFwwULYQqqh3JDWbqnb6AEil5uLX5m4P"/>
+        <div class="absolute -top-10 -right-10 w-40 h-40 bg-secondary-container/20 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl"></div>
+      </div>
+      <!-- Floating Elements -->
+      <div class="absolute -top-6 -left-6 glass-card p-4 rounded-2xl floating-math" style="animation-delay: 0s;">
+        <span class="text-primary font-bold text-2xl">√x² + y²</span>
+      </div>
+      <div class="absolute top-1/2 -right-8 glass-card p-4 rounded-2xl floating-math" style="animation-delay: 1.5s;">
+        <span class="text-secondary font-bold text-2xl">πr²</span>
+      </div>
+      <div class="absolute -bottom-4 right-1/4 glass-card p-4 rounded-2xl floating-math" style="animation-delay: 3s;">
+        <span class="text-primary-container font-bold text-2xl">dy/dx</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 3. Stats Ribbon -->
+<section class="bg-primary text-on-primary py-12">
+  <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+    <div class="flex flex-col items-center">
+      <span class="font-stat-number text-stat-number text-secondary-fixed">500+</span>
+      <span class="font-label-caps text-label-caps uppercase opacity-80">Students Mentored</span>
+    </div>
+    <div class="flex flex-col items-center border-y md:border-y-0 md:border-x border-on-primary/10 py-8 md:py-0">
+      <span class="font-stat-number text-stat-number text-secondary-fixed">98%</span>
+      <span class="font-label-caps text-label-caps uppercase opacity-80">Pass Rate</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <span class="font-stat-number text-stat-number text-secondary-fixed">10+</span>
+      <span class="font-label-caps text-label-caps uppercase opacity-80">Years Experience</span>
+    </div>
+  </div>
+</section>
+
+<!-- 4. About Me -->
+<section class="py-section-padding bg-surface-container-lowest" id="about">
+  <div class="max-w-container-max mx-auto px-gutter grid md:grid-cols-2 gap-16 items-center">
+    <div class="order-2 md:order-1">
+      <div class="relative inline-block mb-6">
+        <h2 class="font-headline-lg text-headline-lg text-primary">The Mind Behind The Method</h2>
+        <div class="absolute -bottom-2 left-0 w-24 h-1 bg-secondary-container"></div>
+      </div>
+      <p class="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed">
+        Mathematics is more than just numbers—it's a language of logic and precision. My name is Melisa Apriani, and I've spent the last decade perfecting a tutoring approach that bridges the gap between academic theory and intuitive understanding.
+      </p>
+      <p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+        My mission is to transform math from a source of anxiety into a competitive advantage. Whether you're tackling high-level calculus or preparing for international competitions, I provide the scaffolding for your success.
+      </p>
+      <div class="flex items-center gap-6">
+        <div class="flex flex-col">
+          <span class="font-headline-md text-headline-md text-primary">Melisa Apriani</span>
+          <span class="text-on-surface-variant">Lead Mathematics Specialist</span>
+        </div>
+      </div>
+    </div>
+    <div class="order-1 md:order-2 grid grid-cols-2 gap-4">
+      <div class="space-y-4">
+        <img class="rounded-2xl shadow-xl h-64 w-full object-cover" data-alt="A close-up high-resolution image of a modern, organized math workspace. A high-end fountain pen rests on a piece of parchment with elegant, handwritten calculus equations. Beside it sits a minimalist glass paperweight reflecting a bright, airy office. The scene is lit with warm morning sunlight, creating a scholarly yet modern atmosphere with indigo and cyan accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAchTE3GDGKiA_50pVXQn_A3jFI5eNLgKeyU4Tte9rjQ3kZW_1JCDoKUPw3Gdlboz2g5BDlQyfMPdS5lbKQb0BtWcfbImNPYc_uNrz5i4RFfw-FRqbw2nemd08lEunh5qdS58e6GU4jSjIXLrfJXRkCe3c87UlUhhERYmNgQ8NUmhaRnRA5JZALn01m7HwmWoVM2INQ0Hyvpk_Mlx5zNG0tGF4CamM6xbC6NtWKjjxyFnYKJxLn6dey78qhbt1ztb6U9uGAW9prk95e"/>
+        <img class="rounded-2xl shadow-xl h-48 w-full object-cover" data-alt="A bright and airy classroom scene showing a large floor-to-ceiling window overlooking a modern cityscape. Inside, a clean whiteboard is filled with neatly organized mathematical proofs and colorful geometric diagrams in indigo and cyan. The lighting is crisp and professional, symbolizing clarity and advanced learning." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsubeNGXmrfFIF5JuLGyn5U6MR9pcL4wOCXNLKZUJqR4a0pACov5ql9gNKYJbWQ1TMzAu7Tq3oJRx3ZxqZwfZDUXduqMfT7d6oUrCetfJqdPGZy3z9x6LlCxF1recFUFu0f-ADrV9-hiKhlq4EOa2RUqcQE_W-qRkYF9KEzFitpVzY-PfKMXBJiOgA5JpEREfhOF2XmQemv86umo8cAdL5d0WYQFt1ZLE52MuS_vGRmIhQ4zTs5qfa91Yg27tT2TFRBgcOCjpTJ5Xg"/>
+      </div>
+      <div class="pt-12">
+        <img class="rounded-2xl shadow-xl h-96 w-full object-cover" data-alt="A top-down view of a modern tablet displaying a 3D mathematical visualization of a complex function. A hand is seen using a stylus to interact with the glowing cyan and indigo graph. The desk is clean, minimalist, and white, emphasizing a tech-forward approach to mathematics and elite education." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIMm5kXufttSyuHtLHpHO8IpjHVK7ifQYyPTvobVX5bW0jPrKDOVVZmqrPgRStRQpvJ2Ww9qiFGCNt-qxnwBm6TpeYw6qv6QY5MGa1lmOxZBNlewriMMX_xkkKSwms7XhoCRaa2Q4Gh5aCXKCSRLQVXKlrQBpfeKojBxMarEactIABu0uTqnrlb-9lPE-R6mXQOl52lGuFzsSP7-UKi5WB3sV61h8zlWgdQe-VyYkFW0AomLmvqQT2xQ3ZR8ynalP0e-_0iiopirsG"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Methodology -->
+<section class="py-section-padding bg-surface" id="methodology">
+  <div class="max-w-container-max mx-auto px-gutter text-center mb-16">
+    <h2 class="font-headline-lg text-headline-lg text-primary mb-4">The Indigo Calculus Method</h2>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">A proprietary framework designed to cultivate mastery through structured intuition and analytical rigor.</p>
+  </div>
+  <div class="max-w-container-max mx-auto px-gutter grid md:grid-cols-3 gap-8">
+    <div class="glass-card p-10 rounded-[2rem] hover:-translate-y-2 transition-transform">
+      <div class="w-16 h-16 bg-secondary-container/20 rounded-2xl flex items-center justify-center mb-8">
+        <span class="material-symbols-outlined text-secondary text-4xl">architecture</span>
+      </div>
+      <h3 class="font-headline-md text-headline-md text-primary mb-4">Conceptual Foundations</h3>
+      <p class="text-on-surface-variant leading-relaxed">We don't just memorize formulas; we dismantle them. Understanding the 'why' creates the mental architecture needed for complex problem-solving.</p>
+    </div>
+    <div class="glass-card p-10 rounded-[2rem] hover:-translate-y-2 transition-transform">
+      <div class="w-16 h-16 bg-secondary-container/20 rounded-2xl flex items-center justify-center mb-8">
+        <span class="material-symbols-outlined text-secondary text-4xl">psychology</span>
+      </div>
+      <h3 class="font-headline-md text-headline-md text-primary mb-4">Analytical Intuition</h3>
+      <p class="text-on-surface-variant leading-relaxed">Training the brain to recognize patterns across different domains. We bridge the gap between abstract symbols and real-world logic.</p>
+    </div>
+    <div class="glass-card p-10 rounded-[2rem] hover:-translate-y-2 transition-transform">
+      <div class="w-16 h-16 bg-secondary-container/20 rounded-2xl flex items-center justify-center mb-8">
+        <span class="material-symbols-outlined text-secondary text-4xl">speed</span>
+      </div>
+      <h3 class="font-headline-md text-headline-md text-primary mb-4">Precision Performance</h3>
+      <p class="text-on-surface-variant leading-relaxed">Developing the speed and accuracy required for elite examinations. Our refined practice cycles ensure zero-error execution under pressure.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Specializations -->
+<section class="py-section-padding bg-primary text-on-primary">
+  <div class="max-w-container-max mx-auto px-gutter grid lg:grid-cols-4 gap-6">
+    <div class="lg:col-span-2 flex flex-col justify-center">
+      <h2 class="font-headline-lg text-headline-lg mb-6">Expertise Across All Tiers</h2>
+      <p class="font-body-lg text-body-lg opacity-80 mb-8">From foundational basics to elite competition mathematics, I provide specialized guidance tailored to your specific academic goals.</p>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-white/10 p-6 rounded-2xl">
+          <span class="text-secondary-fixed font-bold block mb-2">99th Percentile</span>
+          <p class="text-sm opacity-60">Result consistency for GRE/SAT students</p>
+        </div>
+        <div class="bg-white/10 p-6 rounded-2xl">
+          <span class="text-secondary-fixed font-bold block mb-2">Tier 1 Admissions</span>
+          <p class="text-sm opacity-60">Success rate for Ivy League applicants</p>
+        </div>
+      </div>
+    </div>
+    <div class="grid gap-6">
+      <div class="bg-white p-8 rounded-[2rem] text-primary h-full">
+        <span class="material-symbols-outlined text-secondary text-4xl mb-4">functions</span>
+        <h4 class="font-bold text-xl mb-2">Calculus I-III</h4>
+        <p class="text-on-surface-variant text-sm">Limits, derivatives, integrals, and vector analysis for university students.</p>
+      </div>
+      <div class="bg-white p-8 rounded-[2rem] text-primary h-full">
+        <span class="material-symbols-outlined text-secondary text-4xl mb-4">view_quilt</span>
+        <h4 class="font-bold text-xl mb-2">Linear Algebra</h4>
+        <p class="text-on-surface-variant text-sm">Matrix theory, vector spaces, and linear transformations for STEM majors.</p>
+      </div>
+    </div>
+    <div class="grid gap-6">
+      <div class="bg-white p-8 rounded-[2rem] text-primary h-full">
+        <span class="material-symbols-outlined text-secondary text-4xl mb-4">school</span>
+        <h4 class="font-bold text-xl mb-2">SAT / GRE Math</h4>
+        <p class="text-on-surface-variant text-sm">Strategic test-taking methods to maximize scores in standardized exams.</p>
+      </div>
+      <div class="bg-white p-8 rounded-[2rem] text-primary h-full">
+        <span class="material-symbols-outlined text-secondary text-4xl mb-4">military_tech</span>
+        <h4 class="font-bold text-xl mb-2">Competition Prep</h4>
+        <p class="text-on-surface-variant text-sm">Elite training for AMC, AIME, and Math Olympiad challenges.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Why Math Matters -->
+<section class="py-section-padding relative overflow-hidden">
+  <div class="max-w-container-max mx-auto px-gutter relative z-10">
+    <div class="max-w-3xl">
+      <span class="font-label-caps text-label-caps text-secondary mb-4 block uppercase tracking-widest">A Universal Language</span>
+      <h2 class="font-headline-lg text-headline-lg text-primary mb-8">Why Mastery Matters</h2>
+      <div class="space-y-8">
+        <div class="flex gap-6">
+          <div class="text-secondary font-stat-number leading-none">01</div>
+          <div>
+            <h4 class="font-bold text-xl mb-2">Critical Problem Solving</h4>
+            <p class="text-on-surface-variant text-body-md">Math isn't about numbers; it's about the ability to break down complex problems into solvable units. This skill translates to every industry.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="text-secondary font-stat-number leading-none">02</div>
+          <div>
+            <h4 class="font-bold text-xl mb-2">Technological Fluency</h4>
+            <p class="text-on-surface-variant text-body-md">In an AI-driven world, mathematical logic is the core infrastructure. Mastery ensures you aren't just a user, but a creator.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="text-secondary font-stat-number leading-none">03</div>
+          <div>
+            <h4 class="font-bold text-xl mb-2">The Confidence Loop</h4>
+            <p class="text-on-surface-variant text-body-md">Conquering the most difficult subject builds a foundational confidence that spills over into every other area of life and study.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Learning Packages -->
+<section class="py-section-padding bg-surface-container-low" id="pricing">
+  <div class="max-w-container-max mx-auto px-gutter text-center mb-16">
+    <h2 class="font-headline-lg text-headline-lg text-primary mb-4">Investment in Excellence</h2>
+    <p class="font-body-lg text-body-lg text-on-surface-variant">Choose the path that aligns with your academic objectives.</p>
+  </div>
+  <div class="max-w-container-max mx-auto px-gutter grid md:grid-cols-3 gap-8">
+    <!-- Tier 1 -->
+    <div class="glass-card p-8 rounded-[2.5rem] flex flex-col">
+      <h3 class="font-headline-md text-headline-md text-primary mb-2">Single Session</h3>
+      <p class="text-on-surface-variant mb-6">Laser-focused support for a specific topic or upcoming test.</p>
+      <div class="mb-8">
+        <span class="text-4xl font-bold text-primary">$150</span>
+        <span class="text-on-surface-variant">/session</span>
+      </div>
+      <ul class="space-y-4 mb-10 flex-grow">
+        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span> 60-Minute 1:1 Session</li>
+        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span> Custom Session Notes</li>
+        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span> Recorded Session Access</li>
+      </ul>
+      <button class="w-full py-4 border border-primary text-primary rounded-xl font-bold hover:bg-primary hover:text-white transition-all">Select Plan</button>
+    </div>
+    <!-- Tier 2 -->
+    <div class="bg-primary p-10 rounded-[2.5rem] flex flex-col relative shadow-2xl -translate-y-4">
+      <div class="absolute top-6 right-8 bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Most Popular</div>
+      <h3 class="font-headline-md text-headline-md text-on-primary mb-2">Monthly Intensive</h3>
+      <p class="text-primary-fixed-dim mb-6">Continuous growth and deep concept mastery for long-term success.</p>
+      <div class="mb-8">
+        <span class="text-4xl font-bold text-on-primary">$1,200</span>
+        <span class="text-primary-fixed-dim">/month</span>
+      </div>
+      <ul class="space-y-4 mb-10 flex-grow text-on-primary">
+        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-container">check_circle</span> 8 Targeted Sessions</li>
+        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-container">check_circle</span> 24/7 Priority Chat Support</li>
+        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-container">check_circle</span> Personalized Learning Roadmap</li>
+        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-container">check_circle</span> Weekly Progress Reports</li>
+      </ul>
+      <button class="w-full py-4 bg-secondary-container text-on-secondary-container rounded-xl font-bold hover:scale-95 transition-all">Start Intensive</button>
+    </div>
+    <!-- Tier 3 -->
+    <div class="glass-card p-8 rounded-[2.5rem] flex flex-col">
+      <h3 class="font-headline-md text-headline-md text-primary mb-2">Exam Prep</h3>
+      <p class="text-on-surface-variant mb-6">High-impact bootcamp for SAT, GRE, or Competition finals.</p>
+      <div class="mb-8">
+        <span class="text-4xl font-bold text-primary">$1,800</span>
+        <span class="text-on-surface-variant">/program</span>
+      </div>
+      <ul class="space-y-4 mb-10 flex-grow">
+        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span> 12 Intensive Sessions</li>
+        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span> 5 Full-Length Mock Exams</li>
+        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span> Test-Day Strategy Guide</li>
+        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span> Performance Analytics</li>
+      </ul>
+      <button class="w-full py-4 border border-primary text-primary rounded-xl font-bold hover:bg-primary hover:text-white transition-all">Select Plan</button>
+    </div>
+  </div>
+</section>
+
+<!-- 9. Success Stories -->
+<section class="py-section-padding bg-surface-container-lowest" id="success">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <h2 class="font-headline-lg text-headline-lg text-primary mb-12 text-center">Proven Results</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="glass-card p-8 rounded-3xl relative">
+        <span class="material-symbols-outlined text-primary text-4xl mb-4">format_quote</span>
+        <p class="text-on-surface-variant italic mb-8">"Melisa didn't just teach me calculus; she taught me how to think logically. I went from a C to a consistent A in just three months."</p>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-secondary-container/30 flex items-center justify-center font-bold text-primary">D</div>
+          <div>
+            <h5 class="font-bold text-primary">Dina</h5>
+            <span class="text-sm text-secondary font-bold">Grade A in AP Calculus</span>
+          </div>
+        </div>
+      </div>
+      <div class="glass-card p-8 rounded-3xl relative">
+        <span class="material-symbols-outlined text-primary text-4xl mb-4">format_quote</span>
+        <p class="text-on-surface-variant italic mb-8">"The SAT math prep was a game-changer. My score jumped by 180 points, and I finally understood the 'why' behind the shortcuts."</p>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-secondary-container/30 flex items-center justify-center font-bold text-primary">M</div>
+          <div>
+            <h5 class="font-bold text-primary">Marcus</h5>
+            <span class="text-sm text-secondary font-bold">790 SAT Math Score</span>
+          </div>
+        </div>
+      </div>
+      <div class="glass-card p-8 rounded-3xl relative">
+        <span class="material-symbols-outlined text-primary text-4xl mb-4">format_quote</span>
+        <p class="text-on-surface-variant italic mb-8">"As a university engineering student, linear algebra was a wall for me. Melisa made it feel like a puzzle I could solve."</p>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-secondary-container/30 flex items-center justify-center font-bold text-primary">S</div>
+          <div>
+            <h5 class="font-bold text-primary">Sarah</h5>
+            <span class="text-sm text-secondary font-bold">University Honors</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. The Process -->
+<section class="py-section-padding bg-primary text-on-primary">
+  <div class="max-w-container-max mx-auto px-gutter text-center mb-16">
+    <h2 class="font-headline-lg text-headline-lg mb-4">The Pathway to Mastery</h2>
+    <p class="text-primary-fixed-dim">Four simple steps to transform your mathematical capabilities.</p>
+  </div>
+  <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+    <!-- Connector Line -->
+    <div class="hidden md:block absolute top-1/2 left-0 w-full h-[2px] bg-white/10 -translate-y-16"></div>
+    <div class="relative z-10 text-center">
+      <div class="w-16 h-16 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center font-bold text-2xl mx-auto mb-6">1</div>
+      <h4 class="font-bold text-xl mb-2">Consultation</h4>
+      <p class="text-sm text-primary-fixed-dim">A 15-minute sync to understand your goals and current challenges.</p>
+    </div>
+    <div class="relative z-10 text-center">
+      <div class="w-16 h-16 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center font-bold text-2xl mx-auto mb-6">2</div>
+      <h4 class="font-bold text-xl mb-2">Assessment</h4>
+      <p class="text-sm text-primary-fixed-dim">A diagnostic session to pinpoint specific conceptual gaps.</p>
+    </div>
+    <div class="relative z-10 text-center">
+      <div class="w-16 h-16 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center font-bold text-2xl mx-auto mb-6">3</div>
+      <h4 class="font-bold text-xl mb-2">Custom Plan</h4>
+      <p class="text-sm text-primary-fixed-dim">A personalized roadmap designed for your learning style.</p>
+    </div>
+    <div class="relative z-10 text-center">
+      <div class="w-16 h-16 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center font-bold text-2xl mx-auto mb-6">4</div>
+      <h4 class="font-bold text-xl mb-2">Success</h4>
+      <p class="text-sm text-primary-fixed-dim">Consistent progress, elite scores, and newfound confidence.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 11. Sample Materials -->
+<section class="py-section-padding">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <h2 class="font-headline-lg text-headline-lg text-primary mb-12 text-center">Premium Study Materials</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="group relative overflow-hidden rounded-3xl h-80">
+        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A high-quality math worksheet focusing on derivatives and integration. The design is clean with plenty of white space, crisp indigo typography, and clear cyan diagrams illustrating geometric interpretations of the derivative. The layout is professional and elite, typical of advanced academic resources." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9iMn5sdN8obItv7JbzYvB5ac9geAhh391n6XQLLZDiqGUbghO2Rk1M2NTgYRf5Tq6hTAd_Zz9Lf308sHUrTS2qzC0DhaIyQ8WA9yLgMqdH5mvbx3oI2jpMngnhw8MFzG1JGct6Jd7LkXHykT1a46gnOUaSvmhNAmGiW3PLRymcBkHL7f6iClDIN_kuVb_u3pt7W3X_rReWgy_aiE681eLF3LDVypum32LCXuIm3xyFjHzpODSsxl45gRVKfeceBU8eiI147ytweCy"/>
+        <div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+          <span class="bg-white text-primary px-6 py-2 rounded-full font-bold">Preview Worksheet</span>
+        </div>
+      </div>
+      <div class="group relative overflow-hidden rounded-3xl h-80">
+        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A detailed infographic explaining the Fundamental Theorem of Calculus. It features a modern design aesthetic with vibrant cyan line graphs, subtle dot grids, and elegant monospaced math notation. The style is educational yet visually stunning, using the brand's primary and secondary colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJh4XGVu0h5VOxpNQVZzrZnBbCnzEBNFzBx9N_GsQiE39JtInNnjOIep_XdO0EVpcdfsPqIA8QZJrxaylLr77uiCkYSGMS5QWANHAhzMSKkwZOq6yAKv2o1oYJNwFzl_aSohJ9CywO89lHuYWo02bgJKZ7K0sjUH-eVjAdxuXLeIR2-b-1oGnSgARRN27px-cEO_inEwjgNJ_18P4u5OV2wXa5Po50zYDu6Pa51oBnuWDomgvDLueoCvOAxmN68a54-SP6d2kvE3WF"/>
+        <div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+          <span class="bg-white text-primary px-6 py-2 rounded-full font-bold">View Guide</span>
+        </div>
+      </div>
+      <div class="group relative overflow-hidden rounded-3xl h-80 md:col-span-2 lg:col-span-1">
+        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A collection of specialized math challenge problems for competition preparation. The page shows complex multivariable equations and geometric proofs, rendered in a professional, high-end scholarly layout with ample margins and clear headings in bold indigo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtOeSG6uOR3Nf_e5p4A283AJw0ujcyac6y8npCX9vn5UZ0sfJL_6XnQi964oRsic_aUBZOOAyF-gcuzFXhhywPxby1c3iuLYz5tuH_kwqXqFh7I0Qgk6N-EEOQtR3h-KwgJzm-TT5VQ0TZeNXwxrg94XCB2IqCUxPYbnfqbaHNo-UtJf8d7oK80nSEpljK21YWZL5H04iG6Fq1Vhz6Wk5XUUTlPlAbTkPasWILXM6f5wl6O9Z6NqmSJk5f6tfmmtvNdpChs-I1YU4x"/>
+        <div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+          <span class="bg-white text-primary px-6 py-2 rounded-full font-bold">Explore Challenges</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. Awards & Certifications -->
+<section class="py-16 bg-surface-container">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-4xl">verified</span>
+        <span class="font-bold text-lg">M.Sc. Mathematics</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-4xl">workspace_premium</span>
+        <span class="font-bold text-lg">Certified Educator</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-4xl">award_star</span>
+        <span class="font-bold text-lg">Top 1% Tutor</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-4xl">history_edu</span>
+        <span class="font-bold text-lg">Published Author</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13. FAQ -->
+<section class="py-section-padding bg-surface">
+  <div class="max-w-3xl mx-auto px-gutter">
+    <h2 class="font-headline-lg text-headline-lg text-primary mb-12 text-center">Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      <div class="glass-card rounded-2xl overflow-hidden">
+        <button class="w-full px-8 py-6 text-left flex justify-between items-center group" onclick="this.nextElementSibling.classList.toggle('hidden')">
+          <span class="font-bold text-primary">Do you offer online sessions only?</span>
+          <span class="material-symbols-outlined text-secondary transition-transform group-focus:rotate-180">expand_more</span>
+        </button>
+        <div class="px-8 pb-6 text-on-surface-variant hidden">
+          Yes, I specialize in high-end virtual tutoring using advanced collaborative tools that simulate an in-person whiteboard experience.
+        </div>
+      </div>
+      <div class="glass-card rounded-2xl overflow-hidden">
+        <button class="w-full px-8 py-6 text-left flex justify-between items-center group" onclick="this.nextElementSibling.classList.toggle('hidden')">
+          <span class="font-bold text-primary">What level of math do you teach?</span>
+          <span class="material-symbols-outlined text-secondary">expand_more</span>
+        </button>
+        <div class="px-8 pb-6 text-on-surface-variant hidden">
+          I cover everything from high school algebra to advanced university-level calculus, linear algebra, and competition mathematics.
+        </div>
+      </div>
+      <div class="glass-card rounded-2xl overflow-hidden">
+        <button class="w-full px-8 py-6 text-left flex justify-between items-center group" onclick="this.nextElementSibling.classList.toggle('hidden')">
+          <span class="font-bold text-primary">How quickly can I see results?</span>
+          <span class="material-symbols-outlined text-secondary">expand_more</span>
+        </button>
+        <div class="px-8 pb-6 text-on-surface-variant hidden">
+          While every student is different, most students report increased confidence after just 2-3 sessions and measurable grade improvements within a month.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 14. Free Tip Card -->
+<section class="max-w-container-max mx-auto px-gutter mb-section-padding">
+  <div class="bg-primary-container p-12 rounded-[3rem] relative overflow-hidden group">
+    <div class="absolute -top-20 -right-20 w-80 h-80 bg-secondary-container/20 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-700"></div>
+    <div class="relative z-10 flex flex-col md:flex-row items-center gap-12">
+      <div class="bg-white/10 p-8 rounded-3xl">
+        <span class="material-symbols-outlined text-secondary-container text-6xl">lightbulb</span>
+      </div>
+      <div>
+        <span class="font-label-caps text-label-caps text-secondary-container mb-2 block uppercase tracking-widest">Expert Tip of the Week</span>
+        <h2 class="font-headline-md text-headline-md text-on-primary mb-4">The "Reverse-Check" Strategy</h2>
+        <p class="text-primary-fixed-dim text-lg max-w-2xl">Before submitting any complex equation, re-solve the final step using a different method. If the result remains identical, your logic is sound. In calculus, always check your derivative via integration to guarantee a 100% accuracy rate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 15. Instagram Feed -->
+<section class="py-section-padding bg-surface-container-low">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="flex justify-between items-end mb-12">
+      <div>
+        <h2 class="font-headline-lg text-headline-lg text-primary">Math in the Wild</h2>
+        <p class="text-on-surface-variant">Follow for daily logic puzzles and academic insights.</p>
+      </div>
+      <a class="text-primary font-bold hover:text-secondary transition-colors" href="#">@melisa_math_specialist</a>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <img class="aspect-square w-full object-cover rounded-2xl" data-alt="A stylized square Instagram post showing a geometric neon visualization of the Fibonacci sequence. The colors are vibrant cyan and deep indigo on a dark background, reflecting a 'cool' and modern take on mathematics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0t-POEoQa2VAJcdVBa9BTfPbOu2GQI2pH73P-aIL2ZjDNUMrOeJdlBiyZjTX62_2hVhqWJjIjTvV2vQNHpIzMrbvpgpwVyev_H4GUj9MKLZPaykFhHUr4TISBHX-M3QW1GeQEXMAgJLDSsqR7AbJPm7I1zxqez8rScDMnqvBc0NGYFw17cyQPodt0p1BpogfV9Lv1TJukORt5zMGlBbIWCqjJHjx22AXGm0fQv-KkCex4fWnzYSP1OUEgd8Vv72ryt4CJXW48wSLJ"/>
+      <img class="aspect-square w-full object-cover rounded-2xl" data-alt="A lifestyle Instagram photo of a modern desk setup with a sleek laptop, a cup of coffee, and a notebook filled with beautiful, handwritten mathematical proofs. The aesthetic is bright and aspirational, highlighting the beauty in learning." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVE7xfnp4qWq5dcfQiVvUSYrnStoeXDrF-g6Q5TV19A3cs_fPmsISCcn_jw2TFhadXtfuSFBSYHKlr17IxqCqnimsznwxXbsU40T0_wwG17GHYi9NFPnq2f_1nzmk0poaZpAt64L80V03W4FYLuUzU4Xgl3DsA9i88UBhJtqXfkQSDdidb-X_etWFbScbX7_9h_bDyWOXN0ojFaaoK7x2yZkm9BaQZ4WxV0zcOMo3Y_OzDLMYnER6ITQPM4_7Vv2arSmnXrZaQdHQM"/>
+      <img class="aspect-square w-full object-cover rounded-2xl" data-alt="A close-up shot of a chalkboard featuring a complex math problem with a bright cyan 'SOLVED' stamp effect over it. The mood is triumphant and inspiring for students." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAvMty3FKTp1c_uakksU2HPqJZbBuCYxbafK6YVGQMW_VHGhp4k81WtaUCnBUjncFTvAcS_JFS59xrBKMR3YrkK7TvZ7T-uxEwh5y9CZAKmJ-ZJxHDlEirkZd-I_iQmWNwl2o44VlfsBsFrEUKJUmMcaO_Brpq1xB9rJZshf7JqyOFgXhgUkMUEELJUejKyhJL3ymJQYdD_deGLPn0sG8vogkXz_wRrLSv_U7bh9u-cNYzd3-McH1HlGRks_TwiRJ5fQWZbenBd6ff"/>
+      <img class="aspect-square w-full object-cover rounded-2xl" data-alt="A square image of a minimalist digital art piece representing a 4D tesseract in shades of indigo and cyan. The art is sophisticated and appeals to advanced math enthusiasts and STEM students." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ7Ir3hB7LIaOYihY19x5mTFJGae4pPKHAyUqvSsNK_pv67BEl9n5X_z4VRmIR-WBpse0-yTU67dSJvbMqc7mVe3g7Tjh4yM3fhNMeAEN0YTyM28BwgQGk5PBaj1X3rMGuCrWtLqQXZGwEg1WT5D7EJiUyryLf5T83E46fdVe6Jg46nXBJJoDurG4jxaS6cnhSn5GstB9MBrzorL4gxRM68__3ID1NER84fiKCmagWMhWXY2AuvkY_9dQ1_4dczLCXkdfiDjo8823C"/>
+    </div>
+  </div>
+</section>
+
+<!-- 16. Contact & Booking -->
+<section class="py-section-padding" id="contact">
+  <div class="max-w-container-max mx-auto px-gutter grid md:grid-cols-2 gap-16">
+    <div>
+      <h2 class="font-headline-lg text-headline-lg text-primary mb-6">Ready to Master Math?</h2>
+      <p class="text-on-surface-variant text-body-lg mb-8">Reach out today to schedule your initial consultation. Let's build your roadmap to academic excellence together.</p>
+      <div class="space-y-6">
+        <div class="flex items-center gap-6">
+          <div class="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center">
+            <span class="material-symbols-outlined text-secondary">mail</span>
+          </div>
+          <div>
+            <span class="block text-sm text-on-surface-variant uppercase font-bold">Email</span>
+            <span class="font-bold text-primary">hello@melisaapriani.com</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-6">
+          <div class="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center">
+            <span class="material-symbols-outlined text-secondary">location_on</span>
+          </div>
+          <div>
+            <span class="block text-sm text-on-surface-variant uppercase font-bold">Location</span>
+            <span class="font-bold text-primary">Remote Worldwide / Boston, MA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="glass-card p-10 rounded-[3rem]">
+      <form class="space-y-6">
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-bold text-primary mb-2">Name</label>
+            <input class="w-full p-4 rounded-xl border-outline-variant/30 focus:border-secondary focus:ring-secondary/20 transition-all bg-white" placeholder="Jane Doe" type="text"/>
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-primary mb-2">Subject</label>
+            <input class="w-full p-4 rounded-xl border-outline-variant/30 focus:border-secondary focus:ring-secondary/20 transition-all bg-white" placeholder="Calculus II" type="text"/>
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-bold text-primary mb-2">Email</label>
+          <input class="w-full p-4 rounded-xl border-outline-variant/30 focus:border-secondary focus:ring-secondary/20 transition-all bg-white" placeholder="jane@example.com" type="email"/>
+        </div>
+        <div>
+          <label class="block text-sm font-bold text-primary mb-2">Message</label>
+          <textarea class="w-full p-4 rounded-xl border-outline-variant/30 focus:border-secondary focus:ring-secondary/20 transition-all bg-white h-32" placeholder="Tell me about your academic goals..."></textarea>
+        </div>
+        <button class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold hover:shadow-lg transition-all">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- 17. Footer -->
+<footer class="bg-on-surface dark:bg-on-secondary-fixed text-surface dark:text-surface-variant full-width">
+  <div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-gutter py-stack-lg gap-stack-md">
+    <div class="flex items-center gap-3">
+      <img alt="Melisa Apriani Logo" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWtPAf0ZiOXYMegtvTFXI9dy-pz9ufTwHo4-Wt97b3Wh5lWPhhqqn-0Tk8fKCMKTlimmNLrjoGGr2n3bmfgOWiqEQqcemOvRG397ZO_I_I5YLlHMnwPhZTkejOFSxEdkGsCY6eHoy6Am3vYL8gRnu0wiKxt-Bp_SkUwrvlDNl8DL4SQCVKWHvb0VUfzX3a3ZPBR1dCuVYrADpQK3yAH6Hut0qH_Ab-K6AKzMfLAA7RxdYpJJsA22037RA2L_rQQCgPitHHq4HrSztL"/>
+      <span class="font-headline-md text-headline-md font-bold text-surface">Melisa Apriani</span>
+    </div>
+    <div class="flex flex-wrap justify-center gap-8 font-body-md text-body-md">
+      <a class="text-outline-variant hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+      <a class="text-outline-variant hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+      <a class="text-outline-variant hover:text-secondary-fixed transition-colors" href="#">FAQ</a>
+      <a class="text-outline-variant hover:text-secondary-fixed transition-colors" href="#">Blog</a>
+    </div>
+    <p class="text-outline-variant text-sm text-center md:text-right">© 2024 Melisa Apriani • The Modern Academic Catalyst. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+    // Micro-interactions for form focus
+    document.querySelectorAll('input, textarea').forEach(element => {
+      element.addEventListener('focus', () => {
+        element.parentElement.style.transform = 'scale(1.02)';
+        element.parentElement.style.transition = 'transform 0.2s ease';
+      });
+      element.addEventListener('blur', () => {
+        element.parentElement.style.transform = 'scale(1)';
+      });
+    });
+    
+    // Double-tap 'c' untuk scroll linear pelan sampai bawah
+    let lastTapTime = 0;
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'c' || e.key === 'C') {
+        const currentTime = new Date().getTime();
+        const tapGap = currentTime - lastTapTime;
+        
+        if (tapGap < 500 && tapGap > 0) {
+          e.preventDefault();
+          startSmoothScroll();
+          lastTapTime = 0;
+        } else {
+          lastTapTime = currentTime;
+        }
+      }
+    });
+
+    function startSmoothScroll() {
+      const target = document.documentElement.scrollHeight - window.innerHeight;
+      const speed = 5; // pixel per frame
+
+      function scroll() {
+        window.scrollBy(0, speed);
+        if (window.pageYOffset < target) {
+          requestAnimationFrame(scroll);
+        }
+      }
+      
+      scroll();
+    }
+</script>
+
+</body>
+</html>
